@@ -9,4 +9,16 @@
 declare(strict_types=1);
 
 return [
+    'authentication' => [
+        'pdo' => [
+            'dsn'   => 'pgsql:host=localhost;port=5432;dbname=expressive;user=developer;password=123456',
+            'table' => 'users',
+            'field' => [
+                'identity' => 'username',
+                'password' => 'password',
+            ],
+        ],
+        'username' => 'username',
+        'password' => 'password',
+    ],
 ];
