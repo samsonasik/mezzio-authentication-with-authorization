@@ -33,3 +33,15 @@ CREATE EXTENSION
 expressive=# INSERT INTO users(username, password) VALUES('samsonasik', crypt('123456', gen_salt('bf')));
 INSERT 0 1
 ```
+
+Running
+-------
+
+1. Clear browser cache
+2. Run the php -S command:
+
+```php
+$ php -S localhost:8080 -t public
+```
+
+3. Open browser: http://localhost:8080
