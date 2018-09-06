@@ -1,0 +1,5 @@
+<?php // templates/app/login-page.phtml
+
+echo $this->error;
+$form->get('csrf')->setValue($token);
+echo $this->form($form);
