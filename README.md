@@ -9,10 +9,12 @@ $ cd expressive3-example-auth-with-prg && composer install
 $ cp config/autoload/local.php.dist config/autoload/local.php
 ```
 
+Modify the `config/autoload/local.php` as your local dev db config.
+
 Configuration
 -------------
 
-Configure your `config/autoload/local.php` with your local DB config with username and password field. The password field value must have hashed with bcrypt, if you are using postgresql:
+Configure your `config/autoload/local.php` with your local DB config with username and password field. The password field value must have hashed with bcrypt, if you are using postgresql (assumption using user "developer" and create db named "expressive"):
 
 ```sql
 $ createdb -Udeveloper expressive
