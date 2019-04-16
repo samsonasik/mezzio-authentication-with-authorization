@@ -7,6 +7,7 @@ Install
 $ git clone https://github.com/samsonasik/expressive3-example-auth-with-prg.git
 $ cd expressive3-example-auth-with-prg && composer install
 $ cp config/autoload/local.php.dist config/autoload/local.php
+$ composer development-enable
 ```
 
 Modify the `config/autoload/local.php` as your local dev db config.
