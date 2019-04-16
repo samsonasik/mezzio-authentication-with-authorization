@@ -13,6 +13,10 @@ class Flash extends AbstractHelper
 {
     public function __invoke() : array
     {
+        if (\session_status() == \PHP_SESSION_NONE){
+            \session_start();
+        }
+
         return FlashMessages::createFromSession(
             new Session($_SESSION)
         )->getFlashes();
