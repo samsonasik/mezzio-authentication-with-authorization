@@ -20,5 +20,6 @@ return [
         ],
         'username' => 'username',
         'password' => 'password',
+        'redirect' => '/login',
     ],
 ];
