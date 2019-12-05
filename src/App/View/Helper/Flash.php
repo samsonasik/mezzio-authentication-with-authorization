@@ -5,9 +5,9 @@ declare(strict_types=1);
 
 namespace App\View\Helper;
 
-use Zend\Expressive\Flash\FlashMessages;
-use Zend\Expressive\Session\Session;
-use Zend\View\Helper\AbstractHelper;
+use Laminas\View\Helper\AbstractHelper;
+use Mezzio\Flash\FlashMessages;
+use Mezzio\Session\Session;
 
 class Flash extends AbstractHelper
 {

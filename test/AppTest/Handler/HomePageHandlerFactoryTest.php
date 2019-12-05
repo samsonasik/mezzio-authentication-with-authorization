@@ -8,8 +8,8 @@ use App\Handler\HomePageHandler;
 use App\Handler\HomePageHandlerFactory;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\TemplateRendererInterface;
 
 class HomePageHandlerFactoryTest extends TestCase
 {

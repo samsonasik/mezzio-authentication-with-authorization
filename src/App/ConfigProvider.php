@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App;
 
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 
 /**
  * The configuration provider for the App module

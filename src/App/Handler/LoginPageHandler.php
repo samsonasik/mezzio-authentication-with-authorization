@@ -5,16 +5,17 @@ declare(strict_types=1);
 namespace App\Handler;
 
 use App\Form\LoginForm;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Laminas\Diactoros\Response\RedirectResponse;
+use Mezzio\Csrf\CsrfMiddleware;
+use Mezzio\Flash\FlashMessageMiddleware;
+use Mezzio\Session\SessionMiddleware;
+use Mezzio\Template\TemplateRendererInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Diactoros\Response\RedirectResponse;
-use Zend\Expressive\Csrf\CsrfMiddleware;
-use Zend\Expressive\Flash\FlashMessageMiddleware;
-use Zend\Expressive\Session\SessionMiddleware;
-use Zend\Expressive\Template\TemplateRendererInterface;
+use Zend\Expressive\Authentication\UserInterface;
 
 class LoginPageHandler implements MiddlewareInterface
 {
@@ -27,6 +28,11 @@ class LoginPageHandler implements MiddlewareInterface
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler) : ResponseInterface
     {
+        $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
+        if ($session->has(UserInterface::class)) {
+            return new RedirectResponse('/');
+        }
+
         $guard     = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
         $loginForm = new LoginForm($guard);
 
@@ -47,9 +53,7 @@ class LoginPageHandler implements MiddlewareInterface
             }
         }
 
-        $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
         $token   = $guard->generateToken();
-
         return new HtmlResponse(
             $this->template->render('app::login-page', [
                 'form'  => $loginForm,

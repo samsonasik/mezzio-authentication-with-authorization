@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Form;
 
-use Zend\Expressive\Csrf\SessionCsrfGuard;
-use Zend\Form\Element\Hidden;
-use Zend\Form\Element\Password;
-use Zend\Form\Element\Text;
-use Zend\Form\Form;
-use Zend\InputFilter\InputFilterProviderInterface;
+use Laminas\Form\Element\Hidden;
+use Laminas\Form\Element\Password;
+use Laminas\Form\Element\Text;
+use Laminas\Form\Form;
+use Laminas\InputFilter\InputFilterProviderInterface;
+use Mezzio\Csrf\SessionCsrfGuard;
 
 class LoginForm extends Form implements InputFilterProviderInterface
 {
