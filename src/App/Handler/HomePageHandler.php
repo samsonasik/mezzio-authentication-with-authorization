@@ -11,7 +11,6 @@ use Mezzio\Authentication\UserInterface;
 use Mezzio\LaminasView\LaminasViewRenderer;
 use Mezzio\Plates\PlatesRenderer;
 use Mezzio\Router;
-use Mezzio\Session\SessionMiddleware;
 use Mezzio\Template;
 use Mezzio\Twig\TwigRenderer;
 use Psr\Http\Message\ResponseInterface;
@@ -38,11 +37,6 @@ class HomePageHandler implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request) : ResponseInterface
     {
-        $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
-        if (! $session->has(UserInterface::class)) {
-            return new RedirectResponse('/login');
-        }
-
         if (! $this->template) {
             return new JsonResponse([
                 'welcome' => 'Congratulations! You have installed the zend-expressive skeleton application.',

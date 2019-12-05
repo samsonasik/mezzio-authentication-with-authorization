@@ -33,7 +33,10 @@ use Mezzio\MiddlewareFactory;
  * );
  */
 return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
-    $app->get('/', App\Handler\HomePageHandler::class, 'home');
+    $app->get('/', [
+        \Mezzio\Authentication\AuthenticationMiddleware::class,
+        App\Handler\HomePageHandler::class,
+    ], 'home');
     $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
 	$app->route('/login', [
         // csrf middleware
