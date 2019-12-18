@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f56fc5dd7adcb0108772da795ccca471",
+    "content-hash": "caabdc2b6e22074c54009711768b1bfe",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -147,18 +147,18 @@
             "version": "2.1.2",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-component-installer",
-                "reference": "c47b88ef20e5dcecf11dc0941f531df30d8b2fc5"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-component-installer",
+                "reference": "a3080476fca93c6843db85e7a1a4372217623088"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-component-installer/laminas-laminas-component-installer-2.1.2-8a050b.tar",
-                "reference": "c47b88ef20e5dcecf11dc0941f531df30d8b2fc5",
-                "shasum": "68f732a39783299bfb23f4f7e0f0bbde765508a4"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-component-installer/laminas-laminas-component-installer-2.1.2-f1e209.tar",
+                "reference": "a3080476fca93c6843db85e7a1a4372217623088",
+                "shasum": "3e24b8f6f75a3a91bea676123e88a83b5d1a63ac"
             },
             "require": {
                 "composer-plugin-api": "^1.0",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^7.1"
             },
             "replace": {
@@ -169,8 +169,7 @@
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "malukenho/docheader": "^0.1.6",
                 "mikey179/vfsstream": "^1.6.7",
-                "phpunit/phpunit": "^7.5.15 || ^8.3.4",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.5.15 || ^8.3.4"
             },
             "type": "composer-plugin",
             "extra": {
@@ -231,25 +230,25 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-09-04T19:10:43+00:00"
+            "time": "2019-12-18T18:02:59+00:00"
         },
         {
             "name": "laminas/laminas-config-aggregator",
             "version": "1.1.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-config-aggregator",
-                "reference": "2cda3699d337b939c2baf26c6565560ef9d4cc6b"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-config-aggregator",
+                "reference": "20a5826f5539b1103363c50d115fd5422004483b"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-config-aggregator/laminas-laminas-config-aggregator-1.1.1-514d83.tar",
-                "reference": "2cda3699d337b939c2baf26c6565560ef9d4cc6b",
-                "shasum": "f59fcb280bf755996b5bf44fee85e5c5391709c4"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-config-aggregator/laminas-laminas-config-aggregator-1.1.1-a3ccc5.tar",
+                "reference": "20a5826f5539b1103363c50d115fd5422004483b",
+                "shasum": "6c86d30fd2ec2d13741c6d9a79f2e5e90ac58c01"
             },
             "require": {
                 "laminas/laminas-stdlib": "^2.7.7 || ^3.1.0",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -261,8 +260,7 @@
                 "laminas/laminas-servicemanager": "^2.7.7 || ^3.1.1",
                 "malukenho/docheader": "^0.1.5",
                 "mikey179/vfsstream": "^1.6",
-                "phpunit/phpunit": "^5.7.21 || ^6.3",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.21 || ^6.3"
             },
             "suggest": {
                 "laminas/laminas-config": "Allows loading configuration from XML, INI, YAML, and JSON files",
@@ -321,7 +319,7 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2018-04-04T20:37:31+00:00"
+            "time": "2019-12-18T18:04:12+00:00"
         },
         {
             "name": "laminas/laminas-dependency-plugin",
@@ -370,17 +368,17 @@
             "version": "1.8.7",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-diactoros",
-                "reference": "7e75629294ee6f79bcc7411d65786cbb0216124b"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-diactoros",
+                "reference": "a8a18600bd7c5d68d9d6ad9bd2cb221d97e2e8c3"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-diactoros/laminas-laminas-diactoros-1.8.7-92c7c9.tar",
-                "reference": "7e75629294ee6f79bcc7411d65786cbb0216124b",
-                "shasum": "ee1ec1c0db665e383ab86e2e45cd4edc4339ea67"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-diactoros/laminas-laminas-diactoros-1.8.7-fc3655.tar",
+                "reference": "a8a18600bd7c5d68d9d6ad9bd2cb221d97e2e8c3",
+                "shasum": "99a807f8295c59b4545d40fbdead9b226b40daf6"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0",
                 "psr/http-message": "^1.0"
             },
@@ -395,8 +393,7 @@
                 "ext-libxml": "*",
                 "laminas/laminas-coding-standard": "~1.0",
                 "php-http/psr7-integration-tests": "dev-master",
-                "phpunit/phpunit": "^5.7.16 || ^6.0.8 || ^7.2.7",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.16 || ^6.0.8 || ^7.2.7"
             },
             "type": "library",
             "extra": {
@@ -473,24 +470,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-08-06T17:53:53+00:00"
+            "time": "2019-12-18T18:14:54+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
             "version": "2.6.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-escaper",
-                "reference": "a23bf1f0c2b7e745e7698c5b40b9e7596efbb970"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-escaper",
+                "reference": "7695b5e00ea1b9858ea46b01e3cdda67f74ccb14"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-escaper/laminas-laminas-escaper-2.6.1-f4e5be.tar",
-                "reference": "a23bf1f0c2b7e745e7698c5b40b9e7596efbb970",
-                "shasum": "47a5d910ceeacb27530f02f5405ee2255260e350"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-escaper/laminas-laminas-escaper-2.6.1-54c339.tar",
+                "reference": "7695b5e00ea1b9858ea46b01e3cdda67f74ccb14",
+                "shasum": "9aa5281799b01f75fb7692e2a71a46a9030602fe"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -498,8 +495,7 @@
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2"
             },
             "type": "library",
             "extra": {
@@ -553,24 +549,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-09-05T20:03:20+00:00"
+            "time": "2019-12-18T18:16:30+00:00"
         },
         {
             "name": "laminas/laminas-eventmanager",
             "version": "3.2.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-eventmanager",
-                "reference": "b5c6ed526bf55c90dfb58449dd0873e65f051d13"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-eventmanager",
+                "reference": "634a1bcd4a128b2d93534046e5d7897617fbec58"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-eventmanager/laminas-laminas-eventmanager-3.2.1-fbabff.tar",
-                "reference": "b5c6ed526bf55c90dfb58449dd0873e65f051d13",
-                "shasum": "5eed06c00de2c275aec534a5198d77d955e3c0b5"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-eventmanager/laminas-laminas-eventmanager-3.2.1-e03f50.tar",
+                "reference": "634a1bcd4a128b2d93534046e5d7897617fbec58",
+                "shasum": "9e38648398808efe9a0fd8a591f4b50e65ecea94"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -581,8 +577,7 @@
                 "container-interop/container-interop": "^1.1.0",
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "laminas/laminas-stdlib": "^2.7.3 || ^3.0",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2"
             },
             "suggest": {
                 "container-interop/container-interop": "^1.1.0, to use the lazy listeners feature",
@@ -646,25 +641,25 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2018-04-25T15:33:34+00:00"
+            "time": "2019-12-18T18:17:30+00:00"
         },
         {
             "name": "laminas/laminas-filter",
             "version": "2.9.2",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-filter",
-                "reference": "49718e31ccfdac3126c7fa496be10396bb7dab04"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-filter",
+                "reference": "63ddbfac6292d9c4a7277521688cffc3788e8a37"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-filter/laminas-laminas-filter-2.9.2-639453.tar",
-                "reference": "49718e31ccfdac3126c7fa496be10396bb7dab04",
-                "shasum": "0e532ac2828147433d4ccc3789de4a00af34e60e"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-filter/laminas-laminas-filter-2.9.2-ec0135.tar",
+                "reference": "63ddbfac6292d9c4a7277521688cffc3788e8a37",
+                "shasum": "732184986509996aa78791a3749af8caf4697f48"
             },
             "require": {
                 "laminas/laminas-stdlib": "^2.7.7 || ^3.1",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "conflict": {
@@ -680,8 +675,7 @@
                 "laminas/laminas-uri": "^2.6",
                 "pear/archive_tar": "^1.4.3",
                 "phpunit/phpunit": "^5.7.23 || ^6.4.3",
-                "psr/http-factory": "^1.0",
-                "roave/security-advisories": "dev-master"
+                "psr/http-factory": "^1.0"
             },
             "suggest": {
                 "laminas/laminas-crypt": "Laminas\\Crypt component, for encryption filters",
@@ -746,27 +740,27 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-08-19T07:08:04+00:00"
+            "time": "2019-12-18T18:24:54+00:00"
         },
         {
             "name": "laminas/laminas-form",
             "version": "2.14.3",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-form",
-                "reference": "5a26c2b78334a5ef371b8e7502e9454ef76cb422"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-form",
+                "reference": "1c4467fd3535f17180fbf34928fd8d1b6079654d"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-form/laminas-laminas-form-2.14.3-fc86a3.tar",
-                "reference": "5a26c2b78334a5ef371b8e7502e9454ef76cb422",
-                "shasum": "52edbed744c15f4e38ab7d98e78f57918fad7fd9"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-form/laminas-laminas-form-2.14.3-538377.tar",
+                "reference": "1c4467fd3535f17180fbf34928fd8d1b6079654d",
+                "shasum": "746a2561826852e917f2d474548123b7f007faf5"
             },
             "require": {
                 "laminas/laminas-hydrator": "^1.1 || ^2.1 || ^3.0",
                 "laminas/laminas-inputfilter": "^2.8",
                 "laminas/laminas-stdlib": "^3.2.1",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -788,8 +782,7 @@
                 "laminas/laminas-text": "^2.6",
                 "laminas/laminas-validator": "^2.6",
                 "laminas/laminas-view": "^2.6.2",
-                "phpunit/phpunit": "^5.7.23 || ^6.5.3",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.23 || ^6.5.3"
             },
             "suggest": {
                 "laminas/laminas-captcha": "^2.7.1, required for using CAPTCHA form elements",
@@ -862,28 +855,28 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-10-04T10:46:36+00:00"
+            "time": "2019-12-18T18:26:30+00:00"
         },
         {
             "name": "laminas/laminas-http",
             "version": "2.11.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-http",
-                "reference": "808f333bf23153314d0d6eabc395b93e92c05b05"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-http",
+                "reference": "22956ae2fe9e02c42e353a89b70fb32e7c761c2f"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-http/laminas-laminas-http-2.11.1-10bd10.tar",
-                "reference": "808f333bf23153314d0d6eabc395b93e92c05b05",
-                "shasum": "11fc7b32edfe7e19c54c726a6c0049daff930763"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-http/laminas-laminas-http-2.11.1-5f2d6e.tar",
+                "reference": "22956ae2fe9e02c42e353a89b70fb32e7c761c2f",
+                "shasum": "76fe639461d89757875560ab9adfdf355b9b78f8"
             },
             "require": {
                 "laminas/laminas-loader": "^2.5.1",
                 "laminas/laminas-stdlib": "^3.2.1",
                 "laminas/laminas-uri": "^2.5.2",
                 "laminas/laminas-validator": "^2.10.1",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -892,8 +885,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "laminas/laminas-config": "^3.1 || ^2.6",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.3",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.3"
             },
             "suggest": {
                 "paragonie/certainty": "For automated management of cacert.pem"
@@ -951,24 +943,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-12-04T23:02:34+00:00"
+            "time": "2019-12-18T18:31:43+00:00"
         },
         {
             "name": "laminas/laminas-httphandlerrunner",
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-httphandlerrunner",
-                "reference": "7f95500afa14634964a85fa53c8cc33c4d13323f"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-httphandlerrunner",
+                "reference": "c57a14a0491c7f8d74d635dad3c06f580c0453c9"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-httphandlerrunner/laminas-laminas-httphandlerrunner-1.1.0-3e5e8f.tar",
-                "reference": "7f95500afa14634964a85fa53c8cc33c4d13323f",
-                "shasum": "177a202fca9fc80cdbe7d9954d112af2562f8e3b"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-httphandlerrunner/laminas-laminas-httphandlerrunner-1.1.0-ce7239.tar",
+                "reference": "c57a14a0491c7f8d74d635dad3c06f580c0453c9",
+                "shasum": "41e69f1b0c4f8decdcbf989e3ed896532a214ed4"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^7.1",
                 "psr/http-message": "^1.0",
                 "psr/http-message-implementation": "^1.0",
@@ -980,8 +972,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "laminas/laminas-diactoros": "^1.7 || ^2.1.1",
-                "phpunit/phpunit": "^7.0.2",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.0.2"
             },
             "type": "library",
             "extra": {
@@ -1044,25 +1035,25 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-02-19T18:20:34+00:00"
+            "time": "2019-12-18T18:35:02+00:00"
         },
         {
             "name": "laminas/laminas-hydrator",
             "version": "3.0.2",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-hydrator",
-                "reference": "dd43a7c26515bf14c6a884337d121bcb30c6489c"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-hydrator",
+                "reference": "6050a1a918926ef17ed1cf2740de1f7ce0e82182"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-hydrator/laminas-laminas-hydrator-3.0.2-8edbda.tar",
-                "reference": "dd43a7c26515bf14c6a884337d121bcb30c6489c",
-                "shasum": "ce27f651f9b50b60dd5a975b1716cb57a38047f3"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-hydrator/laminas-laminas-hydrator-3.0.2-1f7b93.tar",
+                "reference": "6050a1a918926ef17ed1cf2740de1f7ce0e82182",
+                "shasum": "4d6fcf450a4ae1118265e08ac0927ead45efb6f4"
             },
             "require": {
                 "laminas/laminas-stdlib": "^3.2.1",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^7.2"
             },
             "replace": {
@@ -1076,8 +1067,7 @@
                 "laminas/laminas-servicemanager": "^3.3.2",
                 "phpspec/prophecy": "^1.7.5",
                 "phpstan/phpstan": "^0.10.5",
-                "phpunit/phpunit": "^7.5",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.5"
             },
             "suggest": {
                 "laminas/laminas-eventmanager": "^3.2, to support aggregate hydrator usage",
@@ -1144,27 +1134,30 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-03-15T14:12:03+00:00"
+            "time": "2019-12-18T18:35:31+00:00"
         },
         {
             "name": "laminas/laminas-i18n",
-            "version": "2.10.0",
+            "version": "2.10.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-i18n",
-                "reference": "4c34e4c0efab1b7955b5ae6cb4f39c650444a6bd"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-i18n",
+                "reference": "e76a539200d43428664954f6ec9cf076daa2fac9"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-i18n/laminas-laminas-i18n-2.10.0-426e2b.tar",
-                "reference": "4c34e4c0efab1b7955b5ae6cb4f39c650444a6bd",
-                "shasum": "1d313d3e976a170a5a1c054843bc8974f3c689c7"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-i18n/laminas-laminas-i18n-2.10.1-b7f2ef.tar",
+                "reference": "e76a539200d43428664954f6ec9cf076daa2fac9",
+                "shasum": "f9c94e5094ed06770d4b8cca152fbabc4d438127"
             },
             "require": {
                 "ext-intl": "*",
                 "laminas/laminas-stdlib": "^2.7 || ^3.0",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
+            },
+            "conflict": {
+                "phpspec/prophecy": "<1.9.0"
             },
             "replace": {
                 "zendframework/zend-i18n": "self.version"
@@ -1178,8 +1171,7 @@
                 "laminas/laminas-servicemanager": "^2.7.5 || ^3.0.3",
                 "laminas/laminas-validator": "^2.6",
                 "laminas/laminas-view": "^2.6.3",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.16",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.16"
             },
             "suggest": {
                 "laminas/laminas-cache": "Laminas\\Cache component",
@@ -1247,28 +1239,28 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-11-18T20:31:29+00:00"
+            "time": "2019-12-18T18:36:05+00:00"
         },
         {
             "name": "laminas/laminas-inputfilter",
             "version": "2.10.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-inputfilter",
-                "reference": "f09371e3f152ac47d3fb12fbbb652930f8617ef0"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-inputfilter",
+                "reference": "15d4e1ce29de131cfb23bbc0e46c7fea4eac2ec2"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-inputfilter/laminas-laminas-inputfilter-2.10.1-efeec7.tar",
-                "reference": "f09371e3f152ac47d3fb12fbbb652930f8617ef0",
-                "shasum": "90540518bc698bbdcc16e21fb7ba05fa032abd6d"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-inputfilter/laminas-laminas-inputfilter-2.10.1-59ecd3.tar",
+                "reference": "15d4e1ce29de131cfb23bbc0e46c7fea4eac2ec2",
+                "shasum": "9c1260d22a506280b3613febdb1e56f2c79e72f0"
             },
             "require": {
                 "laminas/laminas-filter": "^2.9.1",
                 "laminas/laminas-servicemanager": "^2.7.10 || ^3.3.1",
                 "laminas/laminas-stdlib": "^2.7 || ^3.0",
                 "laminas/laminas-validator": "^2.11",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -1277,8 +1269,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.15",
-                "psr/http-message": "^1.0",
-                "roave/security-advisories": "dev-master"
+                "psr/http-message": "^1.0"
             },
             "suggest": {
                 "psr/http-message-implementation": "PSR-7 is required if you wish to validate PSR-7 UploadedFileInterface payloads"
@@ -1339,24 +1330,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-08-28T19:45:32+00:00"
+            "time": "2019-12-18T18:40:11+00:00"
         },
         {
             "name": "laminas/laminas-json",
             "version": "3.1.2",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-json",
-                "reference": "f047cbb4be60815737664f6f8d56febbc63e03c5"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-json",
+                "reference": "7863986ad960393e27f9b4764bbb16e4166c9fd0"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-json/laminas-laminas-json-3.1.2-defe66.tar",
-                "reference": "f047cbb4be60815737664f6f8d56febbc63e03c5",
-                "shasum": "bb28b5ada8e78b9fa02810a30c00cf630f9ee1b1"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-json/laminas-laminas-json-3.1.2-716605.tar",
+                "reference": "7863986ad960393e27f9b4764bbb16e4166c9fd0",
+                "shasum": "a62aff4f6dcc789d51b772efd6edd5bd2014f902"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -1365,8 +1356,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "laminas/laminas-stdlib": "^2.7.7 || ^3.1",
-                "phpunit/phpunit": "^5.7.23 || ^6.4.3",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3"
             },
             "suggest": {
                 "laminas/laminas-json-server": "For implementing JSON-RPC servers",
@@ -1424,24 +1414,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-10-09T13:56:13+00:00"
+            "time": "2019-12-18T18:43:09+00:00"
         },
         {
             "name": "laminas/laminas-loader",
             "version": "2.6.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-loader",
-                "reference": "2b93724d021d8deccd410a8f4f50e1c53e85748e"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-loader",
+                "reference": "a6fdf6fed333cd2e41ba6f546c470770f0aefa70"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-loader/laminas-laminas-loader-2.6.1-e6192d.tar",
-                "reference": "2b93724d021d8deccd410a8f4f50e1c53e85748e",
-                "shasum": "6b7a2a56d631f396a1248f6a54c9a2c6f506d9ea"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-loader/laminas-laminas-loader-2.6.1-df6ded.tar",
+                "reference": "a6fdf6fed333cd2e41ba6f546c470770f0aefa70",
+                "shasum": "62b9d911631b5eea4754d2b99e8e8fe93f2cf62f"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -1449,8 +1439,7 @@
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.4",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.4"
             },
             "type": "library",
             "extra": {
@@ -1504,26 +1493,26 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-09-04T19:38:14+00:00"
+            "time": "2019-12-18T18:46:20+00:00"
         },
         {
             "name": "laminas/laminas-psr7bridge",
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-psr7bridge",
-                "reference": "a1d52ed930001b20d11f28fed5ddf43abd571e47"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-psr7bridge",
+                "reference": "cdb5e5fc10582647d48c6e071a1bce14119269e6"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-psr7bridge/laminas-laminas-psr7bridge-1.2.0-a00515.tar",
-                "reference": "a1d52ed930001b20d11f28fed5ddf43abd571e47",
-                "shasum": "7d38f82a6dd0b93c56cd536a2fb9d3e8f67e749e"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-psr7bridge/laminas-laminas-psr7bridge-1.2.0-8920fb.tar",
+                "reference": "cdb5e5fc10582647d48c6e071a1bce14119269e6",
+                "shasum": "68bfd9e5fe2cfdb159bb2b0a51ea4c8e31d40bd4"
             },
             "require": {
                 "laminas/laminas-diactoros": "^1.7 || ^2.0",
                 "laminas/laminas-http": "^2.7",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0",
                 "psr/http-message": "^1.0"
             },
@@ -1535,8 +1524,7 @@
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
-                "phpunit/phpunit": "^5.7.15 || ^6.5.6",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.15 || ^6.5.6"
             },
             "type": "library",
             "extra": {
@@ -1592,28 +1580,28 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2018-12-20T16:48:40+00:00"
+            "time": "2019-12-18T19:05:51+00:00"
         },
         {
             "name": "laminas/laminas-router",
             "version": "3.3.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-router",
-                "reference": "7f21b4e08e2b2d9fa7a68d2351797c9d9ac8f031"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-router",
+                "reference": "9a938c56ac2420c2c1d204b96c6e691fae16498b"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-router/laminas-laminas-router-3.3.0-2e5857.tar",
-                "reference": "7f21b4e08e2b2d9fa7a68d2351797c9d9ac8f031",
-                "shasum": "016e447cba52c704cfda0190f19d57cb9114a401"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-router/laminas-laminas-router-3.3.0-6c547a.tar",
+                "reference": "9a938c56ac2420c2c1d204b96c6e691fae16498b",
+                "shasum": "1d4b06486a370b1f9b259b9a12bca37c409965ac"
             },
             "require": {
                 "container-interop/container-interop": "^1.2",
                 "laminas/laminas-http": "^2.8.1",
                 "laminas/laminas-servicemanager": "^2.7.8 || ^3.3",
                 "laminas/laminas-stdlib": "^3.2.1",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "conflict": {
@@ -1625,8 +1613,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "laminas/laminas-i18n": "^2.7.4",
-                "phpunit/phpunit": "^5.7.22 || ^6.4.1",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.22 || ^6.4.1"
             },
             "suggest": {
                 "laminas/laminas-i18n": "^2.7.4, if defining translatable HTTP path segments"
@@ -1688,26 +1675,26 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-02-26T20:24:12+00:00"
+            "time": "2019-12-18T19:07:52+00:00"
         },
         {
             "name": "laminas/laminas-servicemanager",
             "version": "3.4.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-servicemanager",
-                "reference": "6a06c108ee3407bf3eab8cb793a3944429528693"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-servicemanager",
+                "reference": "fe59d7d3a2a6e435044291356e22c95fe22c1e4d"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-servicemanager/laminas-laminas-servicemanager-3.4.0-a0d43d.tar",
-                "reference": "6a06c108ee3407bf3eab8cb793a3944429528693",
-                "shasum": "79b83bb27e47bbf3b6ab6d995a1caee4ec672d36"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-servicemanager/laminas-laminas-servicemanager-3.4.0-801b4f.tar",
+                "reference": "fe59d7d3a2a6e435044291356e22c95fe22c1e4d",
+                "shasum": "eb92f5b6cc81243ee2155e93d2cff741863f9e34"
             },
             "require": {
                 "container-interop/container-interop": "^1.2",
                 "laminas/laminas-stdlib": "^3.2.1",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0",
                 "psr/container": "^1.0"
             },
@@ -1723,8 +1710,7 @@
                 "mikey179/vfsstream": "^1.6.5",
                 "ocramius/proxy-manager": "^1.0 || ^2.0",
                 "phpbench/phpbench": "^0.13.0",
-                "phpunit/phpunit": "^5.7.25 || ^6.4.4",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.25 || ^6.4.4"
             },
             "suggest": {
                 "laminas/laminas-stdlib": "laminas-stdlib ^2.5 if you wish to use the MergeReplaceKey or MergeRemoveKey features in Config instances",
@@ -1795,24 +1781,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2018-12-22T06:03:40+00:00"
+            "time": "2019-12-18T19:11:07+00:00"
         },
         {
             "name": "laminas/laminas-stdlib",
             "version": "3.2.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-stdlib",
-                "reference": "5109a4479db7e39b981e5574b1f2e82a831f708b"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-stdlib",
+                "reference": "def6d98dd62706f800afba5fe485d7b312107e64"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-stdlib/laminas-laminas-stdlib-3.2.1-174781.tar",
-                "reference": "5109a4479db7e39b981e5574b1f2e82a831f708b",
-                "shasum": "a6136413dddab087f75d6ddec8da913d104fb88e"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-stdlib/laminas-laminas-stdlib-3.2.1-84f05f.tar",
+                "reference": "def6d98dd62706f800afba5fe485d7b312107e64",
+                "shasum": "27a14aacfba1ad3e5b819c446dcc4eadaada77ae"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -1821,8 +1807,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "phpbench/phpbench": "^0.13",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2"
             },
             "type": "library",
             "extra": {
@@ -1877,26 +1862,26 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2018-08-28T21:34:05+00:00"
+            "time": "2019-12-18T19:16:48+00:00"
         },
         {
             "name": "laminas/laminas-stratigility",
             "version": "3.2.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-stratigility",
-                "reference": "f791cfec8f401dbc88bb8cdcd2048f5196748e2b"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-stratigility",
+                "reference": "4c22cc4c142a9e033b81901a2874f6599a4b9647"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-stratigility/laminas-laminas-stratigility-3.2.0-887a88.tar",
-                "reference": "f791cfec8f401dbc88bb8cdcd2048f5196748e2b",
-                "shasum": "98f10dbad1e1310a4053dc3d94aa806e7d5ec5b4"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-stratigility/laminas-laminas-stratigility-3.2.0-eb0ae2.tar",
+                "reference": "4c22cc4c142a9e033b81901a2874f6599a4b9647",
+                "shasum": "598f4fe6fbb1ea6a3a0e044acd0e8e2df31098ec"
             },
             "require": {
                 "fig/http-message-util": "^1.1",
                 "laminas/laminas-escaper": "^2.3",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^7.1",
                 "psr/http-message": "^1.0",
                 "psr/http-server-middleware": "^1.0"
@@ -1911,8 +1896,7 @@
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "laminas/laminas-diactoros": "^1.7.1",
                 "malukenho/docheader": "^0.1.6",
-                "phpunit/phpunit": "^7.0.1",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.0.1"
             },
             "suggest": {
                 "psr/http-message-implementation": "Please install a psr/http-message-implementation to consume Stratigility; e.g., laminas/laminas-diactoros"
@@ -1986,26 +1970,26 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-06-12T15:22:39+00:00"
+            "time": "2019-12-18T19:17:26+00:00"
         },
         {
             "name": "laminas/laminas-uri",
             "version": "2.7.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-uri",
-                "reference": "844d1bf46cdec38e92022edb9f1cb89df914d855"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-uri",
+                "reference": "5ac81c56716ebf4f9d9f26f8eeb586e0d6fd568c"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-uri/laminas-laminas-uri-2.7.1-0494b7.tar",
-                "reference": "844d1bf46cdec38e92022edb9f1cb89df914d855",
-                "shasum": "172b6ca404d09ceb18ea9a9b22c2f382a75b7788"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-uri/laminas-laminas-uri-2.7.1-805e4e.tar",
+                "reference": "5ac81c56716ebf4f9d9f26f8eeb586e0d6fd568c",
+                "shasum": "603741441a890620d328146b9587244fa088e4e5"
             },
             "require": {
                 "laminas/laminas-escaper": "^2.5",
                 "laminas/laminas-validator": "^2.10",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -2013,8 +1997,7 @@
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.4",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.4"
             },
             "type": "library",
             "extra": {
@@ -2068,26 +2051,26 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-10-07T13:35:33+00:00"
+            "time": "2019-12-18T19:20:57+00:00"
         },
         {
             "name": "laminas/laminas-validator",
             "version": "2.12.2",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-validator",
-                "reference": "035c30a48b3f8fc141e825bfd599770a1e3b216f"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-validator",
+                "reference": "0112944726a69d89b3cd86943bf33dd28a032af2"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-validator/laminas-laminas-validator-2.12.2-cc55b7.tar",
-                "reference": "035c30a48b3f8fc141e825bfd599770a1e3b216f",
-                "shasum": "d066b7eb9009694dc7e695f715d9766b5ae4e8c3"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-validator/laminas-laminas-validator-2.12.2-2997a8.tar",
+                "reference": "0112944726a69d89b3cd86943bf33dd28a032af2",
+                "shasum": "167aaf5125f9d9f127ef7102f53d1ba049bb145d"
             },
             "require": {
                 "container-interop/container-interop": "^1.1",
                 "laminas/laminas-stdlib": "^3.2.1",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -2106,8 +2089,7 @@
                 "laminas/laminas-session": "^2.8",
                 "laminas/laminas-uri": "^2.5",
                 "phpunit/phpunit": "^6.0.8 || ^5.7.15",
-                "psr/http-message": "^1.0",
-                "roave/security-advisories": "dev-master"
+                "psr/http-message": "^1.0"
             },
             "suggest": {
                 "laminas/laminas-db": "Laminas\\Db component, required by the (No)RecordExists validator",
@@ -2176,28 +2158,28 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-10-29T08:33:25+00:00"
+            "time": "2019-12-18T19:22:35+00:00"
         },
         {
             "name": "laminas/laminas-view",
             "version": "2.11.4",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-view",
-                "reference": "528e8cc3978eb2a493f627e03fdacbb0d1195d2d"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-view",
+                "reference": "7d16a090f802d881cb9710a2c88877a4b87e399c"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-view/laminas-laminas-view-2.11.4-4dca63.tar",
-                "reference": "528e8cc3978eb2a493f627e03fdacbb0d1195d2d",
-                "shasum": "48e6113b3bb1670d64ffada10d7dbed3be5ea0cf"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-view/laminas-laminas-view-2.11.4-34ae41.tar",
+                "reference": "7d16a090f802d881cb9710a2c88877a4b87e399c",
+                "shasum": "40dde39a4b9e74533406eeec46c579b400d41925"
             },
             "require": {
                 "laminas/laminas-eventmanager": "^2.6.2 || ^3.0",
                 "laminas/laminas-json": "^2.6.1 || ^3.0",
                 "laminas/laminas-loader": "^2.5",
                 "laminas/laminas-stdlib": "^2.7 || ^3.0",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -2225,8 +2207,7 @@
                 "laminas/laminas-servicemanager": "^2.7.5 || ^3.0.3",
                 "laminas/laminas-session": "^2.8.1",
                 "laminas/laminas-uri": "^2.5",
-                "phpunit/phpunit": "^5.7.15 || ^6.0.8",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.15 || ^6.0.8"
             },
             "suggest": {
                 "laminas/laminas-authentication": "Laminas\\Authentication component",
@@ -2301,20 +2282,20 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-12-04T08:40:50+00:00"
+            "time": "2019-12-18T19:27:36+00:00"
         },
         {
             "name": "laminas/laminas-zendframework-bridge",
-            "version": "0.4.0",
+            "version": "0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-zendframework-bridge.git",
-                "reference": "9c43a4d23a1082d8fb4a588b5dab36c61cd20fb6"
+                "reference": "19a9a914eaae5fb7904ab73e603b0fdda77332a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/9c43a4d23a1082d8fb4a588b5dab36c61cd20fb6",
-                "reference": "9c43a4d23a1082d8fb4a588b5dab36c61cd20fb6",
+                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/19a9a914eaae5fb7904ab73e603b0fdda77332a9",
+                "reference": "19a9a914eaae5fb7904ab73e603b0fdda77332a9",
                 "shasum": ""
             },
             "require": {
@@ -2352,27 +2333,27 @@
                 "laminas",
                 "zf"
             ],
-            "time": "2019-11-27T15:01:24+00:00"
+            "time": "2019-12-18T17:34:48+00:00"
         },
         {
             "name": "mezzio/mezzio",
             "version": "3.2.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio",
-                "reference": "f02d79b413f5fcbdfd0631cb6279ffcd8b988b7c"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio",
+                "reference": "02566b50b067c8cf0361c48bac82756983ff8f18"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio/mezzio-mezzio-3.2.1-01f5cc.tar",
-                "reference": "f02d79b413f5fcbdfd0631cb6279ffcd8b988b7c",
-                "shasum": "4124d68552b5e54f8ab938ef99b72b7131b7d03a"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio/mezzio-mezzio-3.2.1-cb6258.tar",
+                "reference": "02566b50b067c8cf0361c48bac82756983ff8f18",
+                "shasum": "1a7274f8e1fb03c123fe3e789a158735e30dd17d"
             },
             "require": {
                 "fig/http-message-util": "^1.1.2",
                 "laminas/laminas-httphandlerrunner": "^1.0.1",
                 "laminas/laminas-stratigility": "^3.0",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "mezzio/mezzio-router": "^3.0",
                 "mezzio/mezzio-template": "^2.0",
                 "php": "^7.1",
@@ -2399,8 +2380,7 @@
                 "mockery/mockery": "^1.0",
                 "phpstan/phpstan": "^0.9.2",
                 "phpstan/phpstan-strict-rules": "^0.9",
-                "phpunit/phpunit": "^7.0.1",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.0.1"
             },
             "suggest": {
                 "filp/whoops": "^2.1 to use the Whoops error handler",
@@ -2486,24 +2466,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2018-11-08T15:29:47+00:00"
+            "time": "2019-12-18T19:46:34+00:00"
         },
         {
             "name": "mezzio/mezzio-authentication",
-            "version": "0.4.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio-authentication",
-                "reference": "55e72f041c54c594544c8c0b9230c4c274e0a43d"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio-authentication",
+                "reference": "c71ea03cdf0b9eaca15c499e05623e772298a92f"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-authentication/mezzio-mezzio-authentication-0.4.0-7b03ab.tar",
-                "reference": "55e72f041c54c594544c8c0b9230c4c274e0a43d",
-                "shasum": "ef2d7a44aff280342c5b8699673ecf73e9210fe8"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-authentication/mezzio-mezzio-authentication-1.1.0-3efbea.tar",
+                "reference": "c71ea03cdf0b9eaca15c499e05623e772298a92f",
+                "shasum": "5b2d363558af850111cc05cc0ff046125e35b0d8"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^7.1",
                 "psr/container": "^1.0",
                 "psr/http-message": "^1.0.1",
@@ -2517,8 +2497,7 @@
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
-                "phpunit/phpunit": "^7.0.2",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.0.2"
             },
             "suggest": {
                 "ext-pdo": "*: for use with the PDO-backed UserRepositoryInterface implementation",
@@ -2529,7 +2508,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4.x-dev"
+                    "dev-master": "1.1.x-dev",
+                    "dev-develop": "1.2.x-dev"
                 },
                 "laminas": {
                     "config-provider": "Mezzio\\Authentication\\ConfigProvider"
@@ -2585,25 +2565,25 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2018-03-15T17:19:40+00:00"
+            "time": "2019-12-18T19:46:51+00:00"
         },
         {
             "name": "mezzio/mezzio-authentication-session",
-            "version": "0.4.1",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio-authentication-session",
-                "reference": "83e1bf4de00b0d79c09a558fb8f9a9cceb15b173"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio-authentication-session",
+                "reference": "e890ab19ab629ceaceb00b7744c997155ee4aec2"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-authentication-session/mezzio-mezzio-authentication-session-0.4.1-2b7fbd.tar",
-                "reference": "83e1bf4de00b0d79c09a558fb8f9a9cceb15b173",
-                "shasum": "2f34afc7e7add54ee770e2de0d2b5f0d02bdbc91"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-authentication-session/mezzio-mezzio-authentication-session-1.0.1-2b4538.tar",
+                "reference": "e890ab19ab629ceaceb00b7744c997155ee4aec2",
+                "shasum": "a6c1633450854fbde16440e9a56fdd8de85e8370"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
-                "mezzio/mezzio-authentication": "^0.4.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
+                "mezzio/mezzio-authentication": "^1.0",
                 "mezzio/mezzio-session": "^1.0",
                 "php": "^7.1",
                 "psr/container": "^1.0",
@@ -2614,13 +2594,13 @@
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
-                "phpunit/phpunit": "^7.0.1",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.0.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.0.x-dev",
+                    "dev-develop": "1.1.x-dev"
                 },
                 "laminas": {
                     "config-provider": "Mezzio\\Authentication\\Session\\ConfigProvider"
@@ -2673,24 +2653,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2018-03-20T15:11:36+00:00"
+            "time": "2019-12-18T19:47:24+00:00"
         },
         {
             "name": "mezzio/mezzio-csrf",
             "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio-csrf",
-                "reference": "7aa400f86f79d8882c156934024441278fd566d1"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio-csrf",
+                "reference": "fbc648ce38fffebd8aa54f3a409c69a7deff6a81"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-csrf/mezzio-mezzio-csrf-1.0.1-cfe1e9.tar",
-                "reference": "7aa400f86f79d8882c156934024441278fd566d1",
-                "shasum": "ffb6db126231d141b2a318b6069800a817e29d0f"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-csrf/mezzio-mezzio-csrf-1.0.1-7cc2aa.tar",
+                "reference": "fbc648ce38fffebd8aa54f3a409c69a7deff6a81",
+                "shasum": "ec5aca69cdf34e40b6d2b302e0a516d760dcf6a5"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "mezzio/mezzio-session": "^1.0",
                 "php": "^7.1",
                 "psr/container": "^1.0",
@@ -2705,8 +2685,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "mezzio/mezzio-flash": "^1.0",
-                "phpunit/phpunit": "^7.0.2",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.0.2"
             },
             "suggest": {
                 "mezzio/mezzio-flash": "^1.0.0alpha1 || ^1.0 To back CSRF tokens using flash messages"
@@ -2771,24 +2750,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-06-24T22:33:26+00:00"
+            "time": "2019-12-18T19:47:38+00:00"
         },
         {
             "name": "mezzio/mezzio-flash",
             "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio-flash",
-                "reference": "9e43d88166bbfdd6c06a76c7f20fb980cf297af9"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio-flash",
+                "reference": "37893dae2691bbb644096c0b29c4926cb23a23f0"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-flash/mezzio-mezzio-flash-1.0.1-25119b.tar",
-                "reference": "9e43d88166bbfdd6c06a76c7f20fb980cf297af9",
-                "shasum": "945ef8eedc0aad99b7a77292d51c30a5a4610761"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-flash/mezzio-mezzio-flash-1.0.1-af9eda.tar",
+                "reference": "37893dae2691bbb644096c0b29c4926cb23a23f0",
+                "shasum": "efbc9ec3e4aae14099ce83f837b2b406c2908607"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "mezzio/mezzio-session": "^1.0",
                 "php": "^7.1",
                 "psr/http-server-middleware": "^1.0"
@@ -2801,8 +2780,7 @@
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
-                "phpunit/phpunit": "^7.0.2",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.0.2"
             },
             "type": "library",
             "extra": {
@@ -2864,24 +2842,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-06-24T22:24:18+00:00"
+            "time": "2019-12-18T19:47:54+00:00"
         },
         {
             "name": "mezzio/mezzio-helpers",
             "version": "5.3.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio-helpers",
-                "reference": "e8a175178c9c64dfe8ff1ceb1f4c641f3088fca8"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio-helpers",
+                "reference": "72e1928d8c40ce27743f120a295d9eaa79c4fe09"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-helpers/mezzio-mezzio-helpers-5.3.0-aa8d96.tar",
-                "reference": "e8a175178c9c64dfe8ff1ceb1f4c641f3088fca8",
-                "shasum": "89ac21424c11d10c7a9ee89b59aa7ee6d0aa9075"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-helpers/mezzio-mezzio-helpers-5.3.0-15aa30.tar",
+                "reference": "72e1928d8c40ce27743f120a295d9eaa79c4fe09",
+                "shasum": "78b2c64aa0af90def970537068e3d87e8d6b01e4"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "mezzio/mezzio-router": "^3.0",
                 "php": "^7.1",
                 "psr/container": "^1.0",
@@ -2896,8 +2874,7 @@
                 "laminas/laminas-diactoros": "^1.7.1",
                 "malukenho/docheader": "^0.1.6",
                 "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "^7.0.2",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.0.2"
             },
             "type": "library",
             "extra": {
@@ -2962,27 +2939,27 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-03-12T20:43:27+00:00"
+            "time": "2019-12-18T19:48:43+00:00"
         },
         {
             "name": "mezzio/mezzio-laminasrouter",
             "version": "3.0.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio-laminasrouter",
-                "reference": "89a77265e0ce789e3de38ea846fe43696be360e9"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio-laminasrouter",
+                "reference": "ffc3e2136b150756b6dcf5e77492cf26c04eba2c"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-laminasrouter/mezzio-mezzio-laminasrouter-3.0.1-b3f259.tar",
-                "reference": "89a77265e0ce789e3de38ea846fe43696be360e9",
-                "shasum": "12158e202b7588e599e763988b8690856985d787"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-laminasrouter/mezzio-mezzio-laminasrouter-3.0.1-ae36aa.tar",
+                "reference": "ffc3e2136b150756b6dcf5e77492cf26c04eba2c",
+                "shasum": "674addb605aa42be4d4e210a51c43b83f192cae2"
             },
             "require": {
                 "fig/http-message-util": "^1.1.2",
                 "laminas/laminas-psr7bridge": "^0.2.2 || ^1.0.0",
                 "laminas/laminas-router": "^3.3.0",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "mezzio/mezzio-router": "^3.0",
                 "php": "^7.1",
                 "psr/http-message": "^1.0.1"
@@ -2995,8 +2972,7 @@
                 "laminas/laminas-i18n": "^2.7.4",
                 "laminas/laminas-stratigility": "^3.0",
                 "malukenho/docheader": "^0.1.6",
-                "phpunit/phpunit": "^7.0.2",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.0.2"
             },
             "type": "library",
             "extra": {
@@ -3061,26 +3037,26 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-06-18T22:51:04+00:00"
+            "time": "2019-12-18T19:48:52+00:00"
         },
         {
             "name": "mezzio/mezzio-laminasviewrenderer",
             "version": "2.2.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio-laminasview-renderer",
-                "reference": "f5990735c422ddcecd4e47396209f09b4892ad90"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio-laminasview-renderer",
+                "reference": "1f06ca3c120516e5057114298741c8292d56c574"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-laminasviewrenderer/mezzio-mezzio-laminasviewrenderer-2.2.0-00ef3f.tar",
-                "reference": "f5990735c422ddcecd4e47396209f09b4892ad90",
-                "shasum": "5c4c012e42342a15be9c702f5bd762e296be713b"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-laminasviewrenderer/mezzio-mezzio-laminasviewrenderer-2.2.0-de61a4.tar",
+                "reference": "1f06ca3c120516e5057114298741c8292d56c574",
+                "shasum": "479dbf7bafd73d95ba91f5b3d0894776b2dfeaa4"
             },
             "require": {
                 "laminas/laminas-servicemanager": "^2.7.8 || ^3.3",
                 "laminas/laminas-view": "^2.11.1",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "mezzio/mezzio-helpers": "^5.0",
                 "mezzio/mezzio-router": "^3.0",
                 "mezzio/mezzio-template": "^2.0",
@@ -3097,8 +3073,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "malukenho/docheader": "^0.1.5",
-                "phpunit/phpunit": "^7.0.2",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.0.2"
             },
             "type": "library",
             "extra": {
@@ -3163,25 +3138,25 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-06-04T03:58:22+00:00"
+            "time": "2019-12-18T19:49:08+00:00"
         },
         {
             "name": "mezzio/mezzio-router",
             "version": "3.1.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio-router",
-                "reference": "ceb16210382d9b642b28a1f6675bd1d1531c7dd2"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio-router",
+                "reference": "19bfee32a93e2b2410efb919a62f21056cc5e692"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-router/mezzio-mezzio-router-3.1.1-fe5582.tar",
-                "reference": "ceb16210382d9b642b28a1f6675bd1d1531c7dd2",
-                "shasum": "3d507dddd5d941d42b33cdec1fefcbd030194b42"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-router/mezzio-mezzio-router-3.1.1-4ca604.tar",
+                "reference": "19bfee32a93e2b2410efb919a62f21056cc5e692",
+                "shasum": "5e6befdb880722e3f7ac933bbffa66cc4ac38ef7"
             },
             "require": {
                 "fig/http-message-util": "^1.1.2",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^7.1",
                 "psr/container": "^1.0",
                 "psr/http-message": "^1.0.1",
@@ -3193,8 +3168,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "malukenho/docheader": "^0.1.6",
-                "phpunit/phpunit": "^7.5.16 || ^8.4.1",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.5.16 || ^8.4.1"
             },
             "suggest": {
                 "mezzio/mezzio-aurarouter": "^3.0 to use the Aura.Router routing adapter",
@@ -3264,24 +3238,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-10-16T20:06:55+00:00"
+            "time": "2019-12-18T19:49:46+00:00"
         },
         {
             "name": "mezzio/mezzio-session",
             "version": "1.3.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio-session",
-                "reference": "fccd52491d1c57879003e4ee0ef19728d59106e0"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio-session",
+                "reference": "e9d0daaf39c26ba8e722b43542d6dd20c9b86d8b"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-session/mezzio-mezzio-session-1.3.0-139b19.tar",
-                "reference": "fccd52491d1c57879003e4ee0ef19728d59106e0",
-                "shasum": "ff651d61b446b205bef7ef139c62b5501088d9cc"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-session/mezzio-mezzio-session-1.3.0-00e865.tar",
+                "reference": "e9d0daaf39c26ba8e722b43542d6dd20c9b86d8b",
+                "shasum": "8eac501e3c90b0ebdf49c3c1ae5c122c93ef741d"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^7.1",
                 "psr/container": "^1.0",
                 "psr/http-server-middleware": "^1.0"
@@ -3294,8 +3268,7 @@
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
-                "phpunit/phpunit": "^6.5.5",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^6.5.5"
             },
             "suggest": {
                 "mezzio/mezzio-csrf": "^1.0 || ^1.0-dev for CSRF protection capabilities",
@@ -3360,26 +3333,26 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-10-16T15:27:03+00:00"
+            "time": "2019-12-18T19:49:50+00:00"
         },
         {
             "name": "mezzio/mezzio-session-ext",
             "version": "1.7.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio-session-ext",
-                "reference": "33bbb579a38c12975a15a98f710e0863cc517b91"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio-session-ext",
+                "reference": "c3de0dc6d6cd681ad85f60cd14a44bf36c2eaed4"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-session-ext/mezzio-mezzio-session-ext-1.7.0-b441a1.tar",
-                "reference": "33bbb579a38c12975a15a98f710e0863cc517b91",
-                "shasum": "f1c311c12465e43862c68097fbb841b04f512550"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-session-ext/mezzio-mezzio-session-ext-1.7.0-b04a1f.tar",
+                "reference": "c3de0dc6d6cd681ad85f60cd14a44bf36c2eaed4",
+                "shasum": "4c28f05fb4d999ec868fe6472f0169347774b4b6"
             },
             "require": {
                 "dflydev/fig-cookies": "^1.0 || ^2.0",
                 "ext-session": "*",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "mezzio/mezzio-session": "^1.3",
                 "php": "^7.1"
             },
@@ -3392,8 +3365,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "laminas/laminas-diactoros": "^1.6",
-                "phpunit/phpunit": "^7.0.2",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.0.2"
             },
             "type": "library",
             "extra": {
@@ -3454,24 +3426,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-10-16T15:37:33+00:00"
+            "time": "2019-12-18T19:50:00+00:00"
         },
         {
             "name": "mezzio/mezzio-template",
             "version": "2.0.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio-template",
-                "reference": "a0c8e4077144cd0ee848e3cd0972edf34f1e03a9"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio-template",
+                "reference": "d84044e064aa7fd88d69a450ff4f832dc5f93d97"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-template/mezzio-mezzio-template-2.0.1-e35449.tar",
-                "reference": "a0c8e4077144cd0ee848e3cd0972edf34f1e03a9",
-                "shasum": "bafbd8fb8957e7a4551b3babec7eef9255a90a46"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-template/mezzio-mezzio-template-2.0.1-f73a3e.tar",
+                "reference": "d84044e064aa7fd88d69a450ff4f832dc5f93d97",
+                "shasum": "4b03ebbb52ed899191538e333807f0cf1b3a7e11"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^7.1"
             },
             "replace": {
@@ -3480,8 +3452,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "malukenho/docheader": "^0.1.6",
-                "phpunit/phpunit": "^7.0.2",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.0.2"
             },
             "suggest": {
                 "mezzio/mezzio-laminasviewrenderer": "^2.0 to use the laminas-view PhpRenderer template renderer",
@@ -3545,7 +3516,7 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-06-20T14:05:59+00:00"
+            "time": "2019-12-18T19:51:15+00:00"
         },
         {
             "name": "psr/container",
@@ -3758,12 +3729,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "e4ee2c8e4ccd908debc64069faf023c684a76760"
+                "reference": "1b2183eef1fdf7438d26b37dd87beb07dd4808bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e4ee2c8e4ccd908debc64069faf023c684a76760",
-                "reference": "e4ee2c8e4ccd908debc64069faf023c684a76760",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/1b2183eef1fdf7438d26b37dd87beb07dd4808bc",
+                "reference": "1b2183eef1fdf7438d26b37dd87beb07dd4808bc",
                 "shasum": ""
             },
             "conflict": {
@@ -3784,7 +3755,7 @@
                 "composer/composer": "<=1-alpha.11",
                 "contao-components/mediaelement": ">=2.14.2,<2.21.1",
                 "contao/core": ">=2,<3.5.39",
-                "contao/core-bundle": ">=4,<4.4.39|>=4.5,<4.7.5",
+                "contao/core-bundle": ">=4,<4.4.46|>=4.5,<4.8.6",
                 "contao/listing-bundle": ">=4,<4.4.8",
                 "datadog/dd-trace": ">=0.30,<0.30.2",
                 "david-garcia/phpwhois": "<=4.3.1",
@@ -3831,7 +3802,7 @@
                 "league/commonmark": "<0.18.3",
                 "magento/magento1ce": "<1.9.4.3",
                 "magento/magento1ee": ">=1,<1.14.4.3",
-                "magento/product-community-edition": ">=2,<2.2.10|>=2.3,<2.3.2",
+                "magento/product-community-edition": ">=2,<2.2.10|>=2.3,<2.3.2-p.2",
                 "monolog/monolog": ">=1.8,<1.12",
                 "namshi/jose": "<2.2",
                 "onelogin/php-saml": "<2.10.4",
@@ -3913,8 +3884,8 @@
                 "titon/framework": ">=0,<9.9.99",
                 "truckersmp/phpwhois": "<=4.3.1",
                 "twig/twig": "<1.38|>=2,<2.7",
-                "typo3/cms": ">=6.2,<6.2.30|>=7,<7.6.32|>=8,<8.7.27|>=9,<9.5.8",
-                "typo3/cms-core": ">=8,<8.7.27|>=9,<9.5.8",
+                "typo3/cms": ">=6.2,<6.2.30|>=7,<7.6.32|>=8,<8.7.30|>=9,<9.5.12|>=10,<10.2.1",
+                "typo3/cms-core": ">=8,<8.7.30|>=9,<9.5.12|>=10,<10.2.1",
                 "typo3/flow": ">=1,<1.0.4|>=1.1,<1.1.1|>=2,<2.0.1|>=2.3,<2.3.16|>=3,<3.0.10|>=3.1,<3.1.7|>=3.2,<3.2.7|>=3.3,<3.3.5",
                 "typo3/neos": ">=1.1,<1.1.3|>=1.2,<1.2.13|>=2,<2.0.4",
                 "typo3/phar-stream-wrapper": ">=1,<2.1.1|>=3,<3.1.1",
@@ -3968,7 +3939,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2019-12-02T13:03:15+00:00"
+            "time": "2019-12-17T15:12:43+00:00"
         }
     ],
     "packages-dev": [
@@ -4091,33 +4062,35 @@
         },
         {
             "name": "laminas/laminas-code",
-            "version": "3.4.0",
+            "version": "3.4.1",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-code",
-                "reference": "125093bda0b94e8cfecae20beb202bcc9aedfa2c"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-code",
+                "reference": "849b3d0a341a26e95340c3b2f40698b3deccf649"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-code/laminas-laminas-code-3.4.0-ab6a24.tar",
-                "reference": "125093bda0b94e8cfecae20beb202bcc9aedfa2c",
-                "shasum": "cf0006b818fecb513828169c7df135612ee9a600"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-code/laminas-laminas-code-3.4.1-fb776c.tar",
+                "reference": "849b3d0a341a26e95340c3b2f40698b3deccf649",
+                "shasum": "6db8494445897c84f23d945be8ae292f582d637b"
             },
             "require": {
                 "laminas/laminas-eventmanager": "^2.6 || ^3.0",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^7.1"
+            },
+            "conflict": {
+                "phpspec/prophecy": "<1.9.0"
             },
             "replace": {
                 "zendframework/zend-code": "self.version"
             },
             "require-dev": {
-                "doctrine/annotations": "^1.0",
+                "doctrine/annotations": "^1.7",
                 "ext-phar": "*",
                 "laminas/laminas-coding-standard": "^1.0",
                 "laminas/laminas-stdlib": "^2.7 || ^3.0",
-                "phpunit/phpunit": "^7.5.16 || ^8.4",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.5.16 || ^8.4"
             },
             "suggest": {
                 "doctrine/annotations": "Doctrine\\Common\\Annotations >=1.0 for annotation features",
@@ -4127,7 +4100,8 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "3.4.x-dev",
-                    "dev-develop": "3.5.x-dev"
+                    "dev-develop": "3.5.x-dev",
+                    "dev-dev-4.0": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -4175,25 +4149,25 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-10-05T23:18:22+00:00"
+            "time": "2019-12-18T18:02:38+00:00"
         },
         {
             "name": "laminas/laminas-composer-autoloading",
             "version": "2.1.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-composer-autoloading",
-                "reference": "10dbd02b9fea3bcb047df044d68ce85e893b2ca6"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-composer-autoloading",
+                "reference": "d13d394ee593dee15840c4283b35df970b32c111"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-composer-autoloading/laminas-laminas-composer-autoloading-2.1.0-9ee710.tar",
-                "reference": "10dbd02b9fea3bcb047df044d68ce85e893b2ca6",
-                "shasum": "82f43bfabef55a5dd8091c41d79c0cd3fc738d62"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-composer-autoloading/laminas-laminas-composer-autoloading-2.1.0-f29f23.tar",
+                "reference": "d13d394ee593dee15840c4283b35df970b32c111",
+                "shasum": "4a3a3119feed67e99e1a40091c2f4eb3a59ea20e"
             },
             "require": {
                 "laminas/laminas-stdlib": "^3.1",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -4204,8 +4178,7 @@
                 "mikey179/vfsstream": "^1.6.4",
                 "mockery/mockery": "^1.0",
                 "php-mock/php-mock-phpunit": "^1.1.2 || ^2.0",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.5",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.5"
             },
             "bin": [
                 "bin/laminas-composer-autoloading"
@@ -4264,24 +4237,24 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2018-05-03T22:00:38+00:00"
+            "time": "2019-12-18T18:03:01+00:00"
         },
         {
             "name": "laminas/laminas-development-mode",
             "version": "3.2.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/laminas/laminas-development-mode",
-                "reference": "5c6e649d951ab205d114791220d18a86adbe35ac"
+                "url": "/home/matthew/work/laminas/testing/laminas/laminas-development-mode",
+                "reference": "275b83791bba62e2229eb4d4ef4b81de94e66117"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-development-mode/laminas-laminas-development-mode-3.2.0-c929ba.tar",
-                "reference": "5c6e649d951ab205d114791220d18a86adbe35ac",
-                "shasum": "8d1e6b0b3029dd586bd385b4d95a190235d1f522"
+                "url": "https://laminas.mwop.net/repo/testing/dist/laminas/laminas-development-mode/laminas-laminas-development-mode-3.2.0-56bdf5.tar",
+                "reference": "275b83791bba62e2229eb4d4ef4b81de94e66117",
+                "shasum": "af75510cd533daaa4a57ad47400c9c6759d3de3e"
             },
             "require": {
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "php": "^5.6 || ^7.0"
             },
             "replace": {
@@ -4290,8 +4263,7 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "mikey179/vfsstream": "^1.6.5",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.5",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.5"
             },
             "bin": [
                 "bin/laminas-development-mode"
@@ -4348,21 +4320,21 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2018-05-07T15:44:42+00:00"
+            "time": "2019-12-18T18:12:23+00:00"
         },
         {
             "name": "mezzio/mezzio-tooling",
             "version": "1.3.0",
             "source": {
                 "type": "git",
-                "url": "/home/matthew/sandbox/laminas-testing/mezzio/mezzio-tooling",
-                "reference": "ff73bb1a1e5c1c112229565cf753f284bafdfa06"
+                "url": "/home/matthew/work/laminas/testing/mezzio/mezzio-tooling",
+                "reference": "f42adbbef0443aea50ea316735fd9d4384a2c94a"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-tooling/mezzio-mezzio-tooling-1.3.0-48649a.tar",
-                "reference": "ff73bb1a1e5c1c112229565cf753f284bafdfa06",
-                "shasum": "1d6bf6965ca066c9a58458d22e157ee7c96c7b93"
+                "url": "https://laminas.mwop.net/repo/testing/dist/mezzio/mezzio-tooling/mezzio-mezzio-tooling-1.3.0-6b36b1.tar",
+                "reference": "f42adbbef0443aea50ea316735fd9d4384a2c94a",
+                "shasum": "30fa8b20d5d9cef5d7b79f07520e3a300d278fa1"
             },
             "require": {
                 "ext-json": "*",
@@ -4371,7 +4343,7 @@
                 "laminas/laminas-composer-autoloading": "^2.0",
                 "laminas/laminas-stdlib": "^3.1",
                 "laminas/laminas-stratigility": "^3.0",
-                "laminas/laminas-zendframework-bridge": "^0.4 || ^1.0",
+                "laminas/laminas-zendframework-bridge": "^0.4.2 || ^1.0",
                 "mezzio/mezzio": "^3.0",
                 "mezzio/mezzio-router": "^3.0",
                 "ocramius/package-versions": "^1.3",
@@ -4387,8 +4359,7 @@
                 "mikey179/vfsstream": "^1.6.7",
                 "mockery/mockery": "^1.2.4",
                 "php-mock/php-mock-phpunit": "^2.5",
-                "phpunit/phpunit": "^7.5.17 || ^8.4.3",
-                "roave/security-advisories": "dev-master"
+                "phpunit/phpunit": "^7.5.17 || ^8.4.3"
             },
             "bin": [
                 "bin/mezzio"
@@ -4453,20 +4424,20 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2019-11-22T15:31:50+00:00"
+            "time": "2019-12-18T19:51:49+00:00"
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.9.3",
+            "version": "1.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "007c053ae6f31bba39dfa19a7726f56e9763bbea"
+                "reference": "579bb7356d91f9456ccd505f24ca8b667966a0a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/007c053ae6f31bba39dfa19a7726f56e9763bbea",
-                "reference": "007c053ae6f31bba39dfa19a7726f56e9763bbea",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/579bb7356d91f9456ccd505f24ca8b667966a0a7",
+                "reference": "579bb7356d91f9456ccd505f24ca8b667966a0a7",
                 "shasum": ""
             },
             "require": {
@@ -4501,7 +4472,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2019-08-09T12:45:53+00:00"
+            "time": "2019-12-15T19:12:40+00:00"
         },
         {
             "name": "ocramius/package-versions",
@@ -4808,33 +4779,33 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.9.0",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "f6811d96d97bdf400077a0cc100ae56aa32b9203"
+                "reference": "d638ebbb58daba25a6a0dc7969e1358a0e3c6682"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/f6811d96d97bdf400077a0cc100ae56aa32b9203",
-                "reference": "f6811d96d97bdf400077a0cc100ae56aa32b9203",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/d638ebbb58daba25a6a0dc7969e1358a0e3c6682",
+                "reference": "d638ebbb58daba25a6a0dc7969e1358a0e3c6682",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
                 "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0|^5.0",
-                "sebastian/comparator": "^1.1|^2.0|^3.0",
+                "sebastian/comparator": "^1.2.3|^2.0|^3.0",
                 "sebastian/recursion-context": "^1.0|^2.0|^3.0"
             },
             "require-dev": {
-                "phpspec/phpspec": "^2.5|^3.2",
+                "phpspec/phpspec": "^2.5 || ^3.2",
                 "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5 || ^7.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8.x-dev"
+                    "dev-master": "1.10.x-dev"
                 }
             },
             "autoload": {
@@ -4867,7 +4838,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2019-10-03T11:07:50+00:00"
+            "time": "2019-12-17T16:54:23+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -5123,16 +5094,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.5.17",
+            "version": "7.5.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "4c92a15296e58191a4cd74cff3b34fc8e374174a"
+                "reference": "fcf6c4bfafaadc07785528b06385cce88935474d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4c92a15296e58191a4cd74cff3b34fc8e374174a",
-                "reference": "4c92a15296e58191a4cd74cff3b34fc8e374174a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fcf6c4bfafaadc07785528b06385cce88935474d",
+                "reference": "fcf6c4bfafaadc07785528b06385cce88935474d",
                 "shasum": ""
             },
             "require": {
@@ -5203,7 +5174,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-10-28T10:37:36+00:00"
+            "time": "2019-12-06T05:14:37+00:00"
         },
         {
             "name": "psr/log",
