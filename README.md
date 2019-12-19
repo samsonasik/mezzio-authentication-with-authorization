@@ -1,4 +1,4 @@
-# Expressive 3 with auth, crsf, flash, csrf, prg
+# Expressive 3 with auth, crsf, flash,prg
 
 Install
 -------
