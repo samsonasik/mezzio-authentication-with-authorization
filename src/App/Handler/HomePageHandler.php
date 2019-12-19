@@ -6,8 +6,6 @@ namespace App\Handler;
 
 use Laminas\Diactoros\Response\HtmlResponse;
 use Laminas\Diactoros\Response\JsonResponse;
-use Laminas\Diactoros\Response\RedirectResponse;
-use Mezzio\Authentication\UserInterface;
 use Mezzio\LaminasView\LaminasViewRenderer;
 use Mezzio\Plates\PlatesRenderer;
 use Mezzio\Router;
