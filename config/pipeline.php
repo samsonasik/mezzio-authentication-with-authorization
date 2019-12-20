@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-use Psr\Container\ContainerInterface;
+use Laminas\Stratigility\Middleware\ErrorHandler;
 use Mezzio\Application;
+use Mezzio\Csrf\CsrfMiddleware;
 use Mezzio\Flash\FlashMessageMiddleware;
 use Mezzio\Handler\NotFoundHandler;
 use Mezzio\Helper\ServerUrlMiddleware;
@@ -15,7 +16,7 @@ use Mezzio\Router\Middleware\ImplicitOptionsMiddleware;
 use Mezzio\Router\Middleware\MethodNotAllowedMiddleware;
 use Mezzio\Router\Middleware\RouteMiddleware;
 use Mezzio\Session\SessionMiddleware;
-use Laminas\Stratigility\Middleware\ErrorHandler;
+use Psr\Container\ContainerInterface;
 
 /**
  * Setup middleware pipeline:
@@ -47,7 +48,7 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     // Register the routing middleware in the middleware pipeline.
     // This middleware registers the Mezzio\Router\RouteResult request attribute.
     $app->pipe(SessionMiddleware::class);
-    $app->pipe(\Mezzio\Csrf\CsrfMiddleware::class);
+    $app->pipe(CsrfMiddleware::class);
     $app->pipe(FlashMessageMiddleware::class);
     $app->pipe(RouteMiddleware::class);
 
