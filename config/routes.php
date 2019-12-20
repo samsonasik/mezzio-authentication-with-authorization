@@ -45,5 +45,6 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
 	    App\Handler\LoginPageHandler::class,
 	    // for authentication next handling
 	    \Mezzio\Authentication\AuthenticationMiddleware::class,
-	], ['GET', 'POST'],'login');
+    ], ['GET', 'POST'],'login');
+    $app->get('/logout', App\Handler\LogoutHandler::class, 'logout');
 };

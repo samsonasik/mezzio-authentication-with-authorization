@@ -54,6 +54,15 @@ $this->inlineScript()
                                 Ping Test
                             </a>
                         </li>
+
+                        <?php if ($this->url() !== '/login') : ?>
+                        <li class="nav-item">
+                            <a href="<?=$this->url('logout')?>" class="nav-link">
+                                Logout
+                            </a>
+                        </li>
+                        <?php endif; ?>
+
                     </ul>
                 </div>
             </div>
@@ -72,7 +81,7 @@ $this->inlineScript()
         <?php endif; ?>
 
         <?=$this->content?>
-        
+
         </main>
     </div>
 

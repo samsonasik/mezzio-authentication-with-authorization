@@ -41,6 +41,7 @@ class ConfigProvider
         return [
             'invokables' => [
                 Handler\PingHandler::class => Handler\PingHandler::class,
+                Handler\LogoutHandler::class => Handler\LogoutHandler::class,
             ],
             'factories'  => [
 				Handler\LoginPageHandler::class => Handler\LoginPageFactory::class,
