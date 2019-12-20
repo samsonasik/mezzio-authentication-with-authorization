@@ -39,9 +39,6 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     ], 'home');
     $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
 	$app->route('/login', [
-        // csrf middleware
-        \Mezzio\Csrf\CsrfMiddleware::class,
-
         // prg middleware
         App\Middleware\PrgMiddleware::class,
 
