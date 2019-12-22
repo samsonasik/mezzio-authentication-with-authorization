@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Middleware\PrgMiddleware;
 use Mezzio\Application;
 use Mezzio\MiddlewareFactory;
 use Psr\Container\ContainerInterface;
@@ -34,17 +35,19 @@ use Psr\Container\ContainerInterface;
  */
 return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
     $app->get('/', [
+        // prg handling
+        PrgMiddleware::class,
+
         \Mezzio\Authentication\AuthenticationMiddleware::class,
         App\Handler\HomePageHandler::class,
     ], 'home');
     $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
 	$app->route('/login', [
-        // prg middleware
-        App\Middleware\PrgMiddleware::class,
-
 	    App\Handler\LoginPageHandler::class,
 	    // for authentication next handling
-	    \Mezzio\Authentication\AuthenticationMiddleware::class,
+        \Mezzio\Authentication\AuthenticationMiddleware::class,
+        // prg handling
+        PrgMiddleware::class,
     ], ['GET', 'POST'],'login');
     $app->get('/logout', App\Handler\LogoutHandler::class, 'logout');
 };

@@ -25,7 +25,6 @@ class PrgMiddleware implements MiddlewareInterface
         if ($session->has('post_data')) {
             $post = $session->get('post_data');
             $session->unset('post_data');
-            unset($_SESSION['post_data']);
 
             $request = $request->withMethod('POST');
             $request = $request->withParsedBody($post);
