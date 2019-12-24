@@ -49,7 +49,7 @@ class LoginPageHandler implements MiddlewareInterface
                 }
 
                 $flashMessages->flash('message', 'Login Failure, please try again');
-                return new RedirectResponse('/login');
+                return $response;
             }
         }
 
