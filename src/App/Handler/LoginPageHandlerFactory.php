@@ -8,7 +8,7 @@ use Mezzio\Template\TemplateRendererInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Server\MiddlewareInterface;
 
-class LoginPageFactory
+class LoginPageHandlerFactory
 {
     public function __invoke(ContainerInterface $container) : MiddlewareInterface
     {

@@ -11,7 +11,10 @@ return [
         // key is the alias name, the value is the service to which it points.
         'aliases' => [
             Mezzio\Authentication\UserRepositoryInterface::class =>
-                Mezzio\Authentication\UserRepository\PdoDatabase::class
+                Mezzio\Authentication\UserRepository\PdoDatabase::class,
+
+            Mezzio\Authorization\AuthorizationInterface::class =>
+                Mezzio\Authorization\Acl\ZendAcl::class
             // Fully\Qualified\ClassOrInterfaceName::class => Fully\Qualified\ClassName::class,
         ],
         // Use 'invokables' for constructor-less services, or services that do

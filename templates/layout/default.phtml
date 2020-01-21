@@ -55,7 +55,15 @@ $this->inlineScript()
                             </a>
                         </li>
 
-                        <?php if ($this->url() !== '/login') : ?>
+                        <?php if ($this->getRole() === 'admin') : ?>
+                            <li class="nav-item">
+                                <a href="<?=$this->url('admin')?>" class="nav-link">
+                                    Admin
+                                </a>
+                            </li>
+                        <?php endif; ?>
+
+                        <?php if ($this->getRole() !== 'guest') : ?>
                         <li class="nav-item">
                             <a href="<?=$this->url('logout')?>" class="nav-link">
                                 Logout

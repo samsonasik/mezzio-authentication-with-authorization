@@ -41,6 +41,12 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
         \Mezzio\Authentication\AuthenticationMiddleware::class,
         App\Handler\HomePageHandler::class,
     ], 'home');
+
+    $app->route('/admin', [
+        \Zend\Expressive\Authentication\AuthenticationMiddleware::class,
+        App\Handler\AdminPageHandler::class,
+    ], ['GET'], 'admin');
+
     $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
 	$app->route('/login', [
 	    App\Handler\LoginPageHandler::class,

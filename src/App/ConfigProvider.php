@@ -28,6 +28,7 @@ class ConfigProvider
             'view_helpers' => [
                 'invokables' => [
                     'flash' => View\Helper\Flash::class,
+                    'getRole' => View\Helper\GetRole::class,
                 ],
             ],
         ];
@@ -44,7 +45,8 @@ class ConfigProvider
                 Handler\LogoutHandler::class => Handler\LogoutHandler::class,
             ],
             'factories'  => [
-				Handler\LoginPageHandler::class => Handler\LoginPageFactory::class,
+                Handler\AdminPageHandler::class => Handler\AdminPageHandlerFactory::class,
+				Handler\LoginPageHandler::class => Handler\LoginPageHandlerFactory::class,
                 Handler\HomePageHandler::class => Handler\HomePageHandlerFactory::class,
                 Middleware\PrgMiddleware::class => InvokableFactory::class,
             ],

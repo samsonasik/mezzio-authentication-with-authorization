@@ -13,11 +13,11 @@ return [
         'pdo' => [
 
             // example dsn for postgresql
-            'dsn'   => 'pgsql:host=localhost;port=5432;dbname=expressive;user=developer;password=123456',
+            'dsn'   => 'pgsql:host=localhost;port=5432;dbname=mezzio;user=developer;password=123456',
 
             // example dsn for mysql
             /*
-                'dsn'   => 'mysql:host=localhost;port=3306;dbname=expressive;user=root;password=123456',
+                'dsn'   => 'mysql:host=localhost;port=3306;dbname=mezzio;user=root;password=123456',
              */
 
             'table' => 'users',

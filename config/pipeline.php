@@ -72,6 +72,58 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     // - route-based validation
     // - etc.
 
+    $app->pipe(new class implements Psr\Http\Server\MiddlewareInterface{
+
+        public function process(
+            Psr\Http\Message\ServerRequestInterface $request,
+            Psr\Http\Server\RequestHandlerInterface $handler
+        ) : Psr\Http\Message\ResponseInterface {
+
+            $session = $request->getAttribute(
+                Mezzio\Session\SessionMiddleware::SESSION_ATTRIBUTE
+            );
+
+            // No Session data
+            if (! $session->has(Mezzio\Authentication\UserInterface::class)) {
+                $user  = '';
+                $roles = ['guest'];
+
+                $request = $request->withAttribute(
+                    Mezzio\Authentication\UserInterface::class,
+                    new Mezzio\Authentication\DefaultUser(
+                        $user,
+                        $roles
+                    )
+                );
+
+                $response = $handler->handle($request);
+                if ($request->getUri()->getPath() === '/login' || $response->getStatusCode() !== 403) {
+                    return $response;
+                }
+
+                return new Laminas\Diactoros\Response\RedirectResponse('/login');
+            }
+
+            // at /login page, redirect to authenticated page
+            if ($request->getUri()->getPath() === '/login') {
+                return new Laminas\Diactoros\Response\RedirectResponse('/');
+            }
+
+            // define roles from DB
+            $sessionData = $session->get(Mezzio\Authentication\UserInterface::class);
+            $request = $request->withAttribute(
+                Mezzio\Authentication\UserInterface::class,
+                new Mezzio\Authentication\DefaultUser(
+                    $sessionData['username'],
+                    $sessionData['roles']
+                )
+            );
+
+            return $handler->handle($request);
+        }
+    });
+    $app->pipe(\Mezzio\Authorization\AuthorizationMiddleware::class);
+
     // Register the dispatch middleware in the middleware pipeline
     $app->pipe(DispatchMiddleware::class);
 
