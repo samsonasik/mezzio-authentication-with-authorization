@@ -10,6 +10,7 @@ return [
             'admin' => ['user'],
         ],
         'resources' => [
+            'api.ping',
             'home',
             'admin',
             'login',
@@ -18,6 +19,7 @@ return [
         'allow' => [
             'guest' => [
                 'login',
+                'api.ping',
             ],
             'user'  => [
                 'logout',
