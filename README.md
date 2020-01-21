@@ -51,3 +51,7 @@ $ php -S localhost:8080 -t public
 ```
 
 3. Open browser: http://localhost:8080
+
+4. Login, if you're a logged in user with "user" role, you can acces `/admin` page, shown like the following (403 Forbidden) in firefox developer tool:
+
+<img src="./authorized-user-cannot-access-admin-page.png">
