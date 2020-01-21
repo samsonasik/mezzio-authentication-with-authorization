@@ -52,6 +52,6 @@ $ php -S localhost:8080 -t public
 
 3. Open browser: http://localhost:8080
 
-4. Login, if you're a logged in user with "user" role, you can acces `/admin` page, shown like the following (403 Forbidden) in firefox developer tool:
+4. Login, if you're a logged in user with "user" role, and open `/admin` page, it will show like the following (403 Forbidden), eg: see in [Firefox developer tools](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor) under "Network" monitor:
 
 <img src="./authorized-user-cannot-access-admin-page.png">
