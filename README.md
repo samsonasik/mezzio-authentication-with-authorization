@@ -4,8 +4,8 @@ Install
 -------
 
 ```bash
-$ git clone https://github.com/samsonasik/laminas-authentication-with-authorization.git
-$ cd laminas-authentication-with-authorization && composer install
+$ git clone git@github.com:samsonasik/mezzio-authentication-with-authorization.git
+$ cd mezzio-authentication-with-authorization && composer install
 $ cp config/autoload/local.php.dist config/autoload/local.php
 $ composer development-enable
 ```
