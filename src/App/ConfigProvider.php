@@ -49,6 +49,7 @@ class ConfigProvider
 				Handler\LoginPageHandler::class => Handler\LoginPageHandlerFactory::class,
                 Handler\HomePageHandler::class => Handler\HomePageHandlerFactory::class,
                 Middleware\PrgMiddleware::class => InvokableFactory::class,
+                Middleware\AuthorizationMiddleware::class => Middleware\AuthorizationMiddlewareFactory::class,
             ],
         ];
     }
