@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c7dd6391029cad5c0d3c86112c30d56",
+    "content-hash": "b8d4b6cda3bd6322edd3d9a2c854a344",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -2564,7 +2564,7 @@
             "version": "dev-hotfix/is-granted-failed-routing",
             "source": {
                 "type": "git",
-                "url": "https://github.com/michalbundyra/mezzio-authorization-acl.git",
+                "url": "https://github.com/michalbundyra/mezzio-authorization-acl",
                 "reference": "ce0e690765294af276525ca1f27ef99f2823da7e"
             },
             "dist": {

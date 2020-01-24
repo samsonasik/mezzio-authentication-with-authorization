@@ -103,7 +103,8 @@
     "repositories" : [
         {
             "type" : "vcs",
-            "url" : "https://github.com/michalbundyra/mezzio-authorization-acl"
+            "url" : "https://github.com/michalbundyra/mezzio-authorization-acl",
+            "no-api": true
         }
     ]
 }
