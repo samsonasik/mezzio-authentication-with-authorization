@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3e7cbd3d31bfa399721e44b6236f76f",
+    "content-hash": "3c7dd6391029cad5c0d3c86112c30d56",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -2561,16 +2561,16 @@
         },
         {
             "name": "mezzio/mezzio-authorization-acl",
-            "version": "1.0.1",
+            "version": "dev-hotfix/is-granted-failed-routing",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mezzio/mezzio-authorization-acl.git",
-                "reference": "cb1dbefa047bc3ae8cd155f2ce18e230162c56e6"
+                "url": "https://github.com/michalbundyra/mezzio-authorization-acl.git",
+                "reference": "ce0e690765294af276525ca1f27ef99f2823da7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mezzio/mezzio-authorization-acl/zipball/cb1dbefa047bc3ae8cd155f2ce18e230162c56e6",
-                "reference": "cb1dbefa047bc3ae8cd155f2ce18e230162c56e6",
+                "url": "https://api.github.com/repos/michalbundyra/mezzio-authorization-acl/zipball/ce0e690765294af276525ca1f27ef99f2823da7e",
+                "reference": "ce0e690765294af276525ca1f27ef99f2823da7e",
                 "shasum": ""
             },
             "require": {
@@ -2608,7 +2608,29 @@
                     "Mezzio\\Authorization\\Acl\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "MezzioTest\\Authorization\\Acl\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
             "license": [
                 "BSD-3-Clause"
             ],
@@ -2622,7 +2644,15 @@
                 "middleware",
                 "psr-7"
             ],
-            "time": "2019-12-31T15:43:31+00:00"
+            "support": {
+                "docs": "https://docs.mezzio.dev/mezzio-authorization-acl/",
+                "issues": "https://github.com/mezzio/mezzio-authorization-acl/issues",
+                "source": "https://github.com/mezzio/mezzio-authorization-acl",
+                "rss": "https://github.com/mezzio/mezzio-authorization-acl/releases.atom",
+                "chat": "https://laminas.dev/chat",
+                "forum": "https://discourse.laminas.dev"
+            },
+            "time": "2020-01-23T21:00:05+00:00"
         },
         {
             "name": "mezzio/mezzio-csrf",
@@ -5841,16 +5871,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.0.2",
+            "version": "v5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "fe6e3cd889ca64172d7a742a2eb058541404ef47"
+                "reference": "345ab6ecb456b5147ea3b3271d7f1f00aadfd257"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/fe6e3cd889ca64172d7a742a2eb058541404ef47",
-                "reference": "fe6e3cd889ca64172d7a742a2eb058541404ef47",
+                "url": "https://api.github.com/repos/symfony/console/zipball/345ab6ecb456b5147ea3b3271d7f1f00aadfd257",
+                "reference": "345ab6ecb456b5147ea3b3271d7f1f00aadfd257",
                 "shasum": ""
             },
             "require": {
@@ -5913,7 +5943,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-12-17T13:20:22+00:00"
+            "time": "2020-01-19T11:13:19+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -6240,6 +6270,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "mezzio/mezzio-authorization-acl": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

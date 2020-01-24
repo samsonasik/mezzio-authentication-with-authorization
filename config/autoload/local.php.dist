@@ -25,6 +25,8 @@ return [
                 'identity' => 'username',
                 'password' => 'password',
             ],
+
+            'sql_get_roles' => 'SELECT role FROM users WHERE username = :identity'
         ],
         'username' => 'username',
         'password' => 'password',

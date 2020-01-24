@@ -30,7 +30,7 @@
         "mezzio/mezzio-authentication": "^1.1.0",
         "mezzio/mezzio-authentication-session": "^1.0.1",
         "mezzio/mezzio-authorization": "^1.0",
-        "mezzio/mezzio-authorization-acl": "^1.0",
+        "mezzio/mezzio-authorization-acl": "dev-hotfix/is-granted-failed-routing",
         "mezzio/mezzio-csrf": "^1.0.0",
         "mezzio/mezzio-flash": "^1.0.0",
         "mezzio/mezzio-helpers": "^5.0",
@@ -99,5 +99,11 @@
         "source": "https://github.com/mezzio/mezzio-skeleton",
         "rss": "https://github.com/mezzio/mezzio-skeleton/releases.atom",
         "slack": "https://zendframework-slack.herokuapp.com"
-    }
+    },
+    "repositories" : [
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/michalbundyra/mezzio-authorization-acl"
+        }
+    ]
 }

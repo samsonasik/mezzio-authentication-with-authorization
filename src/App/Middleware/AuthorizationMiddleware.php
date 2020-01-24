@@ -9,18 +9,15 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Laminas\Diactoros\Response\RedirectResponse;
 use Mezzio\Authentication\DefaultUser;
 use Mezzio\Authentication\UserInterface;
-use Mezzio\Handler\NotFoundHandler;
 use Mezzio\Router\RouteResult;
 use Mezzio\Session\SessionMiddleware;
 
 class AuthorizationMiddleware implements MiddlewareInterface
 {
-    private $notFoundHandler;
     private $redirect;
 
-    public function __construct(NotFoundHandler $notFoundHandler, string $redirect)
+    public function __construct(string $redirect)
     {
-        $this->notFoundHandler = $notFoundHandler;
         $this->redirect        = $redirect;
     }
 
@@ -28,13 +25,6 @@ class AuthorizationMiddleware implements MiddlewareInterface
         ServerRequestInterface $request,
         RequestHandlerInterface $handler
     ) : ResponseInterface {
-
-        // 404 check early
-        $routeResult = $request->getAttribute(RouteResult::class);
-        if ($routeResult->isFailure()) {
-            return $this->notFoundHandler->handle($request, $handler);
-        }
-
         $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
 
         // No Session data

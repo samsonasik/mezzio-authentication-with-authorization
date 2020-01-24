@@ -24,19 +24,19 @@ Password:
 $ psql -Udeveloper mezzio
 Password for user developer:
 
-psql (10.1)
+psql (12.1)
 Type "help" for help.
 
-expressive=# CREATE TABLE users(username character varying(255) PRIMARY KEY NOT NULL, password text NOT NULL, role character varying(255) NOT NULL DEFAULT 'user');
+mezzio=# CREATE TABLE users(username character varying(255) PRIMARY KEY NOT NULL, password text NOT NULL, role character varying(255) NOT NULL DEFAULT 'user');
 CREATE TABLE
 
-expressive=# CREATE EXTENSION pgcrypto;
+mezzio=# CREATE EXTENSION pgcrypto;
 CREATE EXTENSION
 
-expressive=# INSERT INTO users(username, password, role) VALUES('samsonasik', crypt('123456', gen_salt('bf')), 'user');
+mezzio=# INSERT INTO users(username, password, role) VALUES('samsonasik', crypt('123456', gen_salt('bf')), 'user');
 INSERT 0 1
 
-expressive=# INSERT INTO users(username, password, role) VALUES('admin', crypt('123456', gen_salt('bf')), 'admin');
+mezzio=# INSERT INTO users(username, password, role) VALUES('admin', crypt('123456', gen_salt('bf')), 'admin');
 INSERT 0 1
 ```
 
