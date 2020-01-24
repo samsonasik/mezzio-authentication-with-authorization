@@ -7,10 +7,8 @@ namespace App\Handler;
 use App\Form\LoginForm;
 use Laminas\Diactoros\Response\HtmlResponse;
 use Laminas\Diactoros\Response\RedirectResponse;
-use Mezzio\Authentication\UserInterface;
 use Mezzio\Csrf\CsrfMiddleware;
 use Mezzio\Flash\FlashMessageMiddleware;
-use Mezzio\Session\SessionMiddleware;
 use Mezzio\Template\TemplateRendererInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -28,11 +26,6 @@ class LoginPageHandler implements MiddlewareInterface
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler) : ResponseInterface
     {
-        $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
-        if ($session->has(UserInterface::class)) {
-            return new RedirectResponse('/');
-        }
-
         $guard     = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
         $loginForm = new LoginForm($guard);
 
