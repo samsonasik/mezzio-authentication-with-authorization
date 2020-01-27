@@ -1,4 +1,5 @@
 <?php
+
 // src/App/Handler/LoginPageFactory.php
 declare(strict_types=1);
 
@@ -10,9 +11,9 @@ use Psr\Http\Server\MiddlewareInterface;
 
 class LoginPageHandlerFactory
 {
-    public function __invoke(ContainerInterface $container) : MiddlewareInterface
+    public function __invoke(ContainerInterface $container): MiddlewareInterface
     {
-        $template  = $container->get(TemplateRendererInterface::class);
+        $template = $container->get(TemplateRendererInterface::class);
         return new LoginPageHandler($template);
     }
 }

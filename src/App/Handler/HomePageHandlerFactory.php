@@ -9,9 +9,11 @@ use Mezzio\Template\TemplateRendererInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
+use function get_class;
+
 class HomePageHandlerFactory
 {
-    public function __invoke(ContainerInterface $container) : RequestHandlerInterface
+    public function __invoke(ContainerInterface $container): RequestHandlerInterface
     {
         $router   = $container->get(RouterInterface::class);
         $template = $container->has(TemplateRendererInterface::class)

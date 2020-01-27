@@ -9,7 +9,7 @@ use Psr\Http\Server\MiddlewareInterface;
 
 class AuthorizationMiddlewareFactory
 {
-    public function __invoke(ContainerInterface $container) : MiddlewareInterface
+    public function __invoke(ContainerInterface $container): MiddlewareInterface
     {
         $redirect = $container->get('config')['authentication']['redirect'];
         return new AuthorizationMiddleware($redirect);

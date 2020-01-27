@@ -1,4 +1,5 @@
 <?php
+
 // src/App/Form/LoginForm.php
 declare(strict_types=1);
 
@@ -26,70 +27,69 @@ class LoginForm extends Form implements InputFilterProviderInterface
     public function init()
     {
         $this->add([
-            'type' => Text::class,
-            'name' => 'username',
+            'type'    => Text::class,
+            'name'    => 'username',
             'options' => [
                 'label' => 'Username',
             ],
         ]);
 
         $this->add([
-            'type' => Password::class,
-            'name' => 'password',
+            'type'    => Password::class,
+            'name'    => 'password',
             'options' => [
                 'label' => 'Password',
             ],
         ]);
 
         $this->add([
-            'type'  => Hidden::class,
-            'name'  => 'csrf',
+            'type' => Hidden::class,
+            'name' => 'csrf',
         ]);
 
         $this->add([
-            'name' => 'Login',
-            'type' => 'submit',
+            'name'       => 'Login',
+            'type'       => 'submit',
             'attributes' => [
                 'value' => 'Login',
             ],
         ]);
     }
 
-    public function getInputFilterSpecification()
+    public function getInputFilterSpecification(): array
     {
         return [
             [
-                'name' => 'username',
+                'name'     => 'username',
                 'required' => true,
-                'filters' => [
-                    ['name' => 'StripTags'],
-                    ['name' => 'StringTrim'],
-                  ],
-            ],
-
-            [
-                'name' => 'password',
-                'required' => true,
-                'filters' => [
+                'filters'  => [
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
             ],
             [
-                'name' => 'csrf',
+                'name'     => 'password',
                 'required' => true,
+                'filters'  => [
+                    ['name' => 'StripTags'],
+                    ['name' => 'StringTrim'],
+                ],
+            ],
+            [
+                'name'       => 'csrf',
+                'required'   => true,
                 'validators' => [
                     [
-                        'name' => 'callback',
+                        'name'    => 'callback',
                         'options' => [
                             'callback' => function ($value) {
                                 return $this->guard->validateToken($value);
                             },
                             'messages' => [
-                                'callbackValue' => 'The form submitted did not originate from the expected site'
+                                'callbackValue' => 'The form submitted did not originate from the expected site',
                             ],
                         ],
-                    ]
+                    ],
                 ],
             ],
         ];

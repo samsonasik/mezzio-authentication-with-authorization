@@ -5,16 +5,18 @@ declare(strict_types=1);
 namespace AppTest\Handler;
 
 use App\Handler\PingHandler;
+use Laminas\Diactoros\Response\JsonResponse;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
-use Laminas\Diactoros\Response\JsonResponse;
+
+use function json_decode;
 
 class PingHandlerTest extends TestCase
 {
     public function testResponse()
     {
         $pingHandler = new PingHandler();
-        $response = $pingHandler->handle(
+        $response    = $pingHandler->handle(
             $this->prophesize(ServerRequestInterface::class)->reveal()
         );
 

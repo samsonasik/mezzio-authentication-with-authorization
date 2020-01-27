@@ -1,4 +1,5 @@
 <?php
+
 // src/App/Handler/LoginPageHandler.php
 declare(strict_types=1);
 
@@ -21,10 +22,10 @@ class LoginPageHandler implements MiddlewareInterface
 
     public function __construct(TemplateRendererInterface $template)
     {
-        $this->template  = $template;
+        $this->template = $template;
     }
 
-    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler) : ResponseInterface
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         $guard     = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
         $loginForm = new LoginForm($guard);
@@ -46,7 +47,7 @@ class LoginPageHandler implements MiddlewareInterface
             }
         }
 
-        $token   = $guard->generateToken();
+        $token = $guard->generateToken();
         return new HtmlResponse(
             $this->template->render('app::login-page', [
                 'form'  => $loginForm,

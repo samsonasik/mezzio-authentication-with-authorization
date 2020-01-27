@@ -6,6 +6,7 @@ namespace App\Handler;
 
 use Laminas\Diactoros\Response\HtmlResponse;
 use Laminas\Diactoros\Response\JsonResponse;
+use Laminas\ServiceManager\ServiceManager;
 use Mezzio\LaminasView\LaminasViewRenderer;
 use Mezzio\Plates\PlatesRenderer;
 use Mezzio\Router;
@@ -25,7 +26,7 @@ class HomePageHandler implements RequestHandlerInterface
 
     public function __construct(
         Router\RouterInterface $router,
-        Template\TemplateRendererInterface $template = null,
+        ?Template\TemplateRendererInterface $template = null,
         string $containerName
     ) {
         $this->router        = $router;
@@ -33,7 +34,7 @@ class HomePageHandler implements RequestHandlerInterface
         $this->containerName = $containerName;
     }
 
-    public function handle(ServerRequestInterface $request) : ResponseInterface
+    public function handle(ServerRequestInterface $request): ResponseInterface
     {
         if (! $this->template) {
             return new JsonResponse([
@@ -53,7 +54,7 @@ class HomePageHandler implements RequestHandlerInterface
                 $data['containerName'] = 'Pimple';
                 $data['containerDocs'] = 'https://pimple.symfony.com/';
                 break;
-            case 'Laminas\ServiceManager\ServiceManager':
+            case ServiceManager::class:
                 $data['containerName'] = 'Zend Servicemanager';
                 $data['containerDocs'] = 'https://docs.zendframework.com/zend-servicemanager/';
                 break;

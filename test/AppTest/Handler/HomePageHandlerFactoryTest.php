@@ -6,10 +6,12 @@ namespace AppTest\Handler;
 
 use App\Handler\HomePageHandler;
 use App\Handler\HomePageHandlerFactory;
-use PHPUnit\Framework\TestCase;
-use Psr\Container\ContainerInterface;
 use Mezzio\Router\RouterInterface;
 use Mezzio\Template\TemplateRendererInterface;
+use PHPUnit\Framework\TestCase;
+use Psr\Container\ContainerInterface;
+
+use function get_class;
 
 class HomePageHandlerFactoryTest extends TestCase
 {
@@ -19,7 +21,7 @@ class HomePageHandlerFactoryTest extends TestCase
     protected function setUp()
     {
         $this->container = $this->prophesize(ContainerInterface::class);
-        $router = $this->prophesize(RouterInterface::class);
+        $router          = $this->prophesize(RouterInterface::class);
 
         $this->container->get(RouterInterface::class)->willReturn($router);
     }

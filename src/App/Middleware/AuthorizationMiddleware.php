@@ -1,16 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Middleware;
 
+use Laminas\Diactoros\Response\RedirectResponse;
+use Mezzio\Authentication\DefaultUser;
+use Mezzio\Authentication\UserInterface;
+use Mezzio\Session\SessionMiddleware;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Laminas\Diactoros\Response\RedirectResponse;
-use Mezzio\Authentication\DefaultUser;
-use Mezzio\Authentication\UserInterface;
-use Mezzio\Router\RouteResult;
-use Mezzio\Session\SessionMiddleware;
 
 class AuthorizationMiddleware implements MiddlewareInterface
 {
@@ -18,13 +19,13 @@ class AuthorizationMiddleware implements MiddlewareInterface
 
     public function __construct(string $redirect)
     {
-        $this->redirect        = $redirect;
+        $this->redirect = $redirect;
     }
 
     public function process(
         ServerRequestInterface $request,
         RequestHandlerInterface $handler
-    ) : ResponseInterface {
+    ): ResponseInterface {
         $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
 
         // No Session data
@@ -55,7 +56,7 @@ class AuthorizationMiddleware implements MiddlewareInterface
 
         // define roles from DB
         $sessionData = $session->get(UserInterface::class);
-        $request = $request->withAttribute(
+        $request     = $request->withAttribute(
             UserInterface::class,
             new DefaultUser(
                 $sessionData['username'],
@@ -64,5 +65,5 @@ class AuthorizationMiddleware implements MiddlewareInterface
         );
 
         return $handler->handle($request);
-   }
+    }
 }

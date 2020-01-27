@@ -1,4 +1,5 @@
 <?php
+
 // src/App/Middleware/PrgMiddleware.php
 declare(strict_types=1);
 
@@ -13,7 +14,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class PrgMiddleware implements MiddlewareInterface
 {
-    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler) : ResponseInterface
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
 

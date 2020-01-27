@@ -10,7 +10,7 @@ use Zend\Expressive\Template\TemplateRendererInterface;
 
 class AdminPageHandlerFactory
 {
-    public function __invoke(ContainerInterface $container) : RequestHandlerInterface
+    public function __invoke(ContainerInterface $container): RequestHandlerInterface
     {
         $template = $container->get(TemplateRendererInterface::class);
         return new AdminPageHandler($template);
