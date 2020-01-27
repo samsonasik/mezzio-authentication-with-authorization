@@ -77,6 +77,13 @@ $this->inlineScript()
 
     <div class="app-content">
         <main class="container">
+            <?php if ($flashes = $this->flash()) :?>
+                <ul>
+                    <?php foreach($flashes as $message) : ?>
+                        <li><?php echo $message; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
             <?=$this->content?>
         </main>
     </div>
