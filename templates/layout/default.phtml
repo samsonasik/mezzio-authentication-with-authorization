@@ -12,7 +12,7 @@ $this->inlineScript()
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="shortcut icon" href="https://framework.zend.com/ico/favicon.ico" />
+    <link rel="shortcut icon" href="https://getlaminas.org/images/favicon/favicon.ico" />
     <?=$this->headTitle('mezzio')->setSeparator(' - ')->setAutoEscape(false)?>
     <?=$this->headMeta()?>
     <?=$this->headLink()?>
@@ -20,7 +20,7 @@ $this->inlineScript()
         body { padding-top: 70px; }
         .app { min-height: 100vh; }
         .app-footer { padding-bottom: 1em; }
-        .zf-green, h2 a { color: #68b604; }
+        .api-tools-green, h2 a { color: #68b604; }
     </style>
 </head>
 <body class="app">
@@ -33,14 +33,14 @@ $this->inlineScript()
                     </button>
                     <!-- Brand -->
                     <a class="navbar-brand" href="<?=$this->url('home')?>">
-                        <img src="https://framework.zend.com/images/logos/zf-logo-mark.png" alt="Zend Expressive" height="28" />
+                        <img src="https://getlaminas.org/images/logo/laminas-foundation-white.svg" alt="Laminas Mezzio" height="28" />
                     </a>
                 </div>
                 <!-- Links -->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a href="https://docs.zendframework.com/zend-expressive" target="_blank" class="nav-link">
+                            <a href="https://docs.mezzio.dev/mezzio" target="_blank" class="nav-link">
                                 <i class="fa fa-book"></i> Docs
                             </a>
                         </li>
@@ -54,7 +54,6 @@ $this->inlineScript()
                                 Ping Test
                             </a>
                         </li>
-
                         <?php if ($this->getRole() === 'admin') : ?>
                             <li class="nav-item">
                                 <a href="<?=$this->url('admin')?>" class="nav-link">
@@ -70,7 +69,6 @@ $this->inlineScript()
                             </a>
                         </li>
                         <?php endif; ?>
-
                     </ul>
                 </div>
             </div>
@@ -79,17 +77,7 @@ $this->inlineScript()
 
     <div class="app-content">
         <main class="container">
-
-        <?php if ($flashes = $this->flash()) :?>
-            <ul>
-                <?php foreach($flashes as $message) : ?>
-                    <li><?php echo $message; ?></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-
-        <?=$this->content?>
-
+            <?=$this->content?>
         </main>
     </div>
 
@@ -97,7 +85,7 @@ $this->inlineScript()
         <div class="container">
             <hr />
             <p>
-                &copy; 2005 - <?=date('Y')?> by Zend Technologies Ltd. All rights reserved.
+                &copy; 2005 - <?=date('Y')?> by Laminas Technologies Ltd. All rights reserved.
             </p>
         </div>
     </footer>
