@@ -72,6 +72,15 @@
             "AppTest\\": "test/AppTest/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/michalbundyra/mezzio-authorization-acl",
+            "no-api": true
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
         "post-create-project-cmd": [
             "@development-enable"
@@ -94,20 +103,11 @@
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
     },
     "support": {
-        "docs": "https://docs.mezzio.dev/mezzio/",
         "issues": "https://github.com/mezzio/mezzio-skeleton/issues",
-        "source": "https://github.com/mezzio/mezzio-skeleton",
-        "rss": "https://github.com/mezzio/mezzio-skeleton/releases.atom",
+        "forum": "https://discourse.laminas.dev",
         "chat": "https://laminas.dev/chat",
-        "forum": "https://discourse.laminas.dev"
-    },
-    "repositories" : [
-        {
-            "type" : "vcs",
-            "url" : "https://github.com/michalbundyra/mezzio-authorization-acl",
-            "no-api": true
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true
+        "source": "https://github.com/mezzio/mezzio-skeleton",
+        "docs": "https://docs.mezzio.dev/mezzio/",
+        "rss": "https://github.com/mezzio/mezzio-skeleton/releases.atom"
+    }
 }
