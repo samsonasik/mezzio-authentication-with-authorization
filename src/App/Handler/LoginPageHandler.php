@@ -30,6 +30,7 @@ class LoginPageHandler implements MiddlewareInterface
         $guard     = $request->getAttribute(CsrfMiddleware::GUARD_ATTRIBUTE);
         $loginForm = new LoginForm($guard);
 
+        /** @var array $prg */
         $prg = $request->getParsedBody();
         if ($prg) {
             $loginForm->setData($prg);

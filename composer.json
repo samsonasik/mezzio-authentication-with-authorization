@@ -45,7 +45,8 @@
         "laminas/laminas-coding-standard": "~2.0.0",
         "laminas/laminas-development-mode": "^3.1",
         "mezzio/mezzio-tooling": "^1.0",
-        "phpunit/phpunit": "^7.0.1"
+        "phpunit/phpunit": "^7.0.1",
+        "vimeo/psalm": "^3.8"
     },
     "config": {
         "sort-packages": true
@@ -78,7 +79,7 @@
         "post-create-project-cmd": [
             "@development-enable"
         ],
-        "analyze": "phpstan analyze -l max ./src ./config",
+        "analyze": "vendor/bin/psalm --show-info=false",
         "check": [
             "@cs-check",
             "@test",

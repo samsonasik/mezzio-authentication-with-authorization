@@ -14,6 +14,7 @@ use Mezzio\Csrf\SessionCsrfGuard;
 
 class LoginForm extends Form implements InputFilterProviderInterface
 {
+    /** @var SessionCsrfGuard */
     private $guard;
 
     public function __construct(SessionCsrfGuard $guard)
@@ -82,7 +83,7 @@ class LoginForm extends Form implements InputFilterProviderInterface
                     [
                         'name'    => 'callback',
                         'options' => [
-                            'callback' => function ($value) {
+                            'callback' => function (string $value) {
                                 return $this->guard->validateToken($value);
                             },
                             'messages' => [
