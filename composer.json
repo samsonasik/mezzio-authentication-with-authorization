@@ -30,7 +30,7 @@
         "mezzio/mezzio-authentication": "^1.1.0",
         "mezzio/mezzio-authentication-session": "^1.0.1",
         "mezzio/mezzio-authorization": "^1.0",
-        "mezzio/mezzio-authorization-acl": "dev-hotfix/is-granted-failed-routing",
+        "mezzio/mezzio-authorization-acl": "^1.0.2",
         "mezzio/mezzio-csrf": "^1.0.0",
         "mezzio/mezzio-flash": "^1.0.0",
         "mezzio/mezzio-helpers": "^5.0",
@@ -72,20 +72,13 @@
             "AppTest\\": "test/AppTest/"
         }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/michalbundyra/mezzio-authorization-acl",
-            "no-api": true
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
         "post-create-project-cmd": [
             "@development-enable"
         ],
-        "analyze": "phpstan analyze -l max -c ./phpstan.installer.neon ./src ./config",
+        "analyze": "phpstan analyze -l max ./src ./config",
         "check": [
             "@cs-check",
             "@test",
