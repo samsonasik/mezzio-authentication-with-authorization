@@ -1,10 +1,13 @@
 <?php
+
 // config/autoload/global.php
+
+declare(strict_types=1);
 
 return [
     // ...
     'mezzio-authorization-acl' => [
-        'roles' => [
+        'roles'     => [
             'guest' => [],
             'user'  => ['guest'],
             'admin' => ['user'],
@@ -16,7 +19,7 @@ return [
             'login',
             'logout',
         ],
-        'allow' => [
+        'allow'     => [
             'guest' => [
                 'login',
                 'api.ping',

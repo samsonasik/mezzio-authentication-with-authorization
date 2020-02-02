@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace App\Handler;
 
 use Laminas\Diactoros\Response\HtmlResponse;
-use Laminas\Diactoros\Response\JsonResponse;
-use Mezzio\Router;
 use Mezzio\Template;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -14,31 +12,15 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class HomePageHandler implements RequestHandlerInterface
 {
-    private $containerName;
-
-    private $router;
-
     private $template;
 
-    public function __construct(
-        Router\RouterInterface $router,
-        ?Template\TemplateRendererInterface $template = null,
-        string $containerName
-    ) {
-        $this->router        = $router;
-        $this->template      = $template;
-        $this->containerName = $containerName;
+    public function __construct(Template\TemplateRendererInterface $template)
+    {
+        $this->template = $template;
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        if (! $this->template) {
-            return new JsonResponse([
-                'welcome' => 'Congratulations! You have installed the zend-expressive skeleton application.',
-                'docsUrl' => 'https://docs.zendframework.com/zend-expressive/',
-            ]);
-        }
-
         $data = [];
 
         $data['containerName'] = 'Zend Servicemanager';

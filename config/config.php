@@ -13,31 +13,31 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
-    \Mezzio\Authorization\ConfigProvider::class,
-    \Mezzio\Flash\ConfigProvider::class,
-    \Mezzio\Csrf\ConfigProvider::class,
-    \Laminas\I18n\ConfigProvider::class,
-    \Laminas\Form\ConfigProvider::class,
-    \Laminas\InputFilter\ConfigProvider::class,
-    \Laminas\Filter\ConfigProvider::class,
-    \Laminas\Hydrator\ConfigProvider::class,
-    \Mezzio\Session\Ext\ConfigProvider::class,
-    \Mezzio\Authentication\Session\ConfigProvider::class,
-    \Mezzio\Authentication\ConfigProvider::class,
-    \Mezzio\Session\ConfigProvider::class,
-    \Laminas\HttpHandlerRunner\ConfigProvider::class,
-    \Mezzio\LaminasView\ConfigProvider::class,
-    \Mezzio\Router\LaminasRouter\ConfigProvider::class,
-    \Mezzio\Authorization\Acl\ConfigProvider::class,
-    \Mezzio\Authorization\ConfigProvider::class,
-    \Laminas\Router\ConfigProvider::class,
-    \Laminas\Validator\ConfigProvider::class,
+    Mezzio\Authorization\ConfigProvider::class,
+    Mezzio\Flash\ConfigProvider::class,
+    Mezzio\Csrf\ConfigProvider::class,
+    Laminas\I18n\ConfigProvider::class,
+    Laminas\Form\ConfigProvider::class,
+    Laminas\InputFilter\ConfigProvider::class,
+    Laminas\Filter\ConfigProvider::class,
+    Laminas\Hydrator\ConfigProvider::class,
+    Mezzio\Session\Ext\ConfigProvider::class,
+    Mezzio\Authentication\Session\ConfigProvider::class,
+    Mezzio\Authentication\ConfigProvider::class,
+    Mezzio\Session\ConfigProvider::class,
+    Laminas\HttpHandlerRunner\ConfigProvider::class,
+    Mezzio\LaminasView\ConfigProvider::class,
+    Mezzio\Router\LaminasRouter\ConfigProvider::class,
+    Mezzio\Authorization\Acl\ConfigProvider::class,
+    Mezzio\Authorization\ConfigProvider::class,
+    Laminas\Router\ConfigProvider::class,
+    Laminas\Validator\ConfigProvider::class,
     // Include cache configuration
     new ArrayProvider($cacheConfig),
 
-    \Mezzio\Helper\ConfigProvider::class,
-    \Mezzio\ConfigProvider::class,
-    \Mezzio\Router\ConfigProvider::class,
+    Mezzio\Helper\ConfigProvider::class,
+    Mezzio\ConfigProvider::class,
+    Mezzio\Router\ConfigProvider::class,
 
     // Default App module config
     App\ConfigProvider::class,
@@ -52,6 +52,6 @@ $aggregator = new ConfigAggregator([
 
     // Load development config if it exists
     new PhpFileProvider(realpath(__DIR__) . '/development.config.php'),
-], $cacheConfig['config_cache_path'], [\Laminas\ZendFrameworkBridge\ConfigPostProcessor::class]);
+], $cacheConfig['config_cache_path'], [Laminas\ZendFrameworkBridge\ConfigPostProcessor::class]);
 
 return $aggregator->getMergedConfig();

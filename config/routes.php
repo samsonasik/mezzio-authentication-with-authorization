@@ -34,30 +34,28 @@ use Psr\Container\ContainerInterface;
  *     'contact'
  * );
  */
-return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
+
+return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container): void {
     $app->get('/', [
-        \Mezzio\Authentication\AuthenticationMiddleware::class,
+        Mezzio\Authentication\AuthenticationMiddleware::class,
         App\Handler\HomePageHandler::class,
     ], 'home');
 
     $app->route('/admin', [
-        \Zend\Expressive\Authentication\AuthenticationMiddleware::class,
+        Zend\Expressive\Authentication\AuthenticationMiddleware::class,
         App\Handler\AdminPageHandler::class,
     ], ['GET'], 'admin');
 
     $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
-	$app->route('/login', [
+    $app->route('/login', [
         //csrf handling
         CsrfMiddleware::class,
-
         // prg handling
         PrgMiddleware::class,
-
         // the login page
         App\Handler\LoginPageHandler::class,
-
         // authentication handling
-        \Mezzio\Authentication\AuthenticationMiddleware::class,
-    ], ['GET', 'POST'],'login');
+        Mezzio\Authentication\AuthenticationMiddleware::class,
+    ], ['GET', 'POST'], 'login');
     $app->get('/logout', App\Handler\LogoutHandler::class, 'logout');
 };

@@ -20,7 +20,8 @@ use Psr\Container\ContainerInterface;
 /**
  * Setup middleware pipeline:
  */
-return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
+
+return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container): void {
     // The error handler should be the first (most outer) middleware to catch
     // all Exceptions.
     $app->pipe(ErrorHandler::class);
@@ -70,8 +71,8 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     // - route-based validation
     // - etc.
 
-    $app->pipe(\App\Middleware\AuthorizationMiddleware::class);
-    $app->pipe(\Mezzio\Authorization\AuthorizationMiddleware::class);
+    $app->pipe(App\Middleware\AuthorizationMiddleware::class);
+    $app->pipe(Mezzio\Authorization\AuthorizationMiddleware::class);
 
     // Register the dispatch middleware in the middleware pipeline
     $app->pipe(DispatchMiddleware::class);
