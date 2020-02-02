@@ -10,8 +10,6 @@ $ cp config/autoload/local.php.dist config/autoload/local.php
 $ composer development-enable
 ```
 
-Modify the `config/autoload/local.php` as your local dev db config.
-
 Configuration
 -------------
 
@@ -39,6 +37,10 @@ INSERT 0 1
 mezzio=# INSERT INTO users(username, password, role) VALUES('admin', crypt('123456', gen_salt('bf')), 'admin');
 INSERT 0 1
 ```
+
+and you will get the following data:
+
+![user data](https://user-images.githubusercontent.com/459648/73605160-567f0a80-45cd-11ea-9e1d-898df2827758.png)
 
 The Authorization Config
 ------------------------
@@ -96,4 +98,4 @@ $ php -S localhost:8080 -t public
 
 4. Login with username : samsonasik, password: 123456 OR username : admin, password : 123456. If you're a logged in user with "user" role, and open `/admin` page, it will show like the following (403 Forbidden), eg: see in [Firefox developer tools](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor) under "Network" monitor:
 
-<img src="./authorized-user-cannot-access-admin-page.png">
+![authorized-user-cannot-access-admin-page](https://user-images.githubusercontent.com/459648/73605169-73b3d900-45cd-11ea-9085-3c2bc5e9d966.png)
