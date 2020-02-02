@@ -13,7 +13,6 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
-    Mezzio\Authorization\ConfigProvider::class,
     Mezzio\Flash\ConfigProvider::class,
     Mezzio\Csrf\ConfigProvider::class,
     Laminas\I18n\ConfigProvider::class,
@@ -28,8 +27,8 @@ $aggregator = new ConfigAggregator([
     Laminas\HttpHandlerRunner\ConfigProvider::class,
     Mezzio\LaminasView\ConfigProvider::class,
     Mezzio\Router\LaminasRouter\ConfigProvider::class,
-    Mezzio\Authorization\Acl\ConfigProvider::class,
     Mezzio\Authorization\ConfigProvider::class,
+    Mezzio\Authorization\Acl\ConfigProvider::class,
     Laminas\Router\ConfigProvider::class,
     Laminas\Validator\ConfigProvider::class,
     // Include cache configuration
