@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Middleware\PrgMiddleware;
 use Mezzio\Application;
+use Mezzio\Csrf\CsrfMiddleware;
 use Mezzio\MiddlewareFactory;
 use Psr\Container\ContainerInterface;
 
@@ -49,6 +50,9 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
 
     $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
 	$app->route('/login', [
+        //csrf handling
+        CsrfMiddleware::class,
+
         // prg handling
         PrgMiddleware::class,
 
