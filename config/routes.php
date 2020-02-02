@@ -57,13 +57,10 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
         PrgMiddleware::class,
 
         // the login page
-	    App\Handler\LoginPageHandler::class,
+        App\Handler\LoginPageHandler::class,
 
         // authentication handling
         \Mezzio\Authentication\AuthenticationMiddleware::class,
-
-        // prg handling
-        PrgMiddleware::class,
     ], ['GET', 'POST'],'login');
     $app->get('/logout', App\Handler\LogoutHandler::class, 'logout');
 };
