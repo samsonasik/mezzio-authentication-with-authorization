@@ -10,18 +10,13 @@ use Laminas\View\Helper\AbstractHelper;
 use Mezzio\Flash\FlashMessages;
 use Mezzio\Session\Session;
 
-use function session_start;
-use function session_status;
-
-use const PHP_SESSION_NONE;
-
 class Flash extends AbstractHelper
 {
+    use SessionTrait;
+
     public function __invoke(): array
     {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
+        $this->checkIsStarted();
 
         return FlashMessages::createFromSession(
             new Session($_SESSION)

@@ -8,18 +8,13 @@ use Laminas\View\Helper\AbstractHelper;
 use Mezzio\Authentication\UserInterface;
 use Mezzio\Session\Session;
 
-use function session_start;
-use function session_status;
-
-use const PHP_SESSION_NONE;
-
 class GetRole extends AbstractHelper
 {
+    use SessionTrait;
+
     public function __invoke(): string
     {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
+        $this->checkIsStarted();
 
         $session     = new Session($_SESSION);
         $hasLoggedIn = $session->has(UserInterface::class);
