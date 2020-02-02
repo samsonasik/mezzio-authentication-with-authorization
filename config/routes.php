@@ -36,9 +36,6 @@ use Psr\Container\ContainerInterface;
  */
 return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
     $app->get('/', [
-        // prg handling
-        PrgMiddleware::class,
-
         \Mezzio\Authentication\AuthenticationMiddleware::class,
         App\Handler\HomePageHandler::class,
     ], 'home');
