@@ -49,9 +49,15 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
 
     $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
 	$app->route('/login', [
+        // prg handling
+        PrgMiddleware::class,
+
+        // the login page
 	    App\Handler\LoginPageHandler::class,
-	    // for authentication next handling
+
+        // authentication handling
         \Mezzio\Authentication\AuthenticationMiddleware::class,
+
         // prg handling
         PrgMiddleware::class,
     ], ['GET', 'POST'],'login');
