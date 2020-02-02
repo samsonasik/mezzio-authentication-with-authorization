@@ -21,27 +21,9 @@ class HomePageHandlerTest extends TestCase
     /** @var ContainerInterface|ObjectProphecy */
     protected $container;
 
-    /** @var RouterInterface|ObjectProphecy */
-    protected $router;
-
     protected function setUp()
     {
         $this->container = $this->prophesize(ContainerInterface::class);
-        $this->router    = $this->prophesize(RouterInterface::class);
-    }
-
-    public function testReturnsJsonResponseWhenNoTemplateRendererProvided()
-    {
-        $homePage = new HomePageHandler(
-            $this->router->reveal(),
-            null,
-            get_class($this->container->reveal())
-        );
-        $response = $homePage->handle(
-            $this->prophesize(ServerRequestInterface::class)->reveal()
-        );
-
-        $this->assertInstanceOf(JsonResponse::class, $response);
     }
 
     public function testReturnsHtmlResponseWhenTemplateRendererProvided()
@@ -52,9 +34,7 @@ class HomePageHandlerTest extends TestCase
             ->willReturn('');
 
         $homePage = new HomePageHandler(
-            $this->router->reveal(),
-            $renderer->reveal(),
-            get_class($this->container->reveal())
+            $renderer->reveal()
         );
 
         $response = $homePage->handle(
