@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Middleware;
 
 use Laminas\Diactoros\Response\RedirectResponse;
-use Mezzio\Authentication\DefaultUser;
 use Mezzio\Authentication\UserInterface;
 use Mezzio\Session\SessionMiddleware;
 use Psr\Http\Message\ResponseInterface;
@@ -15,10 +14,12 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class AuthorizationMiddleware implements MiddlewareInterface
 {
+    private $user;
     private $redirect;
 
-    public function __construct(string $redirect)
+    public function __construct(callable $user, string $redirect)
     {
+        $this->user     = $user;
         $this->redirect = $redirect;
     }
 
@@ -35,10 +36,7 @@ class AuthorizationMiddleware implements MiddlewareInterface
 
             $request = $request->withAttribute(
                 UserInterface::class,
-                new DefaultUser(
-                    $user,
-                    $roles
-                )
+                ($this->user)($user, $roles)
             );
 
             $response = $handler->handle($request);
@@ -58,10 +56,7 @@ class AuthorizationMiddleware implements MiddlewareInterface
         $sessionData = $session->get(UserInterface::class);
         $request     = $request->withAttribute(
             UserInterface::class,
-            new DefaultUser(
-                $sessionData['username'],
-                $sessionData['roles']
-            )
+            ($this->user)($sessionData['username'], $sessionData['roles'])
         );
 
         return $handler->handle($request);
