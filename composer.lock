@@ -3281,12 +3281,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/samsonasik/mezzio-session-ext",
-                "reference": "4587f1308a5691423a9acb651077e9d65e08b94f"
+                "reference": "ed8e85dd222e4e71c6ba4e4526af6b5cdf2b4b57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/samsonasik/mezzio-session-ext/zipball/4587f1308a5691423a9acb651077e9d65e08b94f",
-                "reference": "4587f1308a5691423a9acb651077e9d65e08b94f",
+                "url": "https://api.github.com/repos/samsonasik/mezzio-session-ext/zipball/ed8e85dd222e4e71c6ba4e4526af6b5cdf2b4b57",
+                "reference": "ed8e85dd222e4e71c6ba4e4526af6b5cdf2b4b57",
                 "shasum": ""
             },
             "require": {
@@ -3366,7 +3366,7 @@
                 "chat": "https://laminas.dev/chat",
                 "forum": "https://discourse.laminas.dev"
             },
-            "time": "2020-01-26T21:00:50+00:00"
+            "time": "2020-02-04T08:38:10+00:00"
         },
         {
             "name": "mezzio/mezzio-template",
@@ -3970,16 +3970,16 @@
         },
         {
             "name": "amphp/byte-stream",
-            "version": "v1.7.1",
+            "version": "v1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/byte-stream.git",
-                "reference": "9d8205686a004948475dc43f8a88d2fa5e75a113"
+                "reference": "1e52f1752b2e20e2a7e464476ef887a2388e3832"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/byte-stream/zipball/9d8205686a004948475dc43f8a88d2fa5e75a113",
-                "reference": "9d8205686a004948475dc43f8a88d2fa5e75a113",
+                "url": "https://api.github.com/repos/amphp/byte-stream/zipball/1e52f1752b2e20e2a7e464476ef887a2388e3832",
+                "reference": "1e52f1752b2e20e2a7e464476ef887a2388e3832",
                 "shasum": ""
             },
             "require": {
@@ -4025,7 +4025,7 @@
                 "non-blocking",
                 "stream"
             ],
-            "time": "2019-10-27T14:33:41+00:00"
+            "time": "2020-01-29T18:22:23+00:00"
         },
         {
             "name": "composer/xdebug-handler",
@@ -6357,16 +6357,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.5.3",
+            "version": "3.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "557a1fc7ac702c66b0bbfe16ab3d55839ef724cb"
+                "reference": "dceec07328401de6211037abbb18bda423677e26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/557a1fc7ac702c66b0bbfe16ab3d55839ef724cb",
-                "reference": "557a1fc7ac702c66b0bbfe16ab3d55839ef724cb",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/dceec07328401de6211037abbb18bda423677e26",
+                "reference": "dceec07328401de6211037abbb18bda423677e26",
                 "shasum": ""
             },
             "require": {
@@ -6404,20 +6404,20 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-12-04T04:46:47+00:00"
+            "time": "2020-01-30T22:20:29+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v5.0.3",
+            "version": "v5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "345ab6ecb456b5147ea3b3271d7f1f00aadfd257"
+                "reference": "91c294166c38d8c0858a86fad76d8c14dc1144c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/345ab6ecb456b5147ea3b3271d7f1f00aadfd257",
-                "reference": "345ab6ecb456b5147ea3b3271d7f1f00aadfd257",
+                "url": "https://api.github.com/repos/symfony/console/zipball/91c294166c38d8c0858a86fad76d8c14dc1144c8",
+                "reference": "91c294166c38d8c0858a86fad76d8c14dc1144c8",
                 "shasum": ""
             },
             "require": {
@@ -6480,7 +6480,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2020-01-19T11:13:19+00:00"
+            "time": "2020-01-25T15:56:29+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
