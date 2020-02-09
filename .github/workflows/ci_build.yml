@@ -1,4 +1,4 @@
-name: "Continuous Integration"
+name: "ci build"
 
 on: [push, pull_request]
 
@@ -20,5 +20,4 @@ jobs:
       - 
         name: "Run test suite"
         run: "composer  test"
-name: ci_build
 true: "pull_request push"
