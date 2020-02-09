@@ -27,38 +27,30 @@ class AuthorizationMiddleware implements MiddlewareInterface
         ServerRequestInterface $request,
         RequestHandlerInterface $handler
     ): ResponseInterface {
-        $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
+        $session     = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
+        $sessionData = $session->get(UserInterface::class);
 
-        // No Session data
-        if (! $session->has(UserInterface::class)) {
-            $user  = '';
-            $roles = ['guest'];
+        $request  = $request->withAttribute(
+            UserInterface::class,
+            $user = ($this->user)($sessionData['username'] ?? '', $sessionData['roles'] ?? ['guest'])
+        );
 
-            $request = $request->withAttribute(
-                UserInterface::class,
-                ($this->user)($user, $roles)
-            );
+        $response      = $handler->handle($request);
+        $isGuest       = $user->getRoles() === ['guest'];
+        $isAtLoginPage = $request->getUri()->getPath() === $this->redirect;
 
-            $response = $handler->handle($request);
-            if ($response->getStatusCode() === 403) {
-                return new RedirectResponse($this->redirect);
+        if ($isGuest && ! $isAtLoginPage) {
+            if ($response->getStatusCode() !== 403) {
+                return $response;
             }
 
-            return $response;
+            return new RedirectResponse($this->redirect);
         }
 
-        // at /login page, redirect to authenticated page
-        if ($request->getUri()->getPath() === $this->redirect) {
+        if (! $isGuest && $isAtLoginPage) {
             return new RedirectResponse('/');
         }
 
-        // define roles from DB
-        $sessionData = $session->get(UserInterface::class);
-        $request     = $request->withAttribute(
-            UserInterface::class,
-            ($this->user)($sessionData['username'], $sessionData['roles'])
-        );
-
-        return $handler->handle($request);
+        return $response;
     }
 }
