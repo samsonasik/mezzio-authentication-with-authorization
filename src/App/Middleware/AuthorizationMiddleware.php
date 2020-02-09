@@ -40,11 +40,11 @@ class AuthorizationMiddleware implements MiddlewareInterface
             );
 
             $response = $handler->handle($request);
-            if ($request->getUri()->getPath() === $this->redirect || $response->getStatusCode() !== 403) {
-                return $response;
+            if ($response->getStatusCode() === 403) {
+                return new RedirectResponse($this->redirect);
             }
 
-            return new RedirectResponse($this->redirect);
+            return $response;
         }
 
         // at /login page, redirect to authenticated page
