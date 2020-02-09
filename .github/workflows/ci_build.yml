@@ -5,11 +5,12 @@ on: [push, pull_request]
 env:
   REQUIRED_PHP_EXTENSIONS: "intl"
 
-jobs: 
-  build: 
+jobs:
+  build:
     runs-on: ubuntu-latest
-    steps: 
-      - uses: actions/checkout@v2
+    steps:
+      - name: Setup PHP Action
+        uses: shivammathur/setup-php@1.8.2
       - name: "Validate composer.json and composer.lock"
         run: "composer validate"
       - name: "Install dependencies"
