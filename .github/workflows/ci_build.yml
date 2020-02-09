@@ -2,6 +2,9 @@ name: "ci build"
 
 on: [push, pull_request]
 
+env:
+  REQUIRED_PHP_EXTENSIONS: "intl"
+
 jobs: 
   build: 
     runs-on: ubuntu-latest
