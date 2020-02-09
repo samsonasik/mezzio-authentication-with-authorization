@@ -1,25 +1,21 @@
-name: "ci_build"
-
-on:
-  pull_request
-  push
-    
-jobs:
-  build:
-
+--- 
+jobs: 
+  build: 
     runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Validate composer.json and composer.lock
-      run: composer validate
-
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress --no-suggest
-
-    - name: CS Check
-      run: composer cs-check
-
-     - name: Run test suite
-       run: composer  test
+    steps: 
+      - 
+        uses: actions/checkout@v2
+      - 
+        name: "Validate composer.json and composer.lock"
+        run: "composer validate"
+      - 
+        name: "Install dependencies"
+        run: "composer install --prefer-dist --no-progress --no-suggest"
+      - 
+        name: "CS Check"
+        run: "composer cs-check"
+      - 
+        name: "Run test suite"
+        run: "composer  test"
+name: ci_build
+true: "pull_request push"
