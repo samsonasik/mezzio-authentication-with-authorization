@@ -10,12 +10,8 @@ use Mezzio\Session\Session;
 
 class GetRole extends AbstractHelper
 {
-    use SessionTrait;
-
     public function __invoke(): string
     {
-        $this->checkIsStarted();
-
         $session     = new Session($_SESSION);
         $hasLoggedIn = $session->has(UserInterface::class);
 

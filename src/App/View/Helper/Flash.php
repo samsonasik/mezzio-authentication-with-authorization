@@ -12,12 +12,8 @@ use Mezzio\Session\Session;
 
 class Flash extends AbstractHelper
 {
-    use SessionTrait;
-
     public function __invoke(): array
     {
-        $this->checkIsStarted();
-
         return FlashMessages::createFromSession(
             new Session($_SESSION)
         )->getFlashes();
