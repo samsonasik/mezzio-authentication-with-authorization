@@ -12,6 +12,8 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
+use function current;
+
 class AuthorizationMiddleware implements MiddlewareInterface
 {
     private $user;
@@ -36,7 +38,7 @@ class AuthorizationMiddleware implements MiddlewareInterface
         );
 
         $response      = $handler->handle($request);
-        $isGuest       = $user->getRoles() === ['guest'];
+        $isGuest       = current($user->getRoles()) === 'guest';
         $isAtLoginPage = $request->getUri()->getPath() === $this->redirect;
 
         if ($isGuest && ! $isAtLoginPage) {

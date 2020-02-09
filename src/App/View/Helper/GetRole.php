@@ -8,6 +8,8 @@ use Laminas\View\Helper\AbstractHelper;
 use Mezzio\Authentication\UserInterface;
 use Mezzio\Session\Session;
 
+use function current;
+
 class GetRole extends AbstractHelper
 {
     public function __invoke(): string
@@ -19,6 +21,6 @@ class GetRole extends AbstractHelper
             return 'guest';
         }
 
-        return $session->get(UserInterface::class)['roles'][0];
+        return current($session->get(UserInterface::class)['roles']);
     }
 }
