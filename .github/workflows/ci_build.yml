@@ -1,0 +1,20 @@
+name: "ci build"
+
+on: [push, pull_request]
+
+env:
+  REQUIRED_PHP_EXTENSIONS: "intl"
+
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - name: "Validate composer.json and composer.lock"
+        run: "composer validate"
+      - name: "Install dependencies"
+        run: "composer install --prefer-dist --no-progress --no-suggest"
+      - name: "CS Check"
+        run: "composer cs-check"
+      - name: "Run test suite"
+        run: "composer  test"
