@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
+        with:
+          extensions: "intl"
+          php-version: "7.4"
       - uses: actions/checkout@v2
       - name: "Validate composer.json and composer.lock"
         run: "composer validate"
