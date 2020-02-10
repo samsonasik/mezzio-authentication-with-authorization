@@ -43,4 +43,10 @@ jobs:
       - name: "DB Fixture"
         run: "cp config/autoload/local.php.travis.dist config/autoload/local.php && docker exec -d postgres psql -h 127.0.0.1 -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
-        run: "composer  test"
+        run: "composer  test-coverage"
+      - name: "Generate badge"
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./clover.xml
+          fail_ci_if_error: true

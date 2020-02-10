@@ -18,10 +18,6 @@ trait SessionTrait
     public function checkIsStarted(): void
     {
         if (session_status() === PHP_SESSION_NONE) {
-            if (headers_sent()) {
-                ob_start();
-            }
-
             session_start();
         }
     }
