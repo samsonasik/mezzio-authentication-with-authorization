@@ -1,12 +1,72 @@
 name: "ci build"
 
-on: [push, pull_request]
-
-env:
-  REQUIRED_PHP_EXTENSIONS: "intl"
-
+on:
+  pull_request:
+  push:
+    branches:
+      - "master"
 jobs:
-  build:
+  build-php71:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup PHP Action
+        uses: shivammathur/setup-php@1.8.2
+        with:
+          extensions: "intl"
+          php-version: "7.1"
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: "Validate composer.json and composer.lock"
+        run: "composer validate"
+      - name: "Install dependencies"
+        run: "composer install --prefer-dist --no-progress --no-suggest"
+      - name: "Code analyze"
+        run: "composer analyze"
+      - name: "CS Check"
+        run: "composer cs-check"
+      - name: "Run test suite"
+        run: "composer  test"
+  build-php72:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup PHP Action
+        uses: shivammathur/setup-php@1.8.2
+        with:
+          extensions: "intl"
+          php-version: "7.2"
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: "Validate composer.json and composer.lock"
+        run: "composer validate"
+      - name: "Install dependencies"
+        run: "composer install --prefer-dist --no-progress --no-suggest"
+      - name: "Code analyze"
+        run: "composer analyze"
+      - name: "CS Check"
+        run: "composer cs-check"
+      - name: "Run test suite"
+        run: "composer  test"
+  build-php73:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup PHP Action
+        uses: shivammathur/setup-php@1.8.2
+        with:
+          extensions: "intl"
+          php-version: "7.3"
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: "Validate composer.json and composer.lock"
+        run: "composer validate"
+      - name: "Install dependencies"
+        run: "composer install --prefer-dist --no-progress --no-suggest"
+      - name: "Code analyze"
+        run: "composer analyze"
+      - name: "CS Check"
+        run: "composer cs-check"
+      - name: "Run test suite"
+        run: "composer  test"
+  build-php74:
     runs-on: ubuntu-latest
     steps:
       - name: Setup PHP Action
@@ -14,11 +74,14 @@ jobs:
         with:
           extensions: "intl"
           php-version: "7.4"
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: "Validate composer.json and composer.lock"
         run: "composer validate"
       - name: "Install dependencies"
         run: "composer install --prefer-dist --no-progress --no-suggest"
+      - name: "Code analyze"
+        run: "composer analyze"
       - name: "CS Check"
         run: "composer cs-check"
       - name: "Run test suite"
