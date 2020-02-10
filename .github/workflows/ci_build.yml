@@ -46,6 +46,9 @@ jobs:
         run: "composer  test-coverage"
       - name: "Generate badge"
         uses: codecov/codecov-action@v1
+        with:
+          file: ./clover.xml
+          fail_ci_if_error: true
         env:
           CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}"
         run: "bash <(curl -s https://codecov.io/bash)"
