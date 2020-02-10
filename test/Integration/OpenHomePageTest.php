@@ -19,8 +19,6 @@ class OpenHomePageTest extends TestCase
 
     public function testAsAguestRedirectToLoginPage()
     {
-        BufferChecker::check();
-
         $uri           = new Uri('/');
         $serverRequest = new ServerRequest([], [], $uri);
 
