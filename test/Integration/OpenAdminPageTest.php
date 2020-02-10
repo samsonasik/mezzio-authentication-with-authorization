@@ -9,16 +9,11 @@ use Laminas\Diactoros\Uri;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
-use function session_destroy;
-use function session_status;
-
-use const PHP_SESSION_ACTIVE;
-
 class OpenAdminPageTest extends TestCase
 {
     private $app;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->app = AppFactory::create();
     }
@@ -65,12 +60,5 @@ class OpenAdminPageTest extends TestCase
 
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(200, $response->getStatusCode());
-    }
-
-    public function tearDown()
-    {
-        if (PHP_SESSION_ACTIVE === session_status()) {
-            session_destroy();
-        }
     }
 }

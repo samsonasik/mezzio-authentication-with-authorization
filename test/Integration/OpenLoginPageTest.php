@@ -9,16 +9,11 @@ use Laminas\Diactoros\Uri;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
-use function session_destroy;
-use function session_status;
-
-use const PHP_SESSION_ACTIVE;
-
 class OpenLoginPageTest extends TestCase
 {
     private $app;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->app = AppFactory::create();
     }
@@ -39,12 +34,5 @@ class OpenLoginPageTest extends TestCase
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals('/', $response->getHeaderLine('Location'));
-    }
-
-    public function tearDown()
-    {
-        if (PHP_SESSION_ACTIVE === session_status()) {
-            session_destroy();
-        }
     }
 }
