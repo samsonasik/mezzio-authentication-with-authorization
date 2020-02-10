@@ -18,7 +18,7 @@ class OpenPingPageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    public function testOpenPingPageAsAguestGotOK()
+    public function testOpenPingPageAsAguestGot200OK()
     {
         $uri           = new Uri('/api/ping');
         $serverRequest = new ServerRequest([], [], $uri);
