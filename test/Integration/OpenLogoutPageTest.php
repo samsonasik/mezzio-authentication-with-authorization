@@ -17,9 +17,6 @@ class OpenLogoutPageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    /**
-     * @runInSeparateProcess
-     */
     public function testOpenLogoutPageAsAuserRedirectToLoginPage()
     {
         $uri           = new Uri('/logout');

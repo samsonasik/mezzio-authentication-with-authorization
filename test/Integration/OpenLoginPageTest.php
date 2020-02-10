@@ -18,9 +18,6 @@ class OpenLoginPageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    /**
-     * @runInSeparateProcess
-     */
     public function testOpenLoginPageAsAuserRedirectToHomePage()
     {
         $sessionData                    = [

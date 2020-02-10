@@ -19,9 +19,6 @@ class GetRoleTest extends TestCase
         $this->helper = new GetRole();
     }
 
-    /**
-     * @runInSeparateProcess
-     */
     public function testGetRoleUser()
     {
         session_start();
