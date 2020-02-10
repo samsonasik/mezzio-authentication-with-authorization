@@ -12,9 +12,7 @@ final class BufferChecker
 {
     public static function check()
     {
-        while (ob_get_level() > 0) {
-            ob_end_flush();
-        }
+        ob_end_flush();
         ob_start();
     }
 }
