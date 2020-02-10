@@ -35,7 +35,7 @@ jobs:
       - name: "CS Check"
         run: "composer cs-check"
       - name: "DB Fixture"
-        run: "psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
+        run: "cp config/autoload/local.php.travis.dist && psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
 
@@ -67,7 +67,7 @@ jobs:
       - name: "CS Check"
         run: "composer cs-check"
       - name: "DB Fixture"
-        run: "psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
+        run: "cp config/autoload/local.php.travis.dist && psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
 
@@ -99,7 +99,7 @@ jobs:
       - name: "CS Check"
         run: "composer cs-check"
       - name: "DB Fixture"
-        run: "psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
+        run: "cp config/autoload/local.php.travis.dist && psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
 
@@ -131,6 +131,6 @@ jobs:
       - name: "CS Check"
         run: "composer cs-check"
       - name: "DB Fixture"
-        run: "psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
+        run: "cp config/autoload/local.php.travis.dist && psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
