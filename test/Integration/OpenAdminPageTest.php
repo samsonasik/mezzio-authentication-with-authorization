@@ -9,6 +9,8 @@ use Laminas\Diactoros\Uri;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
+use function session_start;
+
 class OpenAdminPageTest extends TestCase
 {
     private $app;
@@ -60,5 +62,16 @@ class OpenAdminPageTest extends TestCase
 
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    public function tearDown(): void
+    {
+        session_start();
+        $_SESSION[UserInterface::class] = [
+            'username' => 'samsonasik',
+            'roles'    => [
+                'user',
+            ],
+        ];
     }
 }
