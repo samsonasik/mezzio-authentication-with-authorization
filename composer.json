@@ -106,8 +106,8 @@
         "development-status": "laminas-development-mode status",
         "mezzio": "mezzio --ansi",
         "serve": "php -S 0.0.0.0:8080 -t public/",
-        "test": "phpunit --colors=always -vvv",
-        "test-coverage": "phpunit --colors=always -vvv --coverage-clover coverage.xml"
+        "test": "phpunit --stderr --colors=always -vvv",
+        "test-coverage": "phpunit --stderr --colors=always -vvv --coverage-clover coverage.xml"
     },
     "support": {
         "issues": "https://github.com/mezzio/mezzio-skeleton/issues",
