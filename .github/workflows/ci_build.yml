@@ -19,7 +19,7 @@ jobs:
         uses: shivammathur/setup-php@1.8.2
         with:
           extensions: "intl"
-          php-version: "7.1"
+          php-version: "${{ matrix.php-versions }}"
       - name: Checkout
         uses: actions/checkout@v2
       - name: "Validate composer.json and composer.lock"
