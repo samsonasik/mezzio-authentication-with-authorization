@@ -43,7 +43,7 @@ jobs:
         run: "composer cs-check"
       - name: "Run test suite"
         run: "composer  test"
-  build-php72:
+  build-php73:
     runs-on: ubuntu-latest
     steps:
       - name: Setup PHP Action
