@@ -86,7 +86,7 @@
         "post-create-project-cmd": [
             "@development-enable"
         ],
-        "analyze": "vendor/bin/psalm --show-info=false",
+        "analyze": "psalm",
         "check": [
             "@cs-check",
             "@test",

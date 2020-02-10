@@ -19,6 +19,8 @@ jobs:
         run: "composer validate"
       - name: "Install dependencies"
         run: "composer install --prefer-dist --no-progress --no-suggest"
+      - name: "Code analyze"
+        run: "composer analyze"
       - name: "CS Check"
         run: "composer cs-check"
       - name: "Run test suite"
