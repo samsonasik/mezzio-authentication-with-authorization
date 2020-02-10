@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace AppTest\Handler;
+namespace AppTest\Unit\Handler;
 
-use App\Handler\HomePageHandler;
+use App\Handler\AdminPageHandler;
 use Laminas\Diactoros\Response\HtmlResponse;
 use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
@@ -12,7 +12,7 @@ use Prophecy\Argument;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class HomePageHandlerTest extends TestCase
+class AdminPageHandlerTest extends TestCase
 {
     /** @var ContainerInterface|ObjectProphecy */
     protected $container;
@@ -26,14 +26,14 @@ class HomePageHandlerTest extends TestCase
     {
         $renderer = $this->prophesize(TemplateRendererInterface::class);
         $renderer
-            ->render('app::home-page', Argument::type('array'))
+            ->render('app::admin-page', Argument::type('array'))
             ->willReturn('');
 
-        $homePage = new HomePageHandler(
+        $adminPage = new AdminPageHandler(
             $renderer->reveal()
         );
 
-        $response = $homePage->handle(
+        $response = $adminPage->handle(
             $this->prophesize(ServerRequestInterface::class)->reveal()
         );
 

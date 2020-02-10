@@ -6,8 +6,18 @@ on:
     branches:
       - "master"
 jobs:
+
   build-php71:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12.1
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+        - 5432:5432
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
@@ -24,10 +34,22 @@ jobs:
         run: "composer analyze"
       - name: "CS Check"
         run: "composer cs-check"
+      - name: "DB Fixture"
+        run: "psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
+
   build-php72:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12.1
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+        - 5432:5432
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
@@ -44,10 +66,22 @@ jobs:
         run: "composer analyze"
       - name: "CS Check"
         run: "composer cs-check"
+      - name: "DB Fixture"
+        run: "psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
+
   build-php73:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12.1
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+        - 5432:5432
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
@@ -64,10 +98,22 @@ jobs:
         run: "composer analyze"
       - name: "CS Check"
         run: "composer cs-check"
+      - name: "DB Fixture"
+        run: "psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
+
   build-php74:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12.1
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+        - 5432:5432
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
@@ -84,5 +130,7 @@ jobs:
         run: "composer analyze"
       - name: "CS Check"
         run: "composer cs-check"
+      - name: "DB Fixture"
+        run: "psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
