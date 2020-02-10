@@ -18,7 +18,7 @@ class OpenLoginPageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    public function testAsAuserRedirectToHomePage()
+    public function testOpenLoginPageAsAuserRedirectToHomePage()
     {
         $sessionData                    = [
             'username' => 'samsonasik',
@@ -34,5 +34,12 @@ class OpenLoginPageTest extends TestCase
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals('/', $response->getHeaderLine('Location'));
+    }
+
+    public function tearDown()
+    {
+        if (PHP_SESSION_ACTIVE === session_status()) {
+            session_destroy();
+        }
     }
 }

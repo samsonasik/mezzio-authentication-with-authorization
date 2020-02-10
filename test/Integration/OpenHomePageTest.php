@@ -18,7 +18,7 @@ class OpenHomePageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    public function testAsAguestRedirectToLoginPage()
+    /*public function testOpenHomePageAsAguestRedirectToLoginPage()
     {
         $uri           = new Uri('/');
         $serverRequest = new ServerRequest([], [], $uri);
@@ -26,9 +26,9 @@ class OpenHomePageTest extends TestCase
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
-    }
+    }*/
 
-    public function testAsAuserGotOK()
+    public function testOpenHomePageAsAuserGotOK()
     {
         $sessionData                    = [
             'username' => 'samsonasik',
@@ -43,5 +43,12 @@ class OpenHomePageTest extends TestCase
 
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    public function tearDown()
+    {
+        if (PHP_SESSION_ACTIVE === session_status()) {
+            session_destroy();
+        }
     }
 }

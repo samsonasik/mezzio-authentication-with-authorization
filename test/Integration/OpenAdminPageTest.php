@@ -18,7 +18,7 @@ class OpenAdminPageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    public function testAsAguestRedirectToLoginPage()
+    public function testOpenAdminPageAsAguestRedirectToLoginPage()
     {
         $uri           = new Uri('/admin');
         $serverRequest = new ServerRequest([], [], $uri);
@@ -28,7 +28,7 @@ class OpenAdminPageTest extends TestCase
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
     }
 
-    public function testAsAuserGot403()
+    public function testOpenAdminPageAsAuserGot403()
     {
         $sessionData                    = [
             'username' => 'samsonasik',
@@ -60,5 +60,12 @@ class OpenAdminPageTest extends TestCase
 
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    public function tearDown()
+    {
+        if (PHP_SESSION_ACTIVE === session_status()) {
+            session_destroy();
+        }
     }
 }
