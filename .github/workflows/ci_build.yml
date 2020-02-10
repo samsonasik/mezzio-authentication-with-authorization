@@ -23,7 +23,7 @@ jobs:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
         with:
-          extensions: "intl"
+          extensions: "intl,pdo"
           php-version: "7.1"
       - name: Checkout
         uses: actions/checkout@v2
@@ -56,7 +56,7 @@ jobs:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
         with:
-          extensions: "intl"
+          extensions: "intl,pdo"
           php-version: "7.2"
       - name: Checkout
         uses: actions/checkout@v2
@@ -89,7 +89,7 @@ jobs:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
         with:
-          extensions: "intl"
+          extensions: "intl,pdo"
           php-version: "7.3"
       - name: Checkout
         uses: actions/checkout@v2
@@ -122,7 +122,7 @@ jobs:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
         with:
-          extensions: "intl"
+          extensions: "intl,pdo"
           php-version: "7.4"
       - name: Checkout
         uses: actions/checkout@v2
