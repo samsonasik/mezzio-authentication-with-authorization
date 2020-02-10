@@ -23,6 +23,7 @@ class OpenHomePageTest extends TestCase
         $serverRequest = new ServerRequest([], [], $uri);
 
         $response = $this->app->handle($serverRequest);
+        echo (string) $response->getBody();
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
     }
