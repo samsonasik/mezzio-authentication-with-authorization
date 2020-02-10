@@ -34,8 +34,11 @@ jobs:
         run: "composer analyze"
       - name: "CS Check"
         run: "composer cs-check"
+      - name: Install PostgreSQL 12 client
+        run: |
+          sudo apt-get -yqq install libpq-dev
       - name: "DB Fixture"
-        run: "cp config/autoload/local.php.travis.dist && psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
+        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php.travis && psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
 
@@ -66,8 +69,11 @@ jobs:
         run: "composer analyze"
       - name: "CS Check"
         run: "composer cs-check"
+      - name: Install PostgreSQL 12 client
+        run: |
+          sudo apt-get -yqq install libpq-dev
       - name: "DB Fixture"
-        run: "cp config/autoload/local.php.travis.dist && psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
+        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php.travis && psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
 
@@ -98,8 +104,11 @@ jobs:
         run: "composer analyze"
       - name: "CS Check"
         run: "composer cs-check"
+      - name: Install PostgreSQL 12 client
+        run: |
+          sudo apt-get -yqq install libpq-dev
       - name: "DB Fixture"
-        run: "cp config/autoload/local.php.travis.dist && psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
+        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php.travis && psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
 
@@ -130,7 +139,10 @@ jobs:
         run: "composer analyze"
       - name: "CS Check"
         run: "composer cs-check"
+      - name: Install PostgreSQL 12 client
+        run: |
+          sudo apt-get -yqq install libpq-dev
       - name: "DB Fixture"
-        run: "cp config/autoload/local.php.travis.dist && psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
+        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php.travis && psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
