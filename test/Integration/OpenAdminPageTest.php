@@ -44,22 +44,4 @@ class OpenAdminPageTest extends TestCase
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(403, $response->getStatusCode());
     }
-
-    /** @runInSeparateProcess */
-    public function testAsAnAdminGot200()
-    {
-        $sessionData                    = [
-            'username' => 'admin',
-            'roles'    => [
-                'admin',
-            ],
-        ];
-        $_SESSION[UserInterface::class] = $sessionData;
-
-        $uri           = new Uri('/admin');
-        $serverRequest = new ServerRequest([], [], $uri);
-
-        $response = $this->app->handle($serverRequest);
-        $this->assertEquals(200, $response->getStatusCode());
-    }
 }
