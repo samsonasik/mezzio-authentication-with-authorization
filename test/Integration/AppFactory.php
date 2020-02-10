@@ -9,7 +9,7 @@ use Mezzio\MiddlewareFactory;
 
 final class AppFactory
 {
-    public static function create()
+    public static function create(): Application
     {
         $container = require 'config/container.php';
 
