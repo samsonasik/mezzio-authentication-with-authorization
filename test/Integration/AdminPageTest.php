@@ -9,7 +9,7 @@ use Laminas\Diactoros\Uri;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
-class OpenAdminPageTest extends TestCase
+class AdminPageTest extends TestCase
 {
     private $app;
 

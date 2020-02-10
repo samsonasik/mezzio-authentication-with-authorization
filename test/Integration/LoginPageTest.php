@@ -9,13 +9,24 @@ use Laminas\Diactoros\Uri;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
-class OpenLoginPageTest extends TestCase
+class LoginPageTest extends TestCase
 {
     private $app;
 
     protected function setUp(): void
     {
         $this->app = AppFactory::create();
+    }
+
+    public function testOpenLoginPageAsAguestGot200OK()
+    {
+        unset($_SESSION[UserInterface::class]);
+
+        $uri           = new Uri('/login');
+        $serverRequest = new ServerRequest([], [], $uri);
+
+        $response = $this->app->handle($serverRequest);
+        $this->assertEquals(200, $response->getStatusCode());
     }
 
     public function testOpenLoginPageAsAuserRedirectToHomePage()

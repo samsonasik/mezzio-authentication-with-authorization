@@ -8,7 +8,7 @@ use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\Uri;
 use PHPUnit\Framework\TestCase;
 
-class OpenLogoutPageTest extends TestCase
+class PingPageTest extends TestCase
 {
     private $app;
 
@@ -17,13 +17,12 @@ class OpenLogoutPageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    public function testOpenLogoutPageAsAuserRedirectToLoginPage()
+    public function testOpenPingPageAsAguestGot200OK()
     {
-        $uri           = new Uri('/logout');
+        $uri           = new Uri('/api/ping');
         $serverRequest = new ServerRequest([], [], $uri);
 
         $response = $this->app->handle($serverRequest);
-        $this->assertEquals(302, $response->getStatusCode());
-        $this->assertEquals('/login', $response->getHeaderLine('Location'));
+        $this->assertEquals(200, $response->getStatusCode());
     }
 }
