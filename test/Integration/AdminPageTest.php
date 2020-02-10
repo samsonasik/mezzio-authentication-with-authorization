@@ -47,6 +47,8 @@ class AdminPageTest extends TestCase
 
     public function testOpenAdminPageAsAuserGot200Ok()
     {
+        unset($_SESSION[UserInterface::class]);
+
         $sessionData                    = [
             'username' => 'admin',
             'roles'    => [
