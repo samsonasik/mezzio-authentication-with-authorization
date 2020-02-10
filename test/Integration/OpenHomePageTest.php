@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace AppTest\Integration;
 
 use Laminas\Diactoros\ServerRequest;
+use Laminas\Diactoros\Uri;
 use Mezzio\Application;
 use Mezzio\MiddlewareFactory;
 use PHPUnit\Framework\TestCase;
-use Laminas\Diactoros\Uri;
 
 class OpenHomePageTest extends TestCase
 {
@@ -18,7 +18,7 @@ class OpenHomePageTest extends TestCase
     {
         $container = require 'config/container.php';
 
-        $app = $container->get(Application::class);
+        $app     = $container->get(Application::class);
         $factory = $container->get(MiddlewareFactory::class);
 
         (require 'config/pipeline.php')($app, $factory, $container);
