@@ -6,8 +6,6 @@ declare(strict_types=1);
 
 namespace App\View\Helper;
 
-use function headers_sent;
-use function ob_start;
 use function session_start;
 use function session_status;
 
