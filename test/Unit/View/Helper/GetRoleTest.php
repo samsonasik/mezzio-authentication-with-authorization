@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace AppTest\Unit\View\Helper;
 
 use App\View\Helper\GetRole;
-use PHPUnit\Framework\TestCase;
 use Mezzio\Authentication\UserInterface;
+use PHPUnit\Framework\TestCase;
 
 class GetRoleTest extends TestCase
 {
@@ -21,7 +21,7 @@ class GetRoleTest extends TestCase
     {
         $_SESSION[UserInterface::class] = [
             'username' => 'samsonasik',
-            'roles' => [
+            'roles'    => [
                 'user',
             ],
         ];
