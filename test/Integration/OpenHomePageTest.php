@@ -18,6 +18,7 @@ class OpenHomePageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
+    /** @runInSeparateProcess */
     public function testOpenHomePageAsAuserGotOK()
     {
         $sessionData                    = [

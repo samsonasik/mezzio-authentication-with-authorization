@@ -45,6 +45,7 @@ class OpenAdminPageTest extends TestCase
         $this->assertEquals(403, $response->getStatusCode());
     }
 
+    /** @runInSeparateProcess */
     public function testAsAnAdminGot200()
     {
         $sessionData                    = [
