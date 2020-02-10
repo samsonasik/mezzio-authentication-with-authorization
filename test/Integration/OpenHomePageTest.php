@@ -28,7 +28,6 @@ class OpenHomePageTest extends TestCase
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
     }
 
-    /** @runInSeparateProcess */
     public function testAsAuserGotOK()
     {
         $sessionData                    = [

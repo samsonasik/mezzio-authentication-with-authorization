@@ -28,7 +28,6 @@ class OpenAdminPageTest extends TestCase
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
     }
 
-    /** @runInSeparateProcess */
     public function testAsAuserGot403()
     {
         $sessionData                    = [
@@ -46,7 +45,6 @@ class OpenAdminPageTest extends TestCase
         $this->assertEquals(403, $response->getStatusCode());
     }
 
-    /** @runInSeparateProcess */
     public function testAsAnAdminGot200()
     {
         $sessionData                    = [
