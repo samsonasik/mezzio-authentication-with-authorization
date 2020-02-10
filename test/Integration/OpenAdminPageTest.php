@@ -68,9 +68,9 @@ class OpenAdminPageTest extends TestCase
     {
         session_start();
         $_SESSION[UserInterface::class] = [
-            'username' => 'samsonasik',
+            'username' => 'admin',
             'roles'    => [
-                'user',
+                'admin',
             ],
         ];
     }
