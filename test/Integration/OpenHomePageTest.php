@@ -23,16 +23,6 @@ class OpenHomePageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    /*public function testOpenHomePageAsAguestRedirectToLoginPage()
-    {
-        $uri           = new Uri('/');
-        $serverRequest = new ServerRequest([], [], $uri);
-
-        $response = $this->app->handle($serverRequest);
-        $this->assertEquals(302, $response->getStatusCode());
-        $this->assertEquals('/login', $response->getHeaderLine('Location'));
-    }*/
-
     public function testOpenHomePageAsAuserGotOK()
     {
         $sessionData                    = [
