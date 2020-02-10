@@ -31,6 +31,7 @@ jobs:
           extensions: intl
           php-version: "${{ matrix.php-versions }}"
           coverage: pcov
+          ini-values: memory_limit=256M
       - name: Checkout
         uses: actions/checkout@v2
       - name: "Validate composer.json and composer.lock"
