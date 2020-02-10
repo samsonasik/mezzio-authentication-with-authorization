@@ -10,6 +10,9 @@ use PHPUnit\Framework\TestCase;
 
 class LoginFormTest extends TestCase
 {
+    private $sessionCsrfGuard;
+    private $form;
+
     protected function setUp(): void
     {
         $this->sessionCsrfGuard = $this->prophesize(SessionCsrfGuard::class);
