@@ -12,12 +12,13 @@ jobs:
     services:
       postgres:
         image: postgres:12.1
+        options: --name=postgres
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports:
-        - 5432:5432
+        - 5432/tcp
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
@@ -44,12 +45,13 @@ jobs:
     services:
       postgres:
         image: postgres:12.1
+        options: --name=postgres
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports:
-        - 5432:5432
+        - 5432/tcp
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
@@ -76,12 +78,13 @@ jobs:
     services:
       postgres:
         image: postgres:12.1
+        options: --name=postgres
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports:
-        - 5432:5432
+        - 5432/tcp
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
@@ -108,12 +111,13 @@ jobs:
     services:
       postgres:
         image: postgres:12.1
+        options: --name=postgres
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports:
-        - 5432:5432
+        - 5432/tcp
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
