@@ -13,7 +13,7 @@ use const PHP_SESSION_NONE;
 
 trait SessionTrait
 {
-    public function checkIsStarted()
+    public function checkIsStarted(): void
     {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
