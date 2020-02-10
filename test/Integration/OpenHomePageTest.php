@@ -8,6 +8,11 @@ use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\Uri;
 use PHPUnit\Framework\TestCase;
 
+use function error_reporting;
+use function ini_set;
+
+use const E_ALL;
+
 class OpenHomePageTest extends TestCase
 {
     private $app;
@@ -17,9 +22,11 @@ class OpenHomePageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    /** @runInSeparateProcess */
     public function testAsAguestRedirectToLoginPage()
     {
+        ini_set('display_errors', '1');
+        error_reporting(E_ALL);
+
         $uri           = new Uri('/');
         $serverRequest = new ServerRequest([], [], $uri);
 
