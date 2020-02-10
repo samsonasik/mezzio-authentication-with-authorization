@@ -5,26 +5,21 @@ on:
   push:
     branches:
       - "master"
+
 jobs:
-
-  build-php71:
+  build:
+    name: PHP ${{ matrix.php-versions }}
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:12.1
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
-        ports:
-          - 5432/tcp
-        options: --name=postgres --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
+    strategy:
+      fail-fast: false
+      matrix:
+        php-versions: ['7.1', '7.2', '7.3', '7.4']
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
         with:
-          extensions: mbstring, intl, pdo_pgsql
-          php-version: "7.1"
+          extensions: mbstring, intl, pdo, pdo_pgsql, bcmath, curl, xml, ctype, iconv, pgsql
+          php-version: "${{ matrix.php-versions }}"
       - name: Checkout
         uses: actions/checkout@v2
       - name: "Validate composer.json and composer.lock"
@@ -36,105 +31,6 @@ jobs:
       - name: "CS Check"
         run: "composer cs-check"
       - name: "DB Fixture"
-        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php.travis && docker exec -d postgres psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
-      - name: "Run test suite"
-        run: "composer  test"
-
-  build-php72:
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:12.1
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
-        ports:
-          - 5432/tcp
-        options: --name=postgres --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
-    steps:
-      - name: Setup PHP Action
-        uses: shivammathur/setup-php@1.8.2
-        with:
-          extensions: mbstring, intl, pdo_pgsql
-          php-version: "7.2"
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: "Validate composer.json and composer.lock"
-        run: "composer validate"
-      - name: "Install dependencies"
-        run: "composer install --prefer-dist --no-progress --no-suggest"
-      - name: "Code analyze"
-        run: "composer analyze"
-      - name: "CS Check"
-        run: "composer cs-check"
-      - name: "DB Fixture"
-        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php.travis && docker exec -d postgres psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
-      - name: "Run test suite"
-        run: "composer  test"
-
-  build-php73:
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:12.1
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
-        ports:
-          - 5432/tcp
-        options: --name=postgres --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
-    steps:
-      - name: Setup PHP Action
-        uses: shivammathur/setup-php@1.8.2
-        with:
-          extensions: mbstring, intl, pdo_pgsql
-          php-version: "7.3"
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: "Validate composer.json and composer.lock"
-        run: "composer validate"
-      - name: "Install dependencies"
-        run: "composer install --prefer-dist --no-progress --no-suggest"
-      - name: "Code analyze"
-        run: "composer analyze"
-      - name: "CS Check"
-        run: "composer cs-check"
-      - name: "DB Fixture"
-        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php.travis && docker exec -d postgres psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
-      - name: "Run test suite"
-        run: "composer  test"
-
-  build-php74:
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:12.1
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
-        ports:
-          - 5432/tcp
-        options: --name=postgres --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
-    steps:
-      - name: Setup PHP Action
-        uses: shivammathur/setup-php@1.8.2
-        with:
-          extensions: mbstring, intl, pdo_pgsql
-          php-version: "7.4"
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: "Validate composer.json and composer.lock"
-        run: "composer validate"
-      - name: "Install dependencies"
-        run: "composer install --prefer-dist --no-progress --no-suggest"
-      - name: "Code analyze"
-        run: "composer analyze"
-      - name: "CS Check"
-        run: "composer cs-check"
-      - name: "DB Fixture"
-        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php.travis && docker exec -d postgres psql -h localhost -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
+        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php.travis && docker exec -d postgres psql -h 127.0.0.1 -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test"
