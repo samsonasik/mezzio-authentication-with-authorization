@@ -1,5 +1,5 @@
 {
-    "name": "mezzio/mezzio-skeleton",
+    "name": "samsonasik/mezzio-authentication-with-authorization",
     "type": "project",
     "description": "Laminas skeleton. Begin developing PSR-15 middleware applications in seconds!",
     "keywords": [
@@ -13,7 +13,7 @@
         "zendframework",
         "mezzio"
     ],
-    "homepage": "https://github.com/mezzio/mezzio-skeleton",
+    "homepage": "https://github.com/samsonasik/mezzio-authentication-with-authorization",
     "license": "BSD-3-Clause",
     "require": {
         "php": "^7.2",
