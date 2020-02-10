@@ -12,14 +12,13 @@ jobs:
     services:
       postgres:
         image: postgres:12.1
-        options: --name=postgres
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports:
           - 5432/tcp
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
+        options: --name=postgres --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
@@ -46,14 +45,13 @@ jobs:
     services:
       postgres:
         image: postgres:12.1
-        options: --name=postgres
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports:
           - 5432/tcp
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
+        options: --name=postgres --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
@@ -80,14 +78,13 @@ jobs:
     services:
       postgres:
         image: postgres:12.1
-        options: --name=postgres
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports:
           - 5432/tcp
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
+        options: --name=postgres --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
@@ -114,14 +111,13 @@ jobs:
     services:
       postgres:
         image: postgres:12.1
-        options: --name=postgres
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports:
           - 5432/tcp
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
+        options: --name=postgres --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
