@@ -6,10 +6,7 @@ namespace AppTest\Integration;
 
 use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\Uri;
-use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
-
-use function session_start;
 
 class OpenLogoutPageTest extends TestCase
 {
@@ -20,6 +17,9 @@ class OpenLogoutPageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
+    /**
+     * @runInSeparateProcess
+     */
     public function testOpenLogoutPageAsAuserRedirectToLoginPage()
     {
         $uri           = new Uri('/logout');
@@ -28,16 +28,5 @@ class OpenLogoutPageTest extends TestCase
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
-    }
-
-    public function tearDown(): void
-    {
-        session_start();
-        $_SESSION[UserInterface::class] = [
-            'username' => 'samsonasik',
-            'roles'    => [
-                'user',
-            ],
-        ];
     }
 }

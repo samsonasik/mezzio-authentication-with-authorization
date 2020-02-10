@@ -8,6 +8,8 @@ use App\View\Helper\GetRole;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
+use function session_start;
+
 class GetRoleTest extends TestCase
 {
     private $helper;
@@ -17,8 +19,13 @@ class GetRoleTest extends TestCase
         $this->helper = new GetRole();
     }
 
+    /**
+     * @runInSeparateProcess
+     */
     public function testGetRoleUser()
     {
+        session_start();
+
         $_SESSION[UserInterface::class] = [
             'username' => 'samsonasik',
             'roles'    => [
