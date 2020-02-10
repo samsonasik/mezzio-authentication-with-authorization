@@ -30,25 +30,6 @@ class AdminPageTest extends TestCase
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
     }
 
-    public function testOpenAdminPageAsAnAdminGot200Ok()
-    {
-        session_start();
-
-        $sessionData                    = [
-            'username' => 'admin',
-            'roles'    => [
-                'admin',
-            ],
-        ];
-        $_SESSION[UserInterface::class] = $sessionData;
-
-        $uri           = new Uri('/admin');
-        $serverRequest = new ServerRequest([], [], $uri);
-
-        $response = $this->app->handle($serverRequest);
-        $this->assertEquals(200, $response->getStatusCode());
-    }
-
     public function testOpenAdminPageAsAuserGot403Forbidden()
     {
         $sessionData                    = [
@@ -64,5 +45,28 @@ class AdminPageTest extends TestCase
 
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(403, $response->getStatusCode());
+    }
+
+    public function testOpenAdminPageAsAnAdminGot200Ok()
+    {
+        $sessionData                    = [
+            'username' => 'admin',
+            'roles'    => [
+                'admin',
+            ],
+        ];
+        $_SESSION[UserInterface::class] = $sessionData;
+
+        $uri           = new Uri('/admin');
+        $serverRequest = new ServerRequest([], [], $uri);
+
+        $response = $this->app->handle($serverRequest);
+        $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    protected function tearDown(): void
+    {
+        session_start();
+        unset($_SESSION[UserInterface::class]);
     }
 }
