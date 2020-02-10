@@ -6,8 +6,6 @@ namespace AppTest\Integration;
 
 use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\Uri;
-use Mezzio\Application;
-use Mezzio\MiddlewareFactory;
 use PHPUnit\Framework\TestCase;
 
 class OpenHomePageTest extends TestCase
@@ -16,19 +14,13 @@ class OpenHomePageTest extends TestCase
 
     protected function setUp()
     {
-        $container = require 'config/container.php';
-
-        $app     = $container->get(Application::class);
-        $factory = $container->get(MiddlewareFactory::class);
-
-        (require 'config/pipeline.php')($app, $factory, $container);
-        (require 'config/routes.php')($app, $factory, $container);
-
-        $this->app = $app;
+        $this->app = AppFactory::create();
     }
 
     public function testAsAguestRedirectToLoginPage()
     {
+        BufferChecker::check();
+
         $uri           = new Uri('/');
         $serverRequest = new ServerRequest([], [], $uri);
 
