@@ -18,12 +18,13 @@ jobs:
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports:
-        - 5432/tcp
+          - 5432/tcp
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
         with:
-          extensions: "intl,pdo"
+          extensions: mbstring, intl, pdo_pgsql
           php-version: "7.1"
       - name: Checkout
         uses: actions/checkout@v2
@@ -51,12 +52,13 @@ jobs:
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports:
-        - 5432/tcp
+          - 5432/tcp
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
         with:
-          extensions: "intl,pdo"
+          extensions: mbstring, intl, pdo_pgsql
           php-version: "7.2"
       - name: Checkout
         uses: actions/checkout@v2
@@ -84,12 +86,13 @@ jobs:
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports:
-        - 5432/tcp
+          - 5432/tcp
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
         with:
-          extensions: "intl,pdo"
+          extensions: mbstring, intl, pdo_pgsql
           php-version: "7.3"
       - name: Checkout
         uses: actions/checkout@v2
@@ -117,12 +120,13 @@ jobs:
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
         ports:
-        - 5432/tcp
+          - 5432/tcp
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
         with:
-          extensions: "intl,pdo"
+          extensions: mbstring, intl, pdo_pgsql
           php-version: "7.4"
       - name: Checkout
         uses: actions/checkout@v2
