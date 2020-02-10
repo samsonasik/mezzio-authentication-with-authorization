@@ -30,8 +30,8 @@ class LoginPageHandlerFactoryTest extends TestCase
 
         $factory = new LoginPageHandlerFactory();
 
-        $LoginPage = $factory($this->container->reveal(), null, get_class($this->container->reveal()));
+        $loginPage = $factory($this->container->reveal(), null, get_class($this->container->reveal()));
 
-        $this->assertInstanceOf(LoginPageHandler::class, $LoginPage);
+        $this->assertInstanceOf(LoginPageHandler::class, $loginPage);
     }
 }
