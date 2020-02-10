@@ -6,7 +6,6 @@ namespace AppTest\Integration;
 
 use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\Uri;
-use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
 class OpenPingPageTest extends TestCase

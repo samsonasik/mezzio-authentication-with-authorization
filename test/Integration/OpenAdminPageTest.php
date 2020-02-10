@@ -61,5 +61,4 @@ class OpenAdminPageTest extends TestCase
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(200, $response->getStatusCode());
     }
-
 }
