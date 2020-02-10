@@ -46,6 +46,8 @@ jobs:
         run: "composer  test-coverage"
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
+        env:
+          CODECOV_TOKEN: ${{ secrets. CODECOV_TOKEN }}
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage.xml
