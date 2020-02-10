@@ -10,6 +10,16 @@ jobs:
   build:
     name: PHP ${{ matrix.php-versions }}
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12.1
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432/tcp
+        options: --name=postgres --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
     strategy:
       fail-fast: false
       matrix:
@@ -18,7 +28,7 @@ jobs:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
         with:
-          extensions: "intl"
+          extensions: intl
           php-version: "${{ matrix.php-versions }}"
       - name: Checkout
         uses: actions/checkout@v2
@@ -30,5 +40,11 @@ jobs:
         run: "composer analyze"
       - name: "CS Check"
         run: "composer cs-check"
+      - name: "DB Fixture"
+        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php && docker exec -d postgres psql -h 127.0.0.1 -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
-        run: "composer  test"
+        run: "composer  test-coverage"
+      - name: "Upload coverage and Generate Badge"
+        env:
+          CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}"
+        run: "bash <(curl -s https://codecov.io/bash)"

@@ -1,7 +1,6 @@
 .idea
 composer.phar
 
-clover.xml
-coveralls-upload.json
+coverage.xml
 phpunit.xml
 vendor/

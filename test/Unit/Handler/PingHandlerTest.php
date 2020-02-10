@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AppTest\Handler;
+namespace AppTest\Unit\Handler;
 
 use App\Handler\PingHandler;
 use Laminas\Diactoros\Response\JsonResponse;
