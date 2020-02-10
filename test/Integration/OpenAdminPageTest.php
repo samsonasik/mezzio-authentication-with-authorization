@@ -9,6 +9,11 @@ use Laminas\Diactoros\Uri;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
+use function session_destroy;
+use function session_status;
+
+use const PHP_SESSION_ACTIVE;
+
 class OpenAdminPageTest extends TestCase
 {
     private $app;
