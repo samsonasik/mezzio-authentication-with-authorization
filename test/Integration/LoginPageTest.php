@@ -10,10 +10,12 @@ use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
 use function error_reporting;
+use function fwrite;
 use function ini_set;
 use function preg_match;
 
 use const E_ALL;
+use const STDOUT;
 
 class LoginPageTest extends TestCase
 {
@@ -71,13 +73,9 @@ class LoginPageTest extends TestCase
         ];
         $_SESSION['post_data'] = $sessionData;
 
-        ini_set('display_errors', 'On');
-        error_reporting(E_ALL);
-
         $response = $this->app->handle($serverRequest);
-        $this->app->run();
-//        $this->assertEquals(302, $response->getStatusCode());
-  //      $this->assertEquals('/', $response->getHeaderLine('Location'));
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->assertEquals('/', $response->getHeaderLine('Location'));
     }
 
     public function testOpenLoginPageHasInValidPostDataSessionRedirectBackToLoginPage()
@@ -97,6 +95,11 @@ class LoginPageTest extends TestCase
         $_SESSION['post_data'] = $sessionData;
 
         $response = $this->app->handle($serverRequest);
+
+        ini_set('display_errors', 'On');
+        error_reporting(E_ALL);
+        fwrite(STDOUT, (string) $response->getBody());
+
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
     }
