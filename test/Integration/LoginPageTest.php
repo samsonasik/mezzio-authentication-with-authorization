@@ -9,14 +9,7 @@ use Laminas\Diactoros\Uri;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
-use function error_reporting;
-use function ini_set;
-use function ob_get_contents;
-use function ob_start;
 use function preg_match;
-
-use const E_ALL;
-use const E_STRICT;
 
 class LoginPageTest extends TestCase
 {
@@ -96,13 +89,6 @@ class LoginPageTest extends TestCase
         $_SESSION['post_data'] = $sessionData;
 
         $response = $this->app->handle($serverRequest);
-
-        error_reporting(E_ALL | E_STRICT);
-        ini_set('display_errors', '1');
-
-        ob_start();
-        $this->app->run();
-        echo ob_get_contents();
 
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
