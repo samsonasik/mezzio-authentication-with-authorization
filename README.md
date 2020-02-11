@@ -7,7 +7,7 @@ Install
 -------
 
 ```bash
-$ git clone git@github.com:samsonasik/mezzio-authentication-with-authorization.git
+$ composer create-project samsonasik/mezzio-authentication-with-authorization -sdev
 $ cd mezzio-authentication-with-authorization && composer install
 $ cp config/autoload/local.php.dist config/autoload/local.php
 $ composer development-enable
