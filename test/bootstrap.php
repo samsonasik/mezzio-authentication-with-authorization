@@ -12,8 +12,8 @@ error_reporting(E_ALL);
 include 'vendor/autoload.php';
 
 if (getenv('CI') === 'Yes') {
-    //$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=postgres', null, null);
-    $pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=123456', null, null);
+    $pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=postgres', null, null);
+    //$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=123456', null, null);
     //$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=123456', null, null);
 
     //echo file_get_contents('./data/postgresql.sql');
