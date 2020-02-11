@@ -43,8 +43,8 @@ jobs:
      #   run: "composer cs-check"
       - name: "Export PGPASSWORD"
         run: "export PGPASSWORD=postgres"
-      - name: "DB Fixture"
-        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php && docker exec -d postgres psql -h 127.0.0.1 -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
+      - name: "Setup DB Config"
+        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php"
       - name: "Run test suite"
         run: "cp phpunit.xml.ci.dist phpunit.xml.dist && composer test-coverage"
       - name: Upload coverage to Codecov
