@@ -96,8 +96,8 @@ class LoginPageTest extends TestCase
 
         $response = $this->app->handle($serverRequest);
 
-        ini_set('display_errors', 'On');
-        error_reporting(E_ALL);
+        error_reporting(E_ALL | E_STRICT);
+        ini_set('display_errors', '1');
 
         ob_start();
         $this->app->run();
