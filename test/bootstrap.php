@@ -2,10 +2,6 @@
 
 declare(strict_types=1);
 
-use AppTest\Integration\AppFactory;
-use Laminas\Diactoros\ServerRequest;
-use Laminas\Diactoros\Uri;
-
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 
@@ -21,26 +17,3 @@ INSERT INTO users(username, password, role) VALUES('admin', crypt('123456', gen_
 SQL
     ) or die(print_r($pdo->errorInfo(), true));
 }
-
-session_start();
-
-$app = AppFactory::create();
-
-$uri           = new Uri('/login');
-$serverRequest = new ServerRequest([], [], $uri);
-
-$response = $app->handle($serverRequest);
-$body     = (string) $response->getBody();
-
-preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
-$sessionData           = [
-    'username' => 'samsonasik',
-    'password' => '123456',
-    'csrf'     => $matches[0],
-];
-$_SESSION['post_data'] = $sessionData;
-
-$response = $app->handle($serverRequest);
-$app->run();
-
-exit;
