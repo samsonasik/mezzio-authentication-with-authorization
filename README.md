@@ -16,7 +16,9 @@ $ composer development-enable
 Configuration
 -------------
 
-Configure your `config/autoload/local.php` with your local DB config with username and password field. The password field value must have hashed with bcrypt, if you are using postgresql (assumption using user "developer" and create db named "mezzio"):
+Configure your `config/autoload/local.php` with your local DB config with username and password field.
+
+The following commands are example if you are using postgresql (assumption using user "developer" and create db named "mezzio"), you can create users table with insert username and hashed password with pgcrypto extension into useres table:
 
 ```sql
 $ createdb -Udeveloper mezzio
