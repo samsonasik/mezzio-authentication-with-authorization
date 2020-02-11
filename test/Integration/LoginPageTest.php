@@ -9,7 +9,11 @@ use Laminas\Diactoros\Uri;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
+use function error_reporting;
+use function ini_set;
 use function preg_match;
+
+use const E_ALL;
 
 class LoginPageTest extends TestCase
 {
@@ -66,6 +70,9 @@ class LoginPageTest extends TestCase
             'csrf'     => $matches[0],
         ];
         $_SESSION['post_data'] = $sessionData;
+
+        ini_set('display_errors', 'On');
+        error_reporting(E_ALL);
 
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(302, $response->getStatusCode());
