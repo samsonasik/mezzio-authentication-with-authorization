@@ -16,9 +16,12 @@ $ composer development-enable
 Configuration
 -------------
 
-Configure your `config/autoload/local.php` with your local DB config with username and password field.
+Configure your `config/autoload/local.php` with your local DB config with username and password field. There are examples of `dsn` for both `PostgreSQL` and `MySQL` that you can modify.
 
-The following commands are example if you are using postgresql (assumption using user "developer" and create db named "mezzio"), you can create users table with insert username and hashed password with pgcrypto extension into useres table:
+For PostgreSQL
+--------------
+
+The following commands are example if you are using PostgreSQL (assumption using user "developer" and create db named "mezzio"), you can create users table with insert username and bcrypt hashed password with pgcrypto extension into users table:
 
 ```sql
 $ createdb -Udeveloper mezzio
@@ -46,6 +49,35 @@ INSERT 0 1
 and you will get the following data:
 
 ![user data](https://user-images.githubusercontent.com/459648/73605160-567f0a80-45cd-11ea-9e1d-898df2827758.png)
+
+For MySQL
+--------------
+
+The following commands are example if you are using MySQL (assumption using user "root" and create db named "123456"), you can create users table with insert username and bcrypt hashed password:
+
+```sql
+$ mysql -u root -p -e 'create database mezzio'
+Enter password:
+
+$ mysql -u root
+Enter password:
+
+mysql> use mezzio
+Database changed
+
+mysql> CREATE TABLE users(username varchar(255) PRIMARY KEY NOT NULL, password text NOT NULL, role varchar(255) NOT NULL DEFAULT 'user');
+Query OK, 0 rows affected (0.01 sec)
+
+mezzio=# INSERT INTO users(username, password, role) VALUES('samsonasik''$2a$06$Nt2zePoCfApfBGrfZbHZIudIwZpCNqorTjbKNZtPoLCVic8goZDsi', 'user');
+Query OK, 1 row affected (0.01 sec)
+
+mezzio=# INSERT INTO users(username, password, role) VALUES('admin', '$2a$06$Y2TtankzyiK/OF1yZA4GsOJBhuoP7o99XbfufEeJ0OOJwjUcPB9LO', 'admin');
+Query OK, 1 row affected (0.01 sec)
+```
+
+and you will get the following data:
+
+![user data](https://user-images.githubusercontent.com/459648/74274582-e3039880-4d44-11ea-9caa-e8dc8e81a19f.png)
 
 The Authorization Config
 ------------------------
