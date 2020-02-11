@@ -11,16 +11,26 @@ error_reporting(E_ALL);
 
 include 'vendor/autoload.php';
 
-$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=postgres', null, null);
-//$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=mezzio;user=developer;password=123456', null, null);
-//$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=123456', null, null);
+if (getenv('CI') === 'Yes') {
+    //$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=postgres', null, null);
+    $pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=123456', null, null);
+    //$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=123456', null, null);
 
-$sql  = "SELECT password FROM users WHERE username = 'samsonasik'";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$result = $stmt->fetchObject();
+    //echo file_get_contents('./data/postgresql.sql');
+    $pdo->exec(<<<SQL
+CREATE TABLE IF NOT EXISTS users(username character varying(255) PRIMARY KEY NOT NULL, password text NOT NULL, role character varying(255) NOT NULL DEFAULT 'user');
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+INSERT INTO users(username, password, role) VALUES('samsonasik', crypt('123456', gen_salt('bf')), 'user');
+INSERT INTO users(username, password, role) VALUES('admin', crypt('123456', gen_salt('bf')), 'admin');
+SQL
+    ) or die(print_r($pdo->errorInfo(), true));
 
-var_dump($result);
+    exit;
+}
+
+//$result = $stmt->fetchObject();
+
+//var_dump($result);
 
 exit;
 

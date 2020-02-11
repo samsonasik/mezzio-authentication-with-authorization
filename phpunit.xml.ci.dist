@@ -8,9 +8,11 @@
          convertWarningsToExceptions="true"
          stderr="true"
          backupGlobals="false">
+
     <php>
-        <env name="CI" value="No"/>
+        <env name="CI" value="Yes"/>
     </php>
+
     <testsuites>
         <testsuite name="App\\Tests">
             <directory>./test</directory>
