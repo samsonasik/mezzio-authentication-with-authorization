@@ -9,8 +9,6 @@ use Laminas\Diactoros\Uri;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
-use function session_start;
-
 class HomePageTest extends TestCase
 {
     private $app;
@@ -49,7 +47,6 @@ class HomePageTest extends TestCase
 
     protected function tearDown(): void
     {
-        session_start();
         unset($_SESSION[UserInterface::class]);
     }
 }
