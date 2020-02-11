@@ -53,7 +53,7 @@ and you will get the following data:
 For MySQL
 --------------
 
-The following commands are example if you are using MySQL (assumption using user "root" and create db named "123456"), you can create users table with insert username and bcrypt hashed password:
+The following commands are example if you are using MySQL (assumption using user "root" and create db named "mezzio"), you can create users table with insert username and bcrypt hashed password:
 
 ```sql
 $ mysql -u root -p -e 'create database mezzio'
