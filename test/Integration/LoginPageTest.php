@@ -51,6 +51,48 @@ class LoginPageTest extends TestCase
         $this->assertEquals(303, $response->getStatusCode());
     }
 
+    public function testOpenLoginPageHasValidPostDataSessionRedirectToHomePage()
+    {
+        $uri           = new Uri('/login');
+        $serverRequest = new ServerRequest([], [], $uri);
+
+        $response = $this->app->handle($serverRequest);
+        $body     = (string) $response->getBody();
+
+        preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
+        $sessionData                    = [
+            'username' => 'samsonasik',
+            'password' => '123456',
+            'csrf'     => $matches[0],
+        ];
+        $_SESSION['post_data'] = $sessionData;
+
+        $response = $this->app->handle($serverRequest);
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->assertEquals('/', $response->getHeaderLine('Location'));
+    }
+
+    public function testOpenLoginPageHasInValidPostDataSessionRedirectBackToLoginPage()
+    {
+        $uri           = new Uri('/login');
+        $serverRequest = new ServerRequest([], [], $uri);
+
+        $response = $this->app->handle($serverRequest);
+        $body     = (string) $response->getBody();
+
+        preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
+        $sessionData                    = [
+            'username' => 'samsonasik',
+            'password' => '1234567',
+            'csrf'     => $matches[0],
+        ];
+        $_SESSION['post_data'] = $sessionData;
+
+        $response = $this->app->handle($serverRequest);
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->assertEquals('/login', $response->getHeaderLine('Location'));
+    }
+
     public function testOpenLoginPageAsAuserRedirectToHomePage()
     {
         $sessionData                    = [
