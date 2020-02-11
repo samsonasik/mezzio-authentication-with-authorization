@@ -44,9 +44,4 @@ class AdminPageTest extends TestCase
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(403, $response->getStatusCode());
     }
-
-    protected function tearDown(): void
-    {
-        unset($_SESSION[UserInterface::class]);
-    }
 }

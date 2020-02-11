@@ -20,8 +20,6 @@ class LoginPageTest extends TestCase
 
     public function testOpenLoginPageAsAguestGot200OK()
     {
-        unset($_SESSION[UserInterface::class]);
-
         $uri           = new Uri('/login');
         $serverRequest = new ServerRequest([], [], $uri);
 

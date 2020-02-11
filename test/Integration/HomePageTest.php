@@ -44,9 +44,4 @@ class HomePageTest extends TestCase
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(200, $response->getStatusCode());
     }
-
-    protected function tearDown(): void
-    {
-        unset($_SESSION[UserInterface::class]);
-    }
 }

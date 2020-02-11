@@ -7,6 +7,8 @@ namespace AppTest\Integration;
 use Mezzio\Application;
 use Mezzio\MiddlewareFactory;
 
+use function AppTest\mockNativeSession;
+
 final class AppFactory
 {
     public static function create(): Application
@@ -19,6 +21,7 @@ final class AppFactory
         (require 'config/pipeline.php')($app, $factory, $container);
         (require 'config/routes.php')($app, $factory, $container);
 
+        mockNativeSession();
         return $app;
     }
 }
