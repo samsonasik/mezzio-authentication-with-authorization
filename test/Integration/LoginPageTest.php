@@ -98,7 +98,10 @@ class LoginPageTest extends TestCase
 
         ini_set('display_errors', 'On');
         error_reporting(E_ALL);
-        fwrite(STDOUT, (string) $response->getBody());
+
+        ob_start();
+        $this->app->run();
+        echo ob_get_contents();
 
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
