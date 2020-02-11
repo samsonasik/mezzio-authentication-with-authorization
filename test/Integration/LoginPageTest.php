@@ -60,7 +60,7 @@ class LoginPageTest extends TestCase
         $body     = (string) $response->getBody();
 
         preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
-        $sessionData                    = [
+        $sessionData           = [
             'username' => 'samsonasik',
             'password' => '123456',
             'csrf'     => $matches[0],
@@ -81,7 +81,7 @@ class LoginPageTest extends TestCase
         $body     = (string) $response->getBody();
 
         preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
-        $sessionData                    = [
+        $sessionData           = [
             'username' => 'samsonasik',
             'password' => '1234567',
             'csrf'     => $matches[0],
