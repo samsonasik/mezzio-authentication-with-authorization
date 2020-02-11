@@ -42,7 +42,8 @@ jobs:
      # - name: "CS Check"
      #   run: "composer cs-check"
       - name: "DB Fixture"
-        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php && docker exec -d postgres PGPASSWORD=postgres psql -h 127.0.0.1 -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
+        run: "export PGPASSWORD=postgres"
+        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php && docker exec -d postgres psql -h 127.0.0.1 -d postgres -U postgres -p 5432 -a -q -f data/postgresql.sql"
       - name: "Run test suite"
         run: "composer  test-coverage"
       - name: Upload coverage to Codecov
