@@ -16,6 +16,7 @@ use function ob_start;
 use function preg_match;
 
 use const E_ALL;
+use const E_STRICT;
 
 class LoginPageTest extends TestCase
 {
