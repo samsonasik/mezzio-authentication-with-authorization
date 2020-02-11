@@ -28,7 +28,7 @@ jobs:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
         with:
-          extensions: intl, pdo
+          extensions: intl, pdo, pgsql
           php-version: "${{ matrix.php-versions }}"
           coverage: pcov
       - name: Checkout
