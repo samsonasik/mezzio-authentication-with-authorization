@@ -8,9 +8,6 @@ use Mezzio\Application;
 use Mezzio\MiddlewareFactory;
 
 use function AppTest\mockNativeSession;
-use function dirname;
-use function realpath;
-use function session_save_path;
 
 final class AppFactory
 {
@@ -26,7 +23,6 @@ final class AppFactory
 
         mockNativeSession();
         $_SESSION = [];
-        session_save_path(realpath(dirname(__DIR__) . '/var/session'));
 
         return $app;
     }
