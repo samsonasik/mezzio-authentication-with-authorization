@@ -10,12 +10,12 @@ use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
 use function error_reporting;
-use function fwrite;
 use function ini_set;
+use function ob_get_contents;
+use function ob_start;
 use function preg_match;
 
 use const E_ALL;
-use const STDOUT;
 
 class LoginPageTest extends TestCase
 {
