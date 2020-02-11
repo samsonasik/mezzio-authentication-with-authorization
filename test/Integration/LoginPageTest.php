@@ -9,6 +9,8 @@ use Laminas\Diactoros\Uri;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
+use function preg_match;
+
 class LoginPageTest extends TestCase
 {
     private $app;
@@ -25,6 +27,28 @@ class LoginPageTest extends TestCase
 
         $response = $this->app->handle($serverRequest);
         $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    public function testOpenLoginPageAndSubmitLoginRedirect303Prg()
+    {
+        $uri           = new Uri('/login');
+        $serverRequest = new ServerRequest([], [], $uri);
+
+        $response = $this->app->handle($serverRequest);
+        $body     = (string) $response->getBody();
+
+        preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
+        $formData = [
+            'username' => 'samsonasik',
+            'password' => '123456',
+            'csrf'     => $matches[0],
+        ];
+
+        $serverRequest = $serverRequest->withMethod('POST');
+        $serverRequest = $serverRequest->withParsedBody($formData);
+
+        $response = $this->app->handle($serverRequest);
+        $this->assertEquals(303, $response->getStatusCode());
     }
 
     public function testOpenLoginPageAsAuserRedirectToHomePage()
