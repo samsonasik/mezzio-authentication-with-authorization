@@ -11,8 +11,8 @@ error_reporting(E_ALL);
 
 include 'vendor/autoload.php';
 
-//$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=postgres', null, null);
-$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=mezzio;user=developer;password=123456', null, null);
+$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=postgres', null, null);
+//$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=mezzio;user=developer;password=123456', null, null);
 //$pdo = new PDO('pgsql:host=127.0.0.1;port=5432;dbname=postgres;user=postgres;password=123456', null, null);
 
 $sql  = "SELECT password FROM users WHERE username = 'samsonasik'";
