@@ -12,6 +12,7 @@ use function error_reporting;
 use function ini_set;
 use function preg_match;
 use function session_start;
+use function var_dump;
 
 use const E_ALL;
 
@@ -37,6 +38,8 @@ $sessionData           = [
     'csrf'     => $matches[0],
 ];
 $_SESSION['post_data'] = $sessionData;
+
+var_dump($sessionData);
 
 $response = $app->handle($serverRequest);
 $app->run();
