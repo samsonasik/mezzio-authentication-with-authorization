@@ -104,3 +104,12 @@ $ php -S localhost:8080 -t public
 4. Login with username : samsonasik, password: 123456 OR username : admin, password : 123456. If you're a logged in user with "user" role, and open `/admin` page, it will show like the following (403 Forbidden), eg: see in [Firefox developer tools](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor) under "Network" monitor:
 
 ![authorized-user-cannot-access-admin-page](https://user-images.githubusercontent.com/459648/73605169-73b3d900-45cd-11ea-9085-3c2bc5e9d966.png)
+
+Test
+----
+
+Tests are located under `test` directory, you can run test with composer command:
+
+```bash
+$ composer test
+```
