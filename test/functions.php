@@ -35,5 +35,4 @@ function mockNativeSession(): void
     }
 
     $mock->enable();
-    $_SESSION = [];
 }
