@@ -68,7 +68,7 @@ Database changed
 mysql> CREATE TABLE users(username varchar(255) PRIMARY KEY NOT NULL, password text NOT NULL, role varchar(255) NOT NULL DEFAULT 'user');
 Query OK, 0 rows affected (0.01 sec)
 
-mezzio=# INSERT INTO users(username, password, role) VALUES('samsonasik''$2a$06$Nt2zePoCfApfBGrfZbHZIudIwZpCNqorTjbKNZtPoLCVic8goZDsi', 'user');
+mezzio=# INSERT INTO users(username, password, role) VALUES('samsonasik','$2a$06$Nt2zePoCfApfBGrfZbHZIudIwZpCNqorTjbKNZtPoLCVic8goZDsi', 'user');
 Query OK, 1 row affected (0.01 sec)
 
 mezzio=# INSERT INTO users(username, password, role) VALUES('admin', '$2a$06$Y2TtankzyiK/OF1yZA4GsOJBhuoP7o99XbfufEeJ0OOJwjUcPB9LO', 'admin');
