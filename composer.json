@@ -1,7 +1,7 @@
 {
     "name": "samsonasik/mezzio-authentication-with-authorization",
     "type": "project",
-    "description": "Laminas skeleton. Begin developing PSR-15 middleware applications in seconds!",
+    "description": "Laminas skeleton with authenticaton and authorization example, featuring crsf, flash, prg",
     "keywords": [
         "skeleton",
         "middleware",
@@ -11,7 +11,12 @@
         "psr-15",
         "zf",
         "zendframework",
-        "mezzio"
+        "mezzio",
+        "authentication",
+        "authorization",
+        "csrf",
+        "flash",
+        "prg"
     ],
     "homepage": "https://github.com/samsonasik/mezzio-authentication-with-authorization",
     "license": "BSD-3-Clause",
@@ -45,7 +50,6 @@
         "laminas/laminas-coding-standard": "~2.0.0",
         "laminas/laminas-development-mode": "^3.1",
         "mezzio/mezzio-tooling": "^1.0",
-        "php-mock/php-mock": "^2.2",
         "phpstan/phpstan": "^0.12.9",
         "phpunit/phpunit": "^8.0"
     },
@@ -78,10 +82,7 @@
     "autoload-dev": {
         "psr-4": {
             "AppTest\\": "test/"
-        },
-        "files": [
-            "test/functions.php"
-        ]
+        }
     },
     "repositories": [
         {

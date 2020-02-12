@@ -3,12 +3,7 @@
          xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
          bootstrap="test/bootstrap.php"
          colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         stderr="true"
-         backupGlobals="false">
-
+         stderr="true">
     <php>
         <env name="CI" value="Yes"/>
     </php>
