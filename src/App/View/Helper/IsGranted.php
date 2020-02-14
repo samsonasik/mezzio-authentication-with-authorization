@@ -18,7 +18,10 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class IsGranted extends AbstractHelper
 {
+    /** @var LaminasAcl */
     private $acl;
+
+    /** @var ServerRequestInterface */
     private $request;
 
     public function __construct(LaminasAcl $acl)
@@ -26,7 +29,7 @@ class IsGranted extends AbstractHelper
         $this->acl = $acl;
     }
 
-    public function setRequest(ServerRequestInterface $request)
+    public function setRequest(ServerRequestInterface $request): void
     {
         $this->request = $request;
     }
