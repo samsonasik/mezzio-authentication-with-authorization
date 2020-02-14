@@ -41,12 +41,14 @@ class IsGranted extends AbstractHelper
             RouteResult::class,
             RouteResult::fromRoute(new Route(
                 '/' . $resource,
+                // @codeCoverageIgnoreStart
                 new class implements MiddlewareInterface {
                     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
                     {
                         return new Response();
                     }
                 },
+                // @codeCoverageIgnoreEnd
                 ['GET'],
                 $resource
             ))
