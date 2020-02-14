@@ -52,7 +52,6 @@ class ConfigProvider
                 Handler\HomePageHandler::class            => Handler\HomePageHandlerFactory::class,
                 Middleware\PrgMiddleware::class           => InvokableFactory::class,
                 Middleware\AuthorizationMiddleware::class => Middleware\AuthorizationMiddlewareFactory::class,
-                Middleware\IsGrantedMiddleware::class     => Middleware\IsGrantedMiddlewareFactory::class,
             ],
         ];
     }

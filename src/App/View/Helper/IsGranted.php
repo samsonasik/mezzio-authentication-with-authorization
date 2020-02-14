@@ -7,6 +7,7 @@ declare(strict_types=1);
 namespace App\View\Helper;
 
 use Laminas\Diactoros\Response;
+use Laminas\Diactoros\ServerRequestFactory;
 use Laminas\View\Helper\AbstractHelper;
 use Mezzio\Authorization\Acl\LaminasAcl;
 use Mezzio\Router\Route;
@@ -21,22 +22,14 @@ class IsGranted extends AbstractHelper
     /** @var LaminasAcl */
     private $acl;
 
-    /** @var ServerRequestInterface */
-    private $request;
-
     public function __construct(LaminasAcl $acl)
     {
         $this->acl = $acl;
     }
 
-    public function setRequest(ServerRequestInterface $request): void
-    {
-        $this->request = $request;
-    }
-
     public function __invoke(string $resource): bool
     {
-        $request = $this->request;
+        $request = ServerRequestFactory::fromGlobals();
         $request = $request->withAttribute(
             RouteResult::class,
             RouteResult::fromRoute(new Route(
