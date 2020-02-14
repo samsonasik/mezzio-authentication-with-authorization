@@ -43,8 +43,10 @@ class IsGranted extends AbstractHelper
                 '/' . $resource,
                 // @codeCoverageIgnoreStart
                 new class implements MiddlewareInterface {
-                    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
-                    {
+                    public function process(
+                        ServerRequestInterface $request,
+                        RequestHandlerInterface $handler
+                    ): ResponseInterface {
                         return new Response();
                     }
                 },
