@@ -54,7 +54,7 @@ $this->inlineScript()
                                 Ping Test
                             </a>
                         </li>
-                        <?php if ($this->getRole() === 'admin') : ?>
+                        <?php if ($this->isGranted('admin')) : ?>
                             <li class="nav-item">
                                 <a href="<?=$this->url('admin')?>" class="nav-link">
                                     Admin

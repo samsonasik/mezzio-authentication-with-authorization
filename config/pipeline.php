@@ -74,6 +74,8 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     $app->pipe(App\Middleware\AuthorizationMiddleware::class);
     $app->pipe(Mezzio\Authorization\AuthorizationMiddleware::class);
 
+    $app->pipe(App\Middleware\IsGrantedMiddleware::class);
+
     // Register the dispatch middleware in the middleware pipeline
     $app->pipe(DispatchMiddleware::class);
 
