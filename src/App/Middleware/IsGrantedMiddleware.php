@@ -1,6 +1,6 @@
 <?php
 
-// src/App/Middleware/PrgMiddleware.php
+// src/App/Middleware/IsGrantedMiddleware.php
 declare(strict_types=1);
 
 namespace App\Middleware;
