@@ -21,14 +21,14 @@ Configure your `config/autoload/local.php` with your local DB config with userna
 For PostgreSQL
 --------------
 
-The following commands are example if you are using PostgreSQL (assumption using user "developer" and create db named "mezzio"), you can create users table with insert username and bcrypt hashed password with pgcrypto extension into users table:
+The following commands are example if you are using PostgreSQL (assumption using user "postgres" and create db named "mezzio"), you can create users table with insert username and bcrypt hashed password with pgcrypto extension into users table:
 
 ```sql
-$ createdb -Udeveloper mezzio
+$ createdb -Upostgres mezzio
 Password:
 
-$ psql -Udeveloper mezzio
-Password for user developer:
+$ psql -Upostgres mezzio
+Password for user postgres:
 
 psql (12.1)
 Type "help" for help.
