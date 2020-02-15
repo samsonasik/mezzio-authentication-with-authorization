@@ -10,8 +10,6 @@ use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 
-use function get_class;
-
 class LoginPageHandlerFactoryTest extends TestCase
 {
     /** @var ContainerInterface|ObjectProphecy */
@@ -30,7 +28,7 @@ class LoginPageHandlerFactoryTest extends TestCase
 
         $factory = new LoginPageHandlerFactory();
 
-        $loginPage = $factory($this->container->reveal(), null, get_class($this->container->reveal()));
+        $loginPage = $factory($this->container->reveal());
 
         $this->assertInstanceOf(LoginPageHandler::class, $loginPage);
     }

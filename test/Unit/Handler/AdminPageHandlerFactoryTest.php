@@ -10,8 +10,6 @@ use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 
-use function get_class;
-
 class AdminPageHandlerFactoryTest extends TestCase
 {
     /** @var ContainerInterface|ObjectProphecy */
@@ -30,7 +28,7 @@ class AdminPageHandlerFactoryTest extends TestCase
 
         $factory = new AdminPageHandlerFactory();
 
-        $adminPage = $factory($this->container->reveal(), null, get_class($this->container->reveal()));
+        $adminPage = $factory($this->container->reveal());
 
         $this->assertInstanceOf(AdminPageHandler::class, $adminPage);
     }

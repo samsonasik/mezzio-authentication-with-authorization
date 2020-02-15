@@ -10,8 +10,6 @@ use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 
-use function get_class;
-
 class HomePageHandlerFactoryTest extends TestCase
 {
     /** @var ContainerInterface|ObjectProphecy */
@@ -30,7 +28,7 @@ class HomePageHandlerFactoryTest extends TestCase
 
         $factory = new HomePageHandlerFactory();
 
-        $homePage = $factory($this->container->reveal(), null, get_class($this->container->reveal()));
+        $homePage = $factory($this->container->reveal());
 
         $this->assertInstanceOf(HomePageHandler::class, $homePage);
     }
