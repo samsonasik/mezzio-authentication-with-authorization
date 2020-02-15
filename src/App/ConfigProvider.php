@@ -29,6 +29,9 @@ class ConfigProvider
                     'flash'   => View\Helper\Flash::class,
                     'getRole' => View\Helper\GetRole::class,
                 ],
+                'factories'  => [
+                    'isGranted' => View\Helper\IsGrantedFactory::class,
+                ],
             ],
         ];
     }
