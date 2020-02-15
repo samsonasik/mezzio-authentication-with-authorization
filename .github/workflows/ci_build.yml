@@ -48,8 +48,8 @@ jobs:
         run: "cp phpunit.xml.ci.dist phpunit.xml.dist && composer test-coverage"
         if:  matrix.php-versions  != '7.2'
         run: "cp phpunit.xml.ci.dist phpunit.xml.dist && composer test"
-      - name: Upload coverage to Codecov
-        if:  matrix.php-versions  == '7.2'
+      - if:  matrix.php-versions  == '7.2'
+        name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -58,5 +58,3 @@ jobs:
           name: codecov-umbrella
           yml: ./codecov.yml
           fail_ci_if_error: true
-        if:  matrix.php-versions  != '7.2'
-        run: "echo"
