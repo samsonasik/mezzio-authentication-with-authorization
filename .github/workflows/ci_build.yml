@@ -46,6 +46,7 @@ jobs:
       - name: "Run test suite"
         if:  matrix.php-versions  == '7.2'
         run: "cp phpunit.xml.ci.dist phpunit.xml.dist && composer test-coverage"
+      - name: "Run test suite"
         if:  matrix.php-versions  != '7.2'
         run: "cp phpunit.xml.ci.dist phpunit.xml.dist && composer test"
       - if:  matrix.php-versions  == '7.2'
