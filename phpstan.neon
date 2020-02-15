@@ -1,5 +1,6 @@
+includes:
+	- vendor/phpstan/phpstan/conf/bleedingEdge.neon
+
 parameters:
     inferPrivatePropertyTypeFromConstructor: true
     checkMissingIterableValueType: false
-    ignoreErrors:
-        - '#Call to an undefined method Laminas\\View\\Renderer\\RendererInterface::getRole#'

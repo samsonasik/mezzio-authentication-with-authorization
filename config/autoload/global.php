@@ -13,23 +13,23 @@ return [
             'admin' => ['user'],
         ],
         'resources' => [
-            'api.ping',
-            'home',
-            'admin',
-            'login',
-            'logout',
+            'api.ping.view',
+            'home.view',
+            'admin.view',
+            'login.form',
+            'logout.access',
         ],
         'allow'     => [
             'guest' => [
-                'login',
-                'api.ping',
+                'login.form',
+                'api.ping.view',
             ],
             'user'  => [
-                'logout',
-                'home',
+                'logout.access',
+                'home.view',
             ],
             'admin' => [
-                'admin',
+                'admin.view',
             ],
         ],
     ],

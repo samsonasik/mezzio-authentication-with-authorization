@@ -32,7 +32,7 @@ $this->inlineScript()
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <!-- Brand -->
-                    <a class="navbar-brand" href="<?=$this->url('home')?>">
+                    <a class="navbar-brand" href="<?=$this->url('home.view')?>">
                         <img src="https://getlaminas.org/images/logo/laminas-foundation-white.svg" alt="Laminas Mezzio" height="28" />
                     </a>
                 </div>
@@ -50,13 +50,13 @@ $this->inlineScript()
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?=$this->url('api.ping')?>" class="nav-link">
+                            <a href="<?=$this->url('api.ping.view')?>" class="nav-link">
                                 Ping Test
                             </a>
                         </li>
-                        <?php if ($this->isGranted('admin')) : ?>
+                        <?php if ($this->isGranted('admin.view')) : ?>
                             <li class="nav-item">
-                                <a href="<?=$this->url('admin')?>" class="nav-link">
+                                <a href="<?=$this->url('admin.view')?>" class="nav-link">
                                     Admin
                                 </a>
                             </li>
@@ -64,7 +64,7 @@ $this->inlineScript()
 
                         <?php if ($this->getRole() !== 'guest') : ?>
                         <li class="nav-item">
-                            <a href="<?=$this->url('logout')?>" class="nav-link">
+                            <a href="<?=$this->url('logout.access')?>" class="nav-link">
                                 Logout
                             </a>
                         </li>

@@ -22,9 +22,13 @@ class IsGranted extends AbstractHelper
     /** @var LaminasAcl */
     private $acl;
 
-    public function __construct(LaminasAcl $acl)
+    /** @var GetRole */
+    private $getRole;
+
+    public function __construct(LaminasAcl $acl, GetRole $getRole)
     {
-        $this->acl = $acl;
+        $this->acl     = $acl;
+        $this->getRole = $getRole;
     }
 
     public function __invoke(string $resource): bool
@@ -49,6 +53,6 @@ class IsGranted extends AbstractHelper
             ))
         );
 
-        return $this->acl->isGranted($this->view->getRole(), $request);
+        return $this->acl->isGranted(($this->getRole)(), $request);
     }
 }

@@ -39,14 +39,15 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     $app->get('/', [
         Mezzio\Authentication\AuthenticationMiddleware::class,
         App\Handler\HomePageHandler::class,
-    ], 'home');
+    ], 'home.view');
 
     $app->route('/admin', [
         Zend\Expressive\Authentication\AuthenticationMiddleware::class,
         App\Handler\AdminPageHandler::class,
-    ], ['GET'], 'admin');
+    ], ['GET'], 'admin.view');
 
-    $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
+    $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping.view');
+
     $app->route('/login', [
         //csrf handling
         CsrfMiddleware::class,
@@ -56,6 +57,7 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
         App\Handler\LoginPageHandler::class,
         // authentication handling
         Mezzio\Authentication\AuthenticationMiddleware::class,
-    ], ['GET', 'POST'], 'login');
-    $app->get('/logout', App\Handler\LogoutHandler::class, 'logout');
+    ], ['GET', 'POST'], 'login.form');
+
+    $app->get('/logout', App\Handler\LogoutHandler::class, 'logout.access');
 };
