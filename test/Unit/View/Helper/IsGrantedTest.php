@@ -53,19 +53,19 @@ class IsGrantedTest extends TestCase
         $this->helper = new IsGranted($this->acl, $this->getRole->reveal());
     }
 
-    public function provideGrantData()
+    public function provideGrantData(): array
     {
         return [
-            ['guest', 'login.form', true],
-            ['guest', 'home.view', false],
-            ['user', 'home.view', true],
-            ['user', 'admin.view', false],
-            ['admin', 'admin.view', true],
+            'guest allowed to access login.form resource'    => ['guest', 'login.form', true],
+            'guest not allowed to access home.view resource' => ['guest', 'home.view', false],
+            'user allowed to access home.view resource'      => ['user', 'home.view', true],
+            'user not allowed to access admin.view resource' => ['user', 'admin.view', false],
+            'admin allowed to access admin.view resource'    => ['admin', 'admin.view', true],
         ];
     }
 
     /** @dataProvider provideGrantData */
-    public function testIsGranted($role, $resource, $isGranted)
+    public function testIsGranted(string $role, string $resource, bool $isGranted)
     {
         $this->getRole->__invoke()->willReturn($role);
         $this->assertEquals($isGranted, ($this->helper)($resource));

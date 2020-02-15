@@ -35,10 +35,10 @@ class LoginFormTest extends TestCase
     public function validateData(): array
     {
         return [
-            [['username' => 'samsonasik', 'password' => '123456', 'csrf' => 's3cr3t'], true],
-            [['username' => '', 'password' => '123456', 'csrf' => 's3cr3t'], false],
-            [['username' => 'samsonasik', 'password' => '', 'csrf' => 's3cr3t'], false],
-            [['username' => 'samsonasik', 'password' => '123456', 'csrf' => ''], false],
+            'valid data'       => [['username' => 'samsonasik', 'password' => '123456', 'csrf' => 's3cr3t'], true],
+            'invalid username' => [['username' => '', 'password' => '123456', 'csrf' => 's3cr3t'], false],
+            'invalid password' => [['username' => 'samsonasik', 'password' => '', 'csrf' => 's3cr3t'], false],
+            'empty csrf'       => [['username' => 'samsonasik', 'password' => '123456', 'csrf' => ''], false],
         ];
     }
 
