@@ -43,10 +43,11 @@ jobs:
         run: "composer cs-check"
       - name: "Setup DB Config"
         run: "cp config/autoload/local.php.travis.dist config/autoload/local.php"
-      - name: "Run test suite"
-        if:  matrix.php-versions  == '7.2'
+      - if: matrix.php-versions  == '7.2'
+        name: "Run test suite"
         run: "cp phpunit.xml.ci.dist phpunit.xml.dist && composer test-coverage"
-        else:
+      - if: matrix.php-versions  != '7.2'
+        name: "Run test suite"
         run: "cp phpunit.xml.ci.dist phpunit.xml.dist && composer test"
       - if:  matrix.php-versions  == '7.2'
         name: Upload coverage to Codecov
