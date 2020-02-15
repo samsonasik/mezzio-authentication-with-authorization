@@ -86,34 +86,37 @@ The authorization configuration saved at `config/autoload/global.php` as ACL:
 
 ```php
 <?php
+
 // config/autoload/global.php
+
+declare(strict_types=1);
 
 return [
     // ...
     'mezzio-authorization-acl' => [
-        'roles' => [
+        'roles'     => [
             'guest' => [],
             'user'  => ['guest'],
             'admin' => ['user'],
         ],
         'resources' => [
-            'api.ping',
-            'home',
-            'admin',
-            'login',
-            'logout',
+            'api.ping.view',
+            'home.view',
+            'admin.view',
+            'login.form',
+            'logout.access',
         ],
-        'allow' => [
+        'allow'     => [
             'guest' => [
-                'login',
-                'api.ping',
+                'login.form',
+                'api.ping.view',
             ],
             'user'  => [
-                'logout',
-                'home',
+                'logout.access',
+                'home.view',
             ],
             'admin' => [
-                'admin',
+                'admin.view',
             ],
         ],
     ],
