@@ -37,7 +37,10 @@ class IsGranted extends AbstractHelper
         $request = $request->withAttribute(
             RouteResult::class,
             RouteResult::fromRoute(new Route(
-                ($this->url)($resource),
+                // somehow it needs manual __invoke instead of self called
+                // when running composer test-coverage
+                // with PHP 7.4.2 with Xdebug 2.9.2
+                $this->url->__invoke($resource),
                 // @codeCoverageIgnoreStart
                 new class implements MiddlewareInterface {
                     public function process(
