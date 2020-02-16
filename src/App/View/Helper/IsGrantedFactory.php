@@ -12,10 +12,11 @@ class IsGrantedFactory
 {
     public function __invoke(ContainerInterface $container): IsGranted
     {
-        $acl     = $container->get(LaminasAcl::class);
-        $getRole = $container->get(HelperPluginManager::class)
-                             ->get('getRole');
+        $acl                 = $container->get(LaminasAcl::class);
+        $helperPluginManager = $container->get(HelperPluginManager::class);
+        $getRole             = $helperPluginManager->get('getRole');
+        $url                 = $helperPluginManager->get('url');
 
-        return new IsGranted($acl, $getRole);
+        return new IsGranted($acl, $getRole, $url);
     }
 }

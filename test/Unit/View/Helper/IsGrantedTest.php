@@ -7,6 +7,7 @@ namespace AppTest\Unit\View\Helper;
 use App\View\Helper\GetRole;
 use App\View\Helper\IsGranted;
 use Mezzio\Authorization\Acl\LaminasAclFactory;
+use Mezzio\LaminasView\UrlHelper;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 
@@ -49,8 +50,9 @@ class IsGrantedTest extends TestCase
 
         $this->acl     = (new LaminasAclFactory())($container->reveal());
         $this->getRole = $this->prophesize(GetRole::class);
+        $this->url     = $this->prophesize(UrlHelper::class);
 
-        $this->helper = new IsGranted($this->acl, $this->getRole->reveal());
+        $this->helper = new IsGranted($this->acl, $this->getRole->reveal(), $this->url->reveal());
     }
 
     public function provideGrantData(): array
@@ -67,6 +69,7 @@ class IsGrantedTest extends TestCase
     /** @dataProvider provideGrantData */
     public function testIsGranted(string $role, string $resource, bool $isGranted)
     {
+        $this->url->__invoke($resource)->willReturn('/' . $resource);
         $this->getRole->__invoke()->willReturn($role);
         $this->assertEquals($isGranted, ($this->helper)($resource));
     }

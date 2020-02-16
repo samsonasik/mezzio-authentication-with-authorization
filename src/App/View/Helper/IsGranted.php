@@ -10,6 +10,7 @@ use Laminas\Diactoros\Response;
 use Laminas\Diactoros\ServerRequestFactory;
 use Laminas\View\Helper\AbstractHelper;
 use Mezzio\Authorization\Acl\LaminasAcl;
+use Mezzio\LaminasView\UrlHelper;
 use Mezzio\Router\Route;
 use Mezzio\Router\RouteResult;
 use Psr\Http\Message\ResponseInterface;
@@ -19,16 +20,15 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class IsGranted extends AbstractHelper
 {
-    /** @var LaminasAcl */
     private $acl;
-
-    /** @var GetRole */
     private $getRole;
+    private $url;
 
-    public function __construct(LaminasAcl $acl, GetRole $getRole)
+    public function __construct(LaminasAcl $acl, GetRole $getRole, UrlHelper $url)
     {
         $this->acl     = $acl;
         $this->getRole = $getRole;
+        $this->url     = $url;
     }
 
     public function __invoke(string $resource): bool
@@ -37,7 +37,7 @@ class IsGranted extends AbstractHelper
         $request = $request->withAttribute(
             RouteResult::class,
             RouteResult::fromRoute(new Route(
-                '/' . $resource,
+                ($this->url)($resource),
                 // @codeCoverageIgnoreStart
                 new class implements MiddlewareInterface {
                     public function process(
