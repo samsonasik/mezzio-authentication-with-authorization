@@ -1,6 +1,5 @@
 <?php
 
-// src/App/Middleware/PrgMiddleware.php
 declare(strict_types=1);
 
 namespace App\Middleware;

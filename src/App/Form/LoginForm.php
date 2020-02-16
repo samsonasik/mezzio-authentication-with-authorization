@@ -1,6 +1,5 @@
 <?php
 
-// src/App/Form/LoginForm.php
 declare(strict_types=1);
 
 namespace App\Form;

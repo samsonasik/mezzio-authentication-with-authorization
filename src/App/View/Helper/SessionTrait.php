@@ -1,7 +1,5 @@
 <?php
 
-// src/App/View\Helper\SessionTrait.php
-
 declare(strict_types=1);
 
 namespace App\View\Helper;
