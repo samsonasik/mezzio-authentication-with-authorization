@@ -8,8 +8,12 @@ use App\View\Helper\GetRole;
 use App\View\Helper\IsGranted;
 use Mezzio\Authorization\Acl\LaminasAclFactory;
 use Mezzio\LaminasView\UrlHelper;
+use Mezzio\Router\LaminasRouter;
+use Mezzio\Router\RouteResult;
 use PHPUnit\Framework\TestCase;
+use Prophecy\Argument;
 use Psr\Container\ContainerInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 class IsGrantedTest extends TestCase
 {
@@ -51,8 +55,14 @@ class IsGrantedTest extends TestCase
         $this->acl     = (new LaminasAclFactory())($container->reveal());
         $this->getRole = $this->prophesize(GetRole::class);
         $this->url     = $this->prophesize(UrlHelper::class);
+        $this->router  = $this->prophesize(LaminasRouter::class);
 
-        $this->helper = new IsGranted($this->acl, $this->getRole->reveal(), $this->url->reveal());
+        $this->helper = new IsGranted(
+            $this->acl,
+            $this->getRole->reveal(),
+            $this->url->reveal(),
+            $this->router->reveal()
+        );
     }
 
     public function provideGrantData(): array
@@ -70,7 +80,14 @@ class IsGrantedTest extends TestCase
     public function testIsGranted(string $role, string $resource, bool $isGranted)
     {
         $this->url->__invoke($resource)->willReturn('/' . $resource);
+        $routeResult = $this->prophesize(RouteResult::class);
+        $routeResult->isFailure()->willReturn(false);
+        $routeResult->getMatchedRouteName()->willReturn($resource);
+
+        $this->router->match(Argument::type(ServerRequestInterface::class))
+                     ->willReturn($routeResult->reveal());
         $this->getRole->__invoke()->willReturn($role);
+
         $this->assertEquals($isGranted, ($this->helper)($resource));
     }
 }

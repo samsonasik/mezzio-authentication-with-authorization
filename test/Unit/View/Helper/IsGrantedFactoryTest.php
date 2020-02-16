@@ -10,6 +10,7 @@ use App\View\Helper\IsGrantedFactory;
 use Laminas\View\HelperPluginManager;
 use Mezzio\Authorization\Acl\LaminasAcl;
 use Mezzio\LaminasView\UrlHelper;
+use Mezzio\Router\LaminasRouter;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 
@@ -34,9 +35,11 @@ class IsGrantedFactoryTest extends TestCase
                             ->willReturn(new GetRole());
         $helperPluginManager->get('url')
                             ->willReturn($this->prophesize(UrlHelper::class)->reveal());
-        $this->container
-            ->get(HelperPluginManager::class)
-            ->willReturn($helperPluginManager);
+        $this->container->get(HelperPluginManager::class)
+                        ->willReturn($helperPluginManager);
+
+        $this->container->get(LaminasRouter::class)
+                        ->willReturn($this->prophesize(LaminasRouter::class)->reveal());
 
         $factory = new IsGrantedFactory();
 
