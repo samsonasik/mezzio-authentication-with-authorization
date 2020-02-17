@@ -8,8 +8,7 @@ Install
 
 ```bash
 $ composer create-project samsonasik/mezzio-authentication-with-authorization -sdev
-$ cd mezzio-authentication-with-authorization && composer install
-$ cp config/autoload/local.php.dist config/autoload/local.php
+$ cd mezzio-authentication-with-authorization && cp config/autoload/local.php.dist config/autoload/local.php
 ```
 
 Configuration
