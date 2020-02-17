@@ -27,10 +27,10 @@ class IsGranted extends AbstractHelper
         $this->router  = $router;
     }
 
-    public function __invoke(string $resource): bool
+    public function __invoke(string $resource, array $routeParams = [], array $queryParams = []): bool
     {
         $request = ServerRequestFactory::fromGlobals();
-        $request = $request->withUri(new Uri(($this->url)($resource)));
+        $request = $request->withUri(new Uri(($this->url)($resource, $routeParams, $queryParams)));
 
         $request = $request->withAttribute(
             RouteResult::class,

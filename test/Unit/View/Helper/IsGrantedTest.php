@@ -79,7 +79,7 @@ class IsGrantedTest extends TestCase
     /** @dataProvider provideGrantData */
     public function testIsGranted(string $role, string $resource, bool $isGranted)
     {
-        $this->url->__invoke($resource)->willReturn('/' . $resource);
+        $this->url->__invoke($resource, [], [])->willReturn('/' . $resource);
         $routeResult = $this->prophesize(RouteResult::class);
         $routeResult->isFailure()->willReturn(false);
         $routeResult->getMatchedRouteName()->willReturn($resource);
