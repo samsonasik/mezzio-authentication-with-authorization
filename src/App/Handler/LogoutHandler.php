@@ -17,12 +17,10 @@ class LogoutHandler implements RequestHandlerInterface
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
-        if ($session->has(UserInterface::class)) {
-            $session->unset(UserInterface::class);
+        $session->unset(UserInterface::class);
 
-            $flashMessages = $request->getAttribute(FlashMessageMiddleware::FLASH_ATTRIBUTE);
-            $flashMessages->flash('message', 'You are succesfully logged out');
-        }
+        $flashMessages = $request->getAttribute(FlashMessageMiddleware::FLASH_ATTRIBUTE);
+        $flashMessages->flash('message', 'You are succesfully logged out');
 
         return new RedirectResponse('/login');
     }

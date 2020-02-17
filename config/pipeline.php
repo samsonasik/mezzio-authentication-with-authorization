@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Middleware\UserMiddleware;
 use Laminas\Stratigility\Middleware\ErrorHandler;
 use Mezzio\Application;
 use Mezzio\Flash\FlashMessageMiddleware;
@@ -70,10 +71,7 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     // - route-based authentication
     // - route-based validation
     // - etc.
-
-    $app->pipe(App\Middleware\AuthorizationMiddleware::class);
-    $app->pipe(Mezzio\Authorization\AuthorizationMiddleware::class);
-
+    $app->pipe(UserMiddleware::class);
     // Register the dispatch middleware in the middleware pipeline
     $app->pipe(DispatchMiddleware::class);
 

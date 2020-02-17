@@ -8,16 +8,13 @@ use Mezzio\Authentication\UserInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Server\MiddlewareInterface;
 
-class AuthorizationMiddlewareFactory
+class UserMiddlewareFactory
 {
     public function __invoke(ContainerInterface $container): MiddlewareInterface
     {
-        $redirect = $container->get('config')['authentication']['redirect'];
         $user     = $container->get(UserInterface::class);
+        $redirect = $container->get('config')['authentication']['redirect'];
 
-        return new AuthorizationMiddleware(
-            $user,
-            $redirect
-        );
+        return new UserMiddleware($user, $redirect);
     }
 }

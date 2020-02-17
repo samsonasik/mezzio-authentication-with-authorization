@@ -47,11 +47,11 @@ class ConfigProvider
                 Handler\LogoutHandler::class => Handler\LogoutHandler::class,
             ],
             'factories'  => [
-                Handler\AdminPageHandler::class           => Handler\AdminPageHandlerFactory::class,
-                Handler\LoginPageHandler::class           => Handler\LoginPageHandlerFactory::class,
-                Handler\HomePageHandler::class            => Handler\HomePageHandlerFactory::class,
-                Middleware\PrgMiddleware::class           => InvokableFactory::class,
-                Middleware\AuthorizationMiddleware::class => Middleware\AuthorizationMiddlewareFactory::class,
+                Handler\AdminPageHandler::class  => Handler\AdminPageHandlerFactory::class,
+                Handler\LoginPageHandler::class  => Handler\LoginPageHandlerFactory::class,
+                Handler\HomePageHandler::class   => Handler\HomePageHandlerFactory::class,
+                Middleware\PrgMiddleware::class  => InvokableFactory::class,
+                Middleware\UserMiddleware::class => Middleware\UserMiddlewareFactory::class,
             ],
         ];
     }
