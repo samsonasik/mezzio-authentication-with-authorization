@@ -10,7 +10,6 @@ Install
 $ composer create-project samsonasik/mezzio-authentication-with-authorization -sdev
 $ cd mezzio-authentication-with-authorization && composer install
 $ cp config/autoload/local.php.dist config/autoload/local.php
-$ composer development-enable
 ```
 
 Configuration
