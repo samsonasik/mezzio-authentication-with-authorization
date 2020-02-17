@@ -19,10 +19,11 @@ CREATE TABLE IF NOT EXISTS users(
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 INSERT INTO users(username, password, role) VALUES(
     'samsonasik', crypt('123456', gen_salt('bf')), 'user'
-);
+) ON CONFLICT(username) DO NOTHING;
+
 INSERT INTO users(username, password, role) VALUES(
     'admin', crypt('123456', gen_salt('bf')), 'admin'
-);
+) ON CONFLICT(username) DO NOTHING;
 SQL
     ) || die(print_r($pdo->errorInfo(), true));
 }
