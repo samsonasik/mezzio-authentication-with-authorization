@@ -9,6 +9,7 @@ use Laminas\Diactoros\Response\HtmlResponse;
 use Laminas\Diactoros\Response\RedirectResponse;
 use Mezzio\Csrf\CsrfMiddleware;
 use Mezzio\Flash\FlashMessageMiddleware;
+use Mezzio\Session\SessionMiddleware;
 use Mezzio\Template\TemplateRendererInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -18,10 +19,12 @@ use Psr\Http\Server\RequestHandlerInterface;
 class LoginPageHandler implements MiddlewareInterface
 {
     private $template;
+    private $rememberMeSeconds;
 
-    public function __construct(TemplateRendererInterface $template)
+    public function __construct(TemplateRendererInterface $template, int $rememberMeSeconds)
     {
-        $this->template = $template;
+        $this->template          = $template;
+        $this->rememberMeSeconds = $rememberMeSeconds;
     }
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
@@ -38,6 +41,11 @@ class LoginPageHandler implements MiddlewareInterface
 
                 $flashMessages = $request->getAttribute(FlashMessageMiddleware::FLASH_ATTRIBUTE);
                 if ($response->getStatusCode() !== 302) {
+                    if ((int) $prg['rememberme'] === 1) {
+                        $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
+                        $session->persistSessionFor($this->rememberMeSeconds);
+                    }
+
                     $flashMessages->flash('message', 'You are succesfully authenticated');
                     return new RedirectResponse('/');
                 }

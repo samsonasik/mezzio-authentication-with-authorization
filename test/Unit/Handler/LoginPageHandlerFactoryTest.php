@@ -26,6 +26,14 @@ class LoginPageHandlerFactoryTest extends TestCase
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
+        $this->container
+            ->get('config')
+            ->willReturn([
+                'authentication' => [
+                    'remember-me-seconds' => 86400,
+                ],
+            ]);
+
         $factory = new LoginPageHandlerFactory();
 
         $loginPage = $factory($this->container->reveal());

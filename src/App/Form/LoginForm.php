@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Form;
 
+use Laminas\Form\Element\Checkbox;
 use Laminas\Form\Element\Hidden;
 use Laminas\Form\Element\Password;
 use Laminas\Form\Element\Text;
@@ -43,6 +44,16 @@ class LoginForm extends Form implements InputFilterProviderInterface
         ]);
 
         $this->add([
+            'type'    => Checkbox::class,
+            'name'    => 'rememberme',
+            'options' => [
+                'label'           => 'Remember me',
+                'checked_value'   => 1,
+                'unchecked_value' => 0,
+            ],
+        ]);
+
+        $this->add([
             'type' => Hidden::class,
             'name' => 'csrf',
         ]);
@@ -74,6 +85,11 @@ class LoginForm extends Form implements InputFilterProviderInterface
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
+            ],
+            [
+                'name'        => 'rememberme',
+                'required'    => false,
+                'allow_empty' => true,
             ],
             [
                 'name'       => 'csrf',

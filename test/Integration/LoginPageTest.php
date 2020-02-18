@@ -39,9 +39,10 @@ class LoginPageTest extends TestCase
 
         preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
         $formData = [
-            'username' => 'samsonasik',
-            'password' => '123456',
-            'csrf'     => $matches[0],
+            'username'   => 'samsonasik',
+            'password'   => '123456',
+            'csrf'       => $matches[0],
+            'rememberme' => 0,
         ];
 
         $serverRequest = $serverRequest->withMethod('POST');
@@ -61,9 +62,32 @@ class LoginPageTest extends TestCase
 
         preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
         $sessionData           = [
-            'username' => 'samsonasik',
-            'password' => '123456',
-            'csrf'     => $matches[0],
+            'username'   => 'samsonasik',
+            'password'   => '123456',
+            'csrf'       => $matches[0],
+            'rememberme' => 0,
+        ];
+        $_SESSION['post_data'] = $sessionData;
+
+        $response = $this->app->handle($serverRequest);
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->assertEquals('/', $response->getHeaderLine('Location'));
+    }
+
+    public function testOpenLoginPageHasValidPostDataSessionWithRememberMeCheckedRedirectToHomePage()
+    {
+        $uri           = new Uri('/login');
+        $serverRequest = new ServerRequest([], [], $uri);
+
+        $response = $this->app->handle($serverRequest);
+        $body     = (string) $response->getBody();
+
+        preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
+        $sessionData           = [
+            'username'   => 'samsonasik',
+            'password'   => '123456',
+            'csrf'       => $matches[0],
+            'rememberme' => 1,
         ];
         $_SESSION['post_data'] = $sessionData;
 
@@ -82,9 +106,10 @@ class LoginPageTest extends TestCase
 
         preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
         $sessionData           = [
-            'username' => 'samsonasik',
-            'password' => '1234567',
-            'csrf'     => $matches[0],
+            'username'   => 'samsonasik',
+            'password'   => '1234567',
+            'csrf'       => $matches[0],
+            'rememberme' => 0,
         ];
         $_SESSION['post_data'] = $sessionData;
 

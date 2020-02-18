@@ -12,7 +12,9 @@ class LoginPageHandlerFactory
 {
     public function __invoke(ContainerInterface $container): MiddlewareInterface
     {
-        $template = $container->get(TemplateRendererInterface::class);
-        return new LoginPageHandler($template);
+        $template          = $container->get(TemplateRendererInterface::class);
+        $rememberMeSeconds = $container->get('config')['authentication']['remember-me-seconds'];
+
+        return new LoginPageHandler($template, $rememberMeSeconds);
     }
 }

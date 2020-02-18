@@ -31,5 +31,10 @@ return [
             ],
         ],
     ],
+
+    'authentication' => [
+        'remember-me-seconds' => 604800,
+    ],
+
     // ...
 ];

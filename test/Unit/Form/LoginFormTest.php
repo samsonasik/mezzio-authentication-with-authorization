@@ -32,7 +32,7 @@ class LoginFormTest extends TestCase
         $this->assertIsArray($this->form->getInputFilterSpecification());
     }
 
-    public function validateData(): array
+    public function provideValidateData(): array
     {
         return [
             'valid data'       => [['username' => 'samsonasik', 'password' => '123456', 'csrf' => 's3cr3t'], true],
@@ -43,7 +43,7 @@ class LoginFormTest extends TestCase
     }
 
     /**
-     * @dataProvider validateData
+     * @dataProvider provideValidateData
      */
     public function testValidate(array $data, bool $isValid)
     {
