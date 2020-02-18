@@ -8,6 +8,8 @@ use App\Form\LoginForm;
 use Mezzio\Csrf\SessionCsrfGuard;
 use PHPUnit\Framework\TestCase;
 
+use function rand;
+
 class LoginFormTest extends TestCase
 {
     private $sessionCsrfGuard;
@@ -23,6 +25,7 @@ class LoginFormTest extends TestCase
     {
         $this->assertTrue($this->form->has('username'));
         $this->assertTrue($this->form->has('password'));
+        $this->assertTrue($this->form->has('rememberme'));
         $this->assertTrue($this->form->has('csrf'));
         $this->assertTrue($this->form->has('Login'));
     }
@@ -35,10 +38,42 @@ class LoginFormTest extends TestCase
     public function provideValidateData(): array
     {
         return [
-            'valid data'       => [['username' => 'samsonasik', 'password' => '123456', 'csrf' => 's3cr3t'], true],
-            'invalid username' => [['username' => '', 'password' => '123456', 'csrf' => 's3cr3t'], false],
-            'invalid password' => [['username' => 'samsonasik', 'password' => '', 'csrf' => 's3cr3t'], false],
-            'empty csrf'       => [['username' => 'samsonasik', 'password' => '123456', 'csrf' => ''], false],
+            'valid data'       => [
+                [
+                    'username'   => 'samsonasik',
+                    'password'   => '123456',
+                    'rememberme' => rand(0, 1),
+                    'csrf'       => 's3cr3t',
+                ],
+                true,
+            ],
+            'invalid username' => [
+                [
+                    'username'   => '',
+                    'password'   => '123456',
+                    'rememberme' => rand(0, 1),
+                    'csrf'       => 's3cr3t',
+                ],
+                false,
+            ],
+            'invalid password' => [
+                [
+                    'username'   => 'samsonasik',
+                    'password'   => '',
+                    'rememberme' => rand(0, 1),
+                    'csrf'       => 's3cr3t',
+                ],
+                false,
+            ],
+            'empty csrf'       => [
+                [
+                    'username'   => 'samsonasik',
+                    'password'   => '123456',
+                    'rememberme' => rand(0, 1),
+                    'csrf'       => '',
+                ],
+                false,
+            ],
         ];
     }
 
