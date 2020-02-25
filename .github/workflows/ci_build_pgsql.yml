@@ -47,7 +47,8 @@ jobs:
           cp config/autoload/local.php.ci.pgsql.dist config/autoload/local.php
       - name: "Run test suite"
         run: "composer test-coverage"
-      - name: Upload coverage to Codecov
+      - if: ${{ matrix.php-versions }} == '7.2'
+        name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
