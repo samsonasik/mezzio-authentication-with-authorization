@@ -9,6 +9,8 @@ include 'vendor/autoload.php';
 
 if (getenv('CI') === 'Yes') {
     $config = include 'config/autoload/local.php';
-    $pdo = new PDO($config['authentication']['pdo']['dsn'], null, null);
-    $pdo->exec(file_get_contents(__DIR__ . '/Fixture/' . getenv('DBENGINE'))) || die(print_r($pdo->errorInfo(), true));
+    $pdo    = new PDO($config['authentication']['pdo']['dsn'], null, null);
+    $pdo->exec(
+        file_get_contents(__DIR__ . '/Fixture/' . getenv('DBENGINE'))
+    ) || die(print_r($pdo->errorInfo(), true));
 }
