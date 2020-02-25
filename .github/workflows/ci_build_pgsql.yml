@@ -1,4 +1,4 @@
-name: "ci build"
+name: "ci build pgsql"
 
 on:
   pull_request:

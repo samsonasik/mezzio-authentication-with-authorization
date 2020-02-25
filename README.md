@@ -1,6 +1,7 @@
 # Mezzio 3 with authentication with authorization, featuring crsf, flash, prg, remember me functionality
 
-![ci build](https://github.com/samsonasik/mezzio-authentication-with-authorization/workflows/ci%20build/badge.svg)
+![ci build pgsql](https://github.com/samsonasik/mezzio-authentication-with-authorization/workflows/ci%20build%20pgsql/badge.svg)
+![ci build mysql](https://github.com/samsonasik/mezzio-authentication-with-authorization/workflows/ci%20build%20mysql/badge.svg)
 [![Code Coverage](https://codecov.io/gh/samsonasik/mezzio-authentication-with-authorization/branch/master/graph/badge.svg)](https://codecov.io/gh/samsonasik/mezzio-authentication-with-authorization)
 [![Downloads](https://poser.pugx.org/samsonasik/mezzio-authentication-with-authorization/downloads)](https://packagist.org/packages/samsonasik/mezzio-authentication-with-authorization)
 
