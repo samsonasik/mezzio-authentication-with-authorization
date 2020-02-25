@@ -1,9 +1,25 @@
-# Mezzio 3 with authentication with authorization, featuring crsf, flash, prg, remember me functionality
+# Mezzio 3 with authentication with authorization
 
 ![ci build pgsql](https://github.com/samsonasik/mezzio-authentication-with-authorization/workflows/ci%20build%20pgsql/badge.svg)
 ![ci build mysql](https://github.com/samsonasik/mezzio-authentication-with-authorization/workflows/ci%20build%20mysql/badge.svg)
 [![Code Coverage](https://codecov.io/gh/samsonasik/mezzio-authentication-with-authorization/branch/master/graph/badge.svg)](https://codecov.io/gh/samsonasik/mezzio-authentication-with-authorization)
 [![Downloads](https://poser.pugx.org/samsonasik/mezzio-authentication-with-authorization/downloads)](https://packagist.org/packages/samsonasik/mezzio-authentication-with-authorization)
+
+Introduction
+------------
+
+A Mezzio 3 Skeleton Application with Authentication and Authorization Example.
+
+Features
+--------
+
+- Authentication secured with csrf
+- Authentication using prg for usability
+- Authentication with remember me functionality
+- Authenticaiton notification with Session Flash
+- Authorization with ACL
+- isGranted check in the Layout
+- getRole check in the Layout
 
 Install
 -------
