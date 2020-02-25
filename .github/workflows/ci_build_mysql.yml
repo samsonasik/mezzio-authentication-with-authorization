@@ -18,7 +18,7 @@ jobs:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
         with:
-          extensions: intl
+          extensions: intl, pdo_mysql
           php-version: "${{ matrix.php-versions }}"
           coverage: pcov
       - name: Setup MySQL
@@ -40,9 +40,7 @@ jobs:
       - name: "CS Check"
         run: "composer cs-check"
       - name: "Setup Test and DB Config"
-        run: |
-          cp phpunit.xml.ci.mysql.dist phpunit.xml.dist
-          cp config/autoload/local.php.ci.mysql.dist config/autoload/local.php
+        run: "cp phpunit.xml.ci.mysql.dist phpunit.xml.dist && cp config/autoload/local.php.ci.mysql.dist config/autoload/local.php"
       - name: "Run test suite"
         run: "composer test-coverage"
       - if: matrix.php-versions == '7.2'
