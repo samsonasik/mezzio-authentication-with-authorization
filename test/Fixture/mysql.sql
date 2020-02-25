@@ -1,10 +1,10 @@
-CREATE TABLE users(
+CREATE TABLE IF NOT EXISTS users(
     username varchar(255) PRIMARY KEY NOT NULL,
     password text NOT NULL,
     role varchar(255) NOT NULL DEFAULT 'user'
 );
 
-INSERT INTO users(
+INSERT IGNORE INTO users(
     username,
     password,
     role
@@ -14,7 +14,7 @@ INSERT INTO users(
     'user'
 );
 
-INSERT INTO users(
+INSERT IGNORE INTO users(
     username,
     password,
     role
