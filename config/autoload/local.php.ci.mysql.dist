@@ -13,7 +13,7 @@ return [
         'pdo' => [
 
             // example dsn for mysql
-            'dsn'   => 'mysql:host=127.0.0.1;port=3306;dbname=mezzio;user=test;password=test',
+            'dsn'   => 'mysql:host=127.0.0.1;port=13306;dbname=mezzio;user=test;password=test',
 
             'table' => 'users',
             'field' => [
