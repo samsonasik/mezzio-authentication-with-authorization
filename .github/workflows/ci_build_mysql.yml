@@ -31,6 +31,14 @@ jobs:
           extensions: intl
           php-version: "${{ matrix.php-versions }}"
           coverage: pcov
+      - name: Setup MySQL
+        uses: samin/mysql-action@v1.3
+        with:
+          mysql version: 5.7
+          mysql password: root
+          mysql user: root
+          mysql database: mezzio
+          host port: 3306
       - name: Checkout
         uses: actions/checkout@v2
       - name: "Validate composer.json and composer.lock"
@@ -41,10 +49,12 @@ jobs:
         run: "composer analyze"
       - name: "CS Check"
         run: "composer cs-check"
-      - name: "Setup DB Config"
-        run: "cp config/autoload/local.php.travis.dist config/autoload/local.php"
+      - name: "Setup Test and DB Config"
+        run: |
+          cp phpunit.xml.ci.mysql.dist phpunit.xml.dist
+          cp config/autoload/local.php.ci.mysql.dist config/autoload/local.php
       - name: "Run test suite"
-        run: "cp phpunit.xml.ci.dist phpunit.xml.dist && composer test-coverage"
+        run: "composer test-coverage"
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:

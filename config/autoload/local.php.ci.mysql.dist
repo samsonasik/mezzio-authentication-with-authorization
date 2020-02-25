@@ -1,0 +1,30 @@
+<?php
+/**
+ * Local configuration.
+ *
+ * Copy this file to `local.php` and change its settings as required.
+ * `local.php` is ignored by git and safe to use for local and sensitive data like usernames and passwords.
+ */
+
+declare(strict_types=1);
+
+return [
+    'authentication' => [
+        'pdo' => [
+
+            // example dsn for mysql
+            'dsn'   => 'mysql:host=127.0.0.1;port=3306;dbname=mezzio;user=root;password=root',
+
+            'table' => 'users',
+            'field' => [
+                'identity' => 'username',
+                'password' => 'password',
+            ],
+
+            'sql_get_roles' => 'SELECT role FROM users WHERE username = :identity'
+        ],
+        'username' => 'username',
+        'password' => 'password',
+        'redirect' => '/login',
+    ],
+];

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="test/bootstrap.php"
+         colors="true"
+         stderr="true">
+    <php>
+        <env name="CI" value="Yes"/>
+        <env name="DBENGINE" value="mysql" />
+    </php>
+
+    <testsuites>
+        <testsuite name="App\\Tests">
+            <directory>./test</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+</phpunit>

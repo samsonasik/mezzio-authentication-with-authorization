@@ -1,0 +1,58 @@
+name: "ci build"
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  build:
+    name: PHP ${{ matrix.php-versions }}
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12.1
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: mezzio
+        ports:
+          - 5432:5432
+        options: --name=postgres --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
+    strategy:
+      fail-fast: false
+      matrix:
+        php-versions: ['7.2', '7.3', '7.4']
+    steps:
+      - name: Setup PHP Action
+        uses: shivammathur/setup-php@1.8.2
+        with:
+          extensions: intl
+          php-version: "${{ matrix.php-versions }}"
+          coverage: pcov
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: "Validate composer.json and composer.lock"
+        run: "composer validate"
+      - name: "Install dependencies"
+        run: "composer install --prefer-dist --no-progress --no-suggest && composer development-enable"
+      - name: "Code analyze"
+        run: "composer analyze"
+      - name: "CS Check"
+        run: "composer cs-check"
+      - name: "Setup Test and DB Config"
+        run: |
+          cp phpunit.xml.ci.pgsql.dist phpunit.xml.dist
+          cp config/autoload/local.php.ci.pgsql.dist config/autoload/local.php
+      - name: "Run test suite"
+        run: "composer test-coverage"
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
+          flags: tests
+          name: codecov-umbrella
+          yml: ./codecov.yml
+          fail_ci_if_error: true

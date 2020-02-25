@@ -6,6 +6,7 @@
          stderr="true">
     <php>
         <env name="CI" value="Yes"/>
+        <env name="DBENGINE" value="pgsql" />
     </php>
 
     <testsuites>
