@@ -23,6 +23,6 @@ if (getenv('CI') === 'Yes') {
         $statement = $connection->prepare($sql);
         $statement->execute();
     } catch (PDOException $e) {
-        echo $error->getMessage();
+        echo $e->getMessage();
     }
 }
