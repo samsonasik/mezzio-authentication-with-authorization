@@ -1,5 +1,3 @@
-USE mezzio;
-
 CREATE TABLE IF NOT EXISTS users(
     username varchar(255) PRIMARY KEY NOT NULL,
     password text NOT NULL,
