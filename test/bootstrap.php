@@ -19,9 +19,13 @@ if (getenv('CI') === 'Yes') {
             ]
         );
 
-        $sql       = file_get_contents(__DIR__ . '/Fixture/' . getenv('DBENGINE') . '.sql');
-        $statement = $connection->prepare($sql);
-        $statement->execute();
+        $sql = file_get_contents(__DIR__ . '/Fixture/' . getenv('DBENGINE') . '.sql');
+        if (getenv('DBENGINE') === 'pgsql') {
+            $connection->exec($sql) || die(print_r($connection->errorInfo(), true));
+        } else {
+            $statement = $connection->prepare($sql);
+            $statement->execute();
+        }
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
