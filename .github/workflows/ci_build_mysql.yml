@@ -45,7 +45,7 @@ jobs:
           cp config/autoload/local.php.ci.mysql.dist config/autoload/local.php
       - name: "Run test suite"
         run: "composer test-coverage"
-      - if: ${{ matrix.php-versions }} == '7.2'
+      - if: matrix.php-versions == '7.2'
         name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
