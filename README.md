@@ -16,7 +16,7 @@ Features
 - Authentication secured with csrf
 - Authentication using prg for usability
 - Authentication with remember me functionality
-- Authenticaiton notification with Session Flash
+- Authentication notification with Session Flash
 - Authorization with ACL
 - isGranted check in the Layout
 - getRole check in the Layout
