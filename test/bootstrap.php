@@ -7,8 +7,8 @@ error_reporting(E_ALL);
 
 include 'vendor/autoload.php';
 
-define('CI_DB_ENGINE', getenv('CI_DB_ENGINE'));
-if (CI_DB_ENGINE) {
+$ciDbEngine = getenv('CI_DB_ENGINE'));
+if ($ciDbEngine) {
     $config = (include 'config/autoload/local.php')['authentication']['pdo'];
     try {
         $connection = new PDO(
@@ -20,8 +20,8 @@ if (CI_DB_ENGINE) {
             ]
         );
 
-        $sql = file_get_contents(__DIR__ . '/Fixture/' . CI_DB_ENGINE . '.sql');
-        if (CI_DB_ENGINE === 'pgsql') {
+        $sql = file_get_contents(__DIR__ . '/Fixture/' . $ciDbEngine . '.sql');
+        if ($ciDbEngine === 'pgsql') {
             $connection->exec($sql) || die(print_r($connection->errorInfo(), true));
         } else {
             $statement = $connection->prepare($sql);
