@@ -4,9 +4,6 @@
          bootstrap="test/bootstrap.php"
          colors="true"
          stderr="true">
-    <php>
-        <env name="CI" value="No"/>
-    </php>
     <testsuites>
         <testsuite name="App\\Tests">
             <directory>./test</directory>
