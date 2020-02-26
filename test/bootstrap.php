@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 
 include 'vendor/autoload.php';
 
-const CI_DB_ENGINE = getenv('CI_DB_ENGINE');
+define('CI_DB_ENGINE', getenv('CI_DB_ENGINE'));
 if (CI_DB_ENGINE) {
     $config = (include 'config/autoload/local.php')['authentication']['pdo'];
     try {
