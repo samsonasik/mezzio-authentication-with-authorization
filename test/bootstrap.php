@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 
 include 'vendor/autoload.php';
 
-$ciDbEngine = getenv('CI_DB_ENGINE');
+$ciDbEngine = 'mysql'; //getenv('CI_DB_ENGINE');
 if ($ciDbEngine) {
     $config = (include 'config/autoload/local.php')['authentication']['pdo'];
     try {
@@ -20,10 +20,17 @@ if ($ciDbEngine) {
             ]
         );
 
-        $connection->beginTransaction();
-        $statement = $connection->prepare(file_get_contents(__DIR__ . '/Fixture/' . $ciDbEngine . '.sql'));
-        $statement->execute();
-        $connection->commit();
+        // https://stackoverflow.com/questions/6346674/pdo-support-for-multiple-queries-pdo-mysql-pdo-mysqlnd
+        preg_match_all(
+            "/('(\\\\.|.)*?'|[^;])+/s",
+            file_get_contents(__DIR__ . '/Fixture/' . $ciDbEngine . '.sql'),
+            $matches
+        );
+
+        foreach ($matches[0] as $sql) {
+            $statement = $connection->prepare($sql);
+            $statement->execute();
+        }
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
