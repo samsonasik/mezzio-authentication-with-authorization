@@ -20,10 +20,14 @@ if ($ciDbEngine) {
             ]
         );
 
-        $sql = file_get_contents(__DIR__ . '/Fixture/' . $ciDbEngine . '.sql');
-        if ($ciDbEngine === 'pgsql') {
-            $connection->exec($sql) || die(print_r($connection->errorInfo(), true));
-        } else {
+        // https://stackoverflow.com/questions/6346674/pdo-support-for-multiple-queries-pdo-mysql-pdo-mysqlnd
+        preg_match_all(
+            "/('(\\\\.|.)*?'|[^;])+/s",
+            file_get_contents(__DIR__ . '/Fixture/' . $ciDbEngine . '.sql'),
+            $matches
+        );
+
+        foreach ($matches[0] as $sql) {
             $statement = $connection->prepare($sql);
             $statement->execute();
         }

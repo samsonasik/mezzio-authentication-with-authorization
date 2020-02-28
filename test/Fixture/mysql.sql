@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS users(
     role varchar(255) NOT NULL DEFAULT 'user'
 );
 
-INSERT INTO users(
+INSERT IGNORE INTO users(
     username,
     password,
     role
@@ -14,7 +14,7 @@ INSERT INTO users(
     'user'
 );
 
-INSERT INTO users(
+INSERT IGNORE INTO users(
     username,
     password,
     role
