@@ -20,8 +20,10 @@ if ($ciDbEngine) {
             ]
         );
 
-        $sql = file_get_contents(__DIR__ . '/Fixture/' . $ciDbEngine . '.sql');
-        $connection->exec($sql);
+        $connection->beginTransaction();
+        $statement = $connection->prepare(file_get_contents(__DIR__ . '/Fixture/' . $ciDbEngine . '.sql'));
+        $statement->execute();
+        $connection->commit();
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
