@@ -20,13 +20,9 @@ if ($ciDbEngine) {
             ]
         );
 
-        $sql = file_get_contents(__DIR__ . '/Fixture/' . $ciDbEngine . '.sql');
-        if ($ciDbEngine === 'pgsql') {
-            $connection->exec($sql) || die(print_r($connection->errorInfo(), true));
-        } else {
-            $statement = $connection->prepare($sql);
-            $statement->execute();
-        }
+        $sql       = file_get_contents(__DIR__ . '/Fixture/' . $ciDbEngine . '.sql');
+        $statement = $connection->prepare($sql);
+        $statement->execute();
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
