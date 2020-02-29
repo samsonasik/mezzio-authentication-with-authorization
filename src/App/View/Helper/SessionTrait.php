@@ -4,18 +4,16 @@ declare(strict_types=1);
 
 namespace App\View\Helper;
 
-use function headers_sent;
-use function session_start;
 use function session_status;
 
-use const PHP_SESSION_NONE;
+use const PHP_SESSION_ACTIVE;
 
 trait SessionTrait
 {
-    public function checkIsStarted(): void
+    private function getSession(): array
     {
-        if (session_status() === PHP_SESSION_NONE && ! headers_sent()) {
-            session_start();
-        }
+        return session_status() === PHP_SESSION_ACTIVE
+            ? $_SESSION
+            : [];
     }
 }
