@@ -14,8 +14,8 @@ return [
 
             // example dsn for postgresql
             'dsn'   => 'pgsql:host=127.0.0.1;port=5432;dbname=mezzio',
-            'username' => 'test',
-            'password' => 'test',
+            'username' => 'postgres',
+            'password' => 'postgres',
 
             'table' => 'users',
             'field' => [
