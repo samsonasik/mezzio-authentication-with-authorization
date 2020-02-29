@@ -16,9 +16,7 @@ class GetRole extends AbstractHelper
 
     public function __invoke(): string
     {
-        $this->checkIsStarted();
-
-        $session     = new Session($_SESSION);
+        $session     = new Session($this->getSession());
         $hasLoggedIn = $session->has(UserInterface::class);
 
         if (! $hasLoggedIn) {

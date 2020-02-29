@@ -14,10 +14,8 @@ class Flash extends AbstractHelper
 
     public function __invoke(): array
     {
-        $this->checkIsStarted();
-
         return FlashMessages::createFromSession(
-            new Session($_SESSION)
+            new Session($this->getSession())
         )->getFlashes();
     }
 }

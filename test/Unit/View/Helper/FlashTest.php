@@ -7,6 +7,12 @@ namespace AppTest\Unit\View\Helper;
 use App\View\Helper\Flash;
 use PHPUnit\Framework\TestCase;
 
+use function session_start;
+
+/**
+ * @runTestsInSeparateProcesses
+ * @preserveGlobalState disabled
+ */
 class FlashTest extends TestCase
 {
     private $helper;
@@ -16,10 +22,14 @@ class FlashTest extends TestCase
         $this->helper = new Flash();
     }
 
-    public function testGetFlashMessages()
+    public function testGetFlashMessagesSessionIsNotActive()
     {
-        // flush existing data first that caused by integration tests
-        ($this->helper)();
+        $this->assertEquals([], ($this->helper)());
+    }
+
+    public function testGetFlashMessagesSessionIsActive()
+    {
+        session_start();
 
         $_SESSION['Mezzio\Flash\FlashMessagesInterface::FLASH_NEXT'] = [
             'message' => [
