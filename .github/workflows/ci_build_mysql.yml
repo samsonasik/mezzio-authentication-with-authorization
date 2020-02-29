@@ -14,15 +14,15 @@ jobs:
     name: PHP ${{ matrix.php-versions }}
     runs-on: ubuntu-latest
     services:
-      mariadb:
+      mysql:
         image: mariadb:latest
-        ports:
-          - 3306
         env:
-          MYSQL_USER: test
-          MYSQL_PASSWORD: test
-          MYSQL_DATABASE: mezzio
-        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
+            MYSQL_USER: test
+            MYSQL_PASSWORD: test
+            MYSQL_DATABASE: mezzio
+        ports:
+        - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     strategy:
       fail-fast: false
       matrix:
@@ -36,13 +36,6 @@ jobs:
           coverage: pcov
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Verify MariaDB connection
-        env:
-          PORT: ${{ job.services.mariadb.ports[3306] }}
-        run: |
-          while ! mysqladmin ping -h"127.0.0.1" -P"$PORT" --silent; do
-            sleep 1
-          done
       - name: "Validate composer.json and composer.lock"
         run: "composer validate"
       - name: "Install dependencies"
