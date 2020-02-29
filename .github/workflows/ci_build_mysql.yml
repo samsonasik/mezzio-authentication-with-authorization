@@ -13,16 +13,6 @@ jobs:
   build:
     name: PHP ${{ matrix.php-versions }}
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mariadb:latest
-        env:
-            MYSQL_USER: test
-            MYSQL_PASSWORD: test
-            MYSQL_DATABASE: mezzio
-        ports:
-        - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     strategy:
       fail-fast: false
       matrix:
@@ -36,6 +26,8 @@ jobs:
           coverage: pcov
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Create DB
+        run: mysql -uroot -proot -e "CREATE DATABASE mezzio;"
       - name: "Validate composer.json and composer.lock"
         run: "composer validate"
       - name: "Install dependencies"

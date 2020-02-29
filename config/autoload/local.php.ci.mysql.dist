@@ -14,8 +14,8 @@ return [
 
             // example dsn for mysql
             'dsn'   => 'mysql:host=127.0.0.1;port=3306;dbname=mezzio',
-            'username' => 'test',
-            'password' => 'test',
+            'username' => 'root',
+            'password' => 'root',
 
             'table' => 'users',
             'field' => [
