@@ -26,7 +26,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-versions: ['7.3', '7.4', '8.0']
+        php-versions: ['7.4', '8.0']
     steps:
       - name: Setup PHP Action
         uses: shivammathur/setup-php@1.8.2
@@ -48,7 +48,7 @@ jobs:
         run: "cp config/autoload/local.php.ci.${{ env.CI_DB_ENGINE }}.dist config/autoload/local.php"
       - name: "Run test suite"
         run: "composer test-coverage"
-      - if: matrix.php-versions == '7.3'
+      - if: matrix.php-versions == '7.4'
         name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
