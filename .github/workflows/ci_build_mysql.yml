@@ -23,7 +23,7 @@ jobs:
         with:
           extensions: intl
           php-version: "${{ matrix.php-versions }}"
-          coverage: pcov
+          coverage: xdebug
       - name: Shutdown Ubuntu MySQL (SUDO)
         run: sudo service mysql stop
       - name: Setup MySQL
