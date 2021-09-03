@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AppTest\Unit\View\Helper;
 
 use App\View\Helper\Flash;
+use Mezzio\Flash\FlashMessagesInterface;
 use PHPUnit\Framework\TestCase;
 
 use function session_start;
@@ -15,6 +16,7 @@ use function session_start;
  */
 class FlashTest extends TestCase
 {
+    /** @var Flash */
     private $helper;
 
     protected function setUp(): void
@@ -22,16 +24,16 @@ class FlashTest extends TestCase
         $this->helper = new Flash();
     }
 
-    public function testGetFlashMessagesSessionIsNotActive()
+    public function testGetFlashMessagesSessionIsNotActive(): void
     {
         $this->assertEquals([], ($this->helper)());
     }
 
-    public function testGetFlashMessagesSessionIsActive()
+    public function testGetFlashMessagesSessionIsActive(): void
     {
         session_start();
 
-        $_SESSION['Mezzio\Flash\FlashMessagesInterface::FLASH_NEXT'] = [
+        $_SESSION[FlashMessagesInterface::class . '::FLASH_NEXT'] = [
             'message' => [
                 'value' => 'Test',
                 'hops'  => 1,

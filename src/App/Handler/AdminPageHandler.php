@@ -12,6 +12,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class AdminPageHandler implements RequestHandlerInterface
 {
+    /** @var TemplateRendererInterface */
     private $template;
 
     public function __construct(TemplateRendererInterface $template)

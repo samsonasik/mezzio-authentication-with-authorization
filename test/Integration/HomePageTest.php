@@ -6,11 +6,13 @@ namespace AppTest\Integration;
 
 use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\Uri;
+use Mezzio\Application;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
 class HomePageTest extends TestCase
 {
+    /** @var Application */
     private $app;
 
     protected function setUp(): void
@@ -18,7 +20,7 @@ class HomePageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    public function testOpenHomePageAsAguestRedirectToLoginPage()
+    public function testOpenHomePageAsAguestRedirectToLoginPage(): void
     {
         $uri           = new Uri('/');
         $serverRequest = new ServerRequest([], [], $uri);
@@ -28,7 +30,7 @@ class HomePageTest extends TestCase
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
     }
 
-    public function testOpenHomePageAsAuserGot200Ok()
+    public function testOpenHomePageAsAuserGot200Ok(): void
     {
         $sessionData                    = [
             'username' => 'samsonasik',

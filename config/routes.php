@@ -1,6 +1,11 @@
 <?php
 
 declare(strict_types=1);
+use App\Handler\HomePageHandler;
+use App\Handler\AdminPageHandler;
+use App\Handler\PingHandler;
+use App\Handler\LoginPageHandler;
+use App\Handler\LogoutHandler;
 
 use App\Handler;
 use App\Middleware\PrgMiddleware;
@@ -42,18 +47,18 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     $app->get('/', [
         AuthenticationMiddleware::class,
         AuthorizationMiddleware::class,
-        Handler\HomePageHandler::class,
+        HomePageHandler::class,
     ], 'home.view');
 
     $app->route('/admin', [
         AuthenticationMiddleware::class,
         AuthorizationMiddleware::class,
-        Handler\AdminPageHandler::class,
+        AdminPageHandler::class,
     ], ['GET'], 'admin.view');
 
     $app->get('/api/ping', [
         AuthorizationMiddleware::class,
-        Handler\PingHandler::class,
+        PingHandler::class,
     ], 'api.ping.view');
 
     $app->route('/login', [
@@ -63,7 +68,7 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
         // prg handling
         PrgMiddleware::class,
         // the login page
-        Handler\LoginPageHandler::class,
+        LoginPageHandler::class,
         // authentication handling
         AuthenticationMiddleware::class,
     ], ['GET', 'POST'], 'login.form');
@@ -71,6 +76,6 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     $app->get('/logout', [
         AuthenticationMiddleware::class,
         AuthorizationMiddleware::class,
-        Handler\LogoutHandler::class,
+        LogoutHandler::class,
     ], 'logout.access');
 };

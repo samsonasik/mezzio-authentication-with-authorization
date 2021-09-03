@@ -12,10 +12,13 @@ use Mezzio\Authorization\Acl\LaminasAcl;
 use Mezzio\LaminasView\UrlHelper;
 use Mezzio\Router\LaminasRouter;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 
 class IsGrantedFactoryTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var ContainerInterface|ObjectProphecy */
     protected $container;
 
@@ -24,7 +27,7 @@ class IsGrantedFactoryTest extends TestCase
         $this->container = $this->prophesize(ContainerInterface::class);
     }
 
-    public function testFactory()
+    public function testFactory(): void
     {
         $this->container
             ->get(LaminasAcl::class)

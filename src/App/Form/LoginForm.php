@@ -25,7 +25,7 @@ class LoginForm extends Form implements InputFilterProviderInterface
         $this->init();
     }
 
-    public function init()
+    public function init(): void
     {
         $this->add([
             'type'    => Text::class,
@@ -67,6 +67,9 @@ class LoginForm extends Form implements InputFilterProviderInterface
         ]);
     }
 
+    /**
+     * @return mixed[]
+     */
     public function getInputFilterSpecification(): array
     {
         return [
@@ -98,7 +101,7 @@ class LoginForm extends Form implements InputFilterProviderInterface
                     [
                         'name'    => 'callback',
                         'options' => [
-                            'callback' => function (string $value) {
+                            'callback' => function (string $value): bool {
                                 return $this->guard->validateToken($value);
                             },
                             'messages' => [

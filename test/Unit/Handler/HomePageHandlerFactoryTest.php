@@ -8,10 +8,13 @@ use App\Handler\HomePageHandler;
 use App\Handler\HomePageHandlerFactory;
 use Mezzio\Template\TemplateRendererInterface;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 
 class HomePageHandlerFactoryTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var ContainerInterface|ObjectProphecy */
     protected $container;
 
@@ -20,7 +23,7 @@ class HomePageHandlerFactoryTest extends TestCase
         $this->container = $this->prophesize(ContainerInterface::class);
     }
 
-    public function testFactoryWithTemplate()
+    public function testFactoryWithTemplate(): void
     {
         $this->container
             ->get(TemplateRendererInterface::class)

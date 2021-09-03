@@ -9,10 +9,13 @@ use App\Middleware\UserMiddlewareFactory;
 use Mezzio\Authentication\DefaultUserFactory;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 
 class UserMiddlewareFactoryTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var ContainerInterface|ObjectProphecy */
     protected $container;
 
@@ -21,7 +24,7 @@ class UserMiddlewareFactoryTest extends TestCase
         $this->container = $this->prophesize(ContainerInterface::class);
     }
 
-    public function testFactory()
+    public function testFactory(): void
     {
         $this->container
             ->get(UserInterface::class)

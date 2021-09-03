@@ -15,4 +15,8 @@
             <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
+    <php>
+        <ini name="xdebug.mode" value="coverage"/>
+        <env name="XDEBUG_MODE" value="coverage"/>
+    </php>
 </phpunit>

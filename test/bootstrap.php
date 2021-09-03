@@ -22,7 +22,7 @@ if ($ciDbEngine) {
 
         // https://stackoverflow.com/questions/6346674/pdo-support-for-multiple-queries-pdo-mysql-pdo-mysqlnd
         preg_match_all(
-            "/('(\\\\.|.)*?'|[^;])+/s",
+            "#('(\\\\.|.)*?'|[^;])+#s",
             file_get_contents(__DIR__ . '/Fixture/' . $ciDbEngine . '.sql'),
             $matches
         );
@@ -31,7 +31,7 @@ if ($ciDbEngine) {
             $statement = $connection->prepare($sql);
             $statement->execute();
         }
-    } catch (PDOException $e) {
-        echo $e->getMessage();
+    } catch (PDOException $pdoException) {
+        echo $pdoException->getMessage();
     }
 }
