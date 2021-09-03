@@ -47,7 +47,7 @@ jobs:
       - name: "Setup Test and DB Config"
         run: "cp config/autoload/local.php.ci.${{ env.CI_DB_ENGINE }}.dist config/autoload/local.php"
       - name: "Run test suite"
-        run: "composer test-coverage"
+        run: "XDEBUG_MODE=coverage composer test-coverage"
       - if: matrix.php-versions == '8.0'
         name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
