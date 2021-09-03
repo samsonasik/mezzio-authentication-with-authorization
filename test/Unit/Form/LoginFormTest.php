@@ -7,11 +7,14 @@ namespace AppTest\Unit\Form;
 use App\Form\LoginForm;
 use Mezzio\Csrf\SessionCsrfGuard;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 use function rand;
 
 class LoginFormTest extends TestCase
 {
+    use ProphecyTrait;
+
     private $sessionCsrfGuard;
     private $form;
 

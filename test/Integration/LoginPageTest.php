@@ -12,7 +12,6 @@ use PHPUnit\Framework\TestCase;
 use function preg_match;
 
 /**
- * @runTestsInSeparateProcesses
  * @preserveGlobalState disabled
  */
 class LoginPageTest extends TestCase

@@ -10,7 +10,6 @@ use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @runTestsInSeparateProcesses
  * @preserveGlobalState disabled
  */
 class LogoutPageTest extends TestCase

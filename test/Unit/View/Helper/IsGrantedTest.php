@@ -12,11 +12,14 @@ use Mezzio\Router\LaminasRouter;
 use Mezzio\Router\RouteResult;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 class IsGrantedTest extends TestCase
 {
+    use ProphecyTrait;
+
     private $helper;
 
     protected function setUp(): void
