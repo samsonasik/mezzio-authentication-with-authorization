@@ -7,6 +7,7 @@ use Rector\CodingStyle\Rector\Include_\FollowRequireByDirRector;
 use Rector\Core\Configuration\Option;
 use Rector\Core\ValueObject\PhpVersion;
 use Rector\Set\ValueObject\SetList;
+use Rector\TypeDeclaration\Rector\ClassMethod\AddArrayParamDocTypeRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictTypedPropertyRector;
 use Rector\TypeDeclaration\Rector\Param\ParamTypeFromStrictTypedPropertyRector;
 use Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector;
@@ -32,5 +33,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
         // in test
         FollowRequireByDirRector::class,
+
+        // buggy on param callable
+        AddArrayParamDocTypeRector::class,
     ]);
 };
