@@ -40,7 +40,9 @@ jobs:
       - name: "Install dependencies"
         run: "composer install --prefer-dist --no-progress --no-suggest && composer development-enable"
       - name: "Code analyze"
-        run: "composer analyze"
+        run: |
+          composer analyze
+          vendor/bin/rector --dry-run
       - name: "CS Check"
         run: "composer cs-check"
       - name: "Setup Test and DB Config"
