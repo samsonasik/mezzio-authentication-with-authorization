@@ -1,9 +1,9 @@
 <?php
 
 declare(strict_types=1);
+
 use Mezzio\Flash\ConfigProvider;
 use Laminas\ZendFrameworkBridge\ConfigPostProcessor;
-
 use Laminas\ConfigAggregator\ArrayProvider;
 use Laminas\ConfigAggregator\ConfigAggregator;
 use Laminas\ConfigAggregator\PhpFileProvider;
