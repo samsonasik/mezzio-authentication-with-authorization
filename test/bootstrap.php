@@ -5,11 +5,11 @@ declare(strict_types=1);
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 
-include __DIR__ . '/vendor/autoload.php';
+include 'vendor/autoload.php';
 
 $ciDbEngine = getenv('CI_DB_ENGINE');
 if ($ciDbEngine) {
-    $config = (include __DIR__ . '/config/autoload/local.php')['authentication']['pdo'];
+    $config = (include 'config/autoload/local.php')['authentication']['pdo'];
     try {
         $connection = new PDO(
             $config['dsn'],
