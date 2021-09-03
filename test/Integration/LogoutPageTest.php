@@ -6,6 +6,7 @@ namespace AppTest\Integration;
 
 use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\Uri;
+use Mezzio\Application;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
@@ -14,6 +15,7 @@ use PHPUnit\Framework\TestCase;
  */
 class LogoutPageTest extends TestCase
 {
+    /** @var Application */
     private $app;
 
     protected function setUp(): void
@@ -21,7 +23,7 @@ class LogoutPageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    public function testOpenLogoutPageAsAuserRedirectToLoginPage()
+    public function testOpenLogoutPageAsAuserRedirectToLoginPage(): void
     {
         $sessionData                    = [
             'username' => 'samsonasik',
@@ -39,7 +41,7 @@ class LogoutPageTest extends TestCase
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
     }
 
-    public function testOpenLogoutPageAsAGuestRedirectToLoginPage()
+    public function testOpenLogoutPageAsAGuestRedirectToLoginPage(): void
     {
         $uri           = new Uri('/logout');
         $serverRequest = new ServerRequest([], [], $uri);

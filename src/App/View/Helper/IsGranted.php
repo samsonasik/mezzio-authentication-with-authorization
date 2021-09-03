@@ -14,9 +14,13 @@ use Mezzio\Router\RouteResult;
 
 class IsGranted extends AbstractHelper
 {
+    /** @var LaminasAcl */
     private $acl;
+    /** @var GetRole */
     private $getRole;
+    /** @var UrlHelper */
     private $url;
+    /** @var LaminasRouter */
     private $router;
 
     public function __construct(LaminasAcl $acl, GetRole $getRole, UrlHelper $url, LaminasRouter $router)

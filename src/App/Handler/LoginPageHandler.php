@@ -18,7 +18,9 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class LoginPageHandler implements MiddlewareInterface
 {
+    /** @var TemplateRendererInterface */
     private $template;
+    /** @var int */
     private $rememberMeSeconds;
 
     public function __construct(TemplateRendererInterface $template, int $rememberMeSeconds)

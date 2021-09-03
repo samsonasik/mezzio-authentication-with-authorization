@@ -6,11 +6,13 @@ namespace AppTest\Integration;
 
 use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\Uri;
+use Mezzio\Application;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
 class AdminPageTest extends TestCase
 {
+    /** @var Application */
     private $app;
 
     protected function setUp(): void
@@ -18,7 +20,7 @@ class AdminPageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    public function testOpenAdminPageAsAguestRedirectToLoginPage()
+    public function testOpenAdminPageAsAguestRedirectToLoginPage(): void
     {
         $uri           = new Uri('/admin');
         $serverRequest = new ServerRequest([], [], $uri);
@@ -28,7 +30,7 @@ class AdminPageTest extends TestCase
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
     }
 
-    public function testOpenAdminPageAsAuserGot403Forbidden()
+    public function testOpenAdminPageAsAuserGot403Forbidden(): void
     {
         $sessionData                    = [
             'username' => 'samsonasik',
@@ -45,7 +47,7 @@ class AdminPageTest extends TestCase
         $this->assertEquals(403, $response->getStatusCode());
     }
 
-    public function testOpenAdminPageAsAnAdminGot200Ok()
+    public function testOpenAdminPageAsAnAdminGot200Ok(): void
     {
         $sessionData                    = [
             'username' => 'admin',

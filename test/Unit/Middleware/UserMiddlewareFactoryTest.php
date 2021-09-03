@@ -24,7 +24,7 @@ class UserMiddlewareFactoryTest extends TestCase
         $this->container = $this->prophesize(ContainerInterface::class);
     }
 
-    public function testFactory()
+    public function testFactory(): void
     {
         $this->container
             ->get(UserInterface::class)

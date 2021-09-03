@@ -6,6 +6,7 @@ namespace AppTest\Integration;
 
 use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\Uri;
+use Mezzio\Application;
 use Mezzio\Authentication\UserInterface;
 use PHPUnit\Framework\TestCase;
 
@@ -16,6 +17,7 @@ use function preg_match;
  */
 class LoginPageTest extends TestCase
 {
+    /** @var Application */
     private $app;
 
     protected function setUp(): void
@@ -23,7 +25,7 @@ class LoginPageTest extends TestCase
         $this->app = AppFactory::create();
     }
 
-    public function testOpenLoginPageAsAguestGot200OK()
+    public function testOpenLoginPageAsAguestGot200OK(): void
     {
         $uri           = new Uri('/login');
         $serverRequest = new ServerRequest([], [], $uri);
@@ -32,7 +34,7 @@ class LoginPageTest extends TestCase
         $this->assertEquals(200, $response->getStatusCode());
     }
 
-    public function testOpenLoginPageAndSubmitLoginRedirect303Prg()
+    public function testOpenLoginPageAndSubmitLoginRedirect303Prg(): void
     {
         $uri           = new Uri('/login');
         $serverRequest = new ServerRequest([], [], $uri);
@@ -40,7 +42,7 @@ class LoginPageTest extends TestCase
         $response = $this->app->handle($serverRequest);
         $body     = (string) $response->getBody();
 
-        preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
+        preg_match('#(?<=name="csrf" value=")(.{32})#', $body, $matches);
         $formData = [
             'username'   => 'samsonasik',
             'password'   => '123456',
@@ -55,7 +57,7 @@ class LoginPageTest extends TestCase
         $this->assertEquals(303, $response->getStatusCode());
     }
 
-    public function testOpenLoginPageHasValidPostDataSessionRedirectToHomePage()
+    public function testOpenLoginPageHasValidPostDataSessionRedirectToHomePage(): void
     {
         $uri           = new Uri('/login');
         $serverRequest = new ServerRequest([], [], $uri);
@@ -63,7 +65,7 @@ class LoginPageTest extends TestCase
         $response = $this->app->handle($serverRequest);
         $body     = (string) $response->getBody();
 
-        preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
+        preg_match('#(?<=name="csrf" value=")(.{32})#', $body, $matches);
         $sessionData           = [
             'username'   => 'samsonasik',
             'password'   => '123456',
@@ -77,7 +79,7 @@ class LoginPageTest extends TestCase
         $this->assertEquals('/', $response->getHeaderLine('Location'));
     }
 
-    public function testOpenLoginPageHasValidPostDataSessionWithRememberMeCheckedRedirectToHomePage()
+    public function testOpenLoginPageHasValidPostDataSessionWithRememberMeCheckedRedirectToHomePage(): void
     {
         $uri           = new Uri('/login');
         $serverRequest = new ServerRequest([], [], $uri);
@@ -85,7 +87,7 @@ class LoginPageTest extends TestCase
         $response = $this->app->handle($serverRequest);
         $body     = (string) $response->getBody();
 
-        preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
+        preg_match('#(?<=name="csrf" value=")(.{32})#', $body, $matches);
         $sessionData           = [
             'username'   => 'samsonasik',
             'password'   => '123456',
@@ -99,7 +101,7 @@ class LoginPageTest extends TestCase
         $this->assertEquals('/', $response->getHeaderLine('Location'));
     }
 
-    public function testOpenLoginPageHasInValidPostDataSessionRedirectBackToLoginPage()
+    public function testOpenLoginPageHasInValidPostDataSessionRedirectBackToLoginPage(): void
     {
         $uri           = new Uri('/login');
         $serverRequest = new ServerRequest([], [], $uri);
@@ -107,7 +109,7 @@ class LoginPageTest extends TestCase
         $response = $this->app->handle($serverRequest);
         $body     = (string) $response->getBody();
 
-        preg_match('/(?<=name="csrf" value=")(.{32})/', $body, $matches);
+        preg_match('#(?<=name="csrf" value=")(.{32})#', $body, $matches);
         $sessionData           = [
             'username'   => 'samsonasik',
             'password'   => '1234567',
@@ -122,7 +124,7 @@ class LoginPageTest extends TestCase
         $this->assertEquals('/login', $response->getHeaderLine('Location'));
     }
 
-    public function testOpenLoginPageAsAuserRedirectToHomePage()
+    public function testOpenLoginPageAsAuserRedirectToHomePage(): void
     {
         $sessionData                    = [
             'username' => 'samsonasik',

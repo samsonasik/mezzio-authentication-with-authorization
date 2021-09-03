@@ -8,6 +8,7 @@ use App\Form\LoginForm;
 use Mezzio\Csrf\SessionCsrfGuard;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
+use Prophecy\Prophecy\ObjectProphecy;
 
 use function rand;
 
@@ -15,7 +16,9 @@ class LoginFormTest extends TestCase
 {
     use ProphecyTrait;
 
+    /** @var ObjectProphecy */
     private $sessionCsrfGuard;
+    /** @var LoginForm */
     private $form;
 
     protected function setUp(): void
@@ -24,7 +27,7 @@ class LoginFormTest extends TestCase
         $this->form             = new LoginForm($this->sessionCsrfGuard->reveal());
     }
 
-    public function testHasElements()
+    public function testHasElements(): void
     {
         $this->assertTrue($this->form->has('username'));
         $this->assertTrue($this->form->has('password'));
@@ -33,11 +36,14 @@ class LoginFormTest extends TestCase
         $this->assertTrue($this->form->has('Login'));
     }
 
-    public function testHasInputFilters()
+    public function testHasInputFilters(): void
     {
         $this->assertIsArray($this->form->getInputFilterSpecification());
     }
 
+    /**
+     * @return array<string, array<array<string, string|int>|bool>>
+     */
     public function provideValidateData(): array
     {
         return [
@@ -82,8 +88,9 @@ class LoginFormTest extends TestCase
 
     /**
      * @dataProvider provideValidateData
+     * @param array<string, string>|array<string, int> $data
      */
-    public function testValidate(array $data, bool $isValid)
+    public function testValidate(array $data, bool $isValid): void
     {
         $this->sessionCsrfGuard->validateToken($data['csrf'])->willReturn(true);
         $this->form->setData($data);

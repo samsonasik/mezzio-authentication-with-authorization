@@ -16,6 +16,7 @@ use function session_start;
  */
 class GetRoleTest extends TestCase
 {
+    /** @var GetRole */
     private $helper;
 
     protected function setUp(): void
@@ -23,12 +24,12 @@ class GetRoleTest extends TestCase
         $this->helper = new GetRole();
     }
 
-    public function testGetRoleGuestSessionIsNotActive()
+    public function testGetRoleGuestSessionIsNotActive(): void
     {
         $this->assertEquals('guest', ($this->helper)());
     }
 
-    public function testGetRoleUser()
+    public function testGetRoleUser(): void
     {
         session_start();
 

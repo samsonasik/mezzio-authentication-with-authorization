@@ -23,7 +23,7 @@ class LoginPageHandlerFactoryTest extends TestCase
         $this->container = $this->prophesize(ContainerInterface::class);
     }
 
-    public function testFactoryWithTemplate()
+    public function testFactoryWithTemplate(): void
     {
         $this->container
             ->get(TemplateRendererInterface::class)

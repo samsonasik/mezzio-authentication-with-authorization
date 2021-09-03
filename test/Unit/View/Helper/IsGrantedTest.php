@@ -20,6 +20,7 @@ class IsGrantedTest extends TestCase
 {
     use ProphecyTrait;
 
+    /** @var IsGranted */
     private $helper;
 
     protected function setUp(): void
@@ -68,6 +69,9 @@ class IsGrantedTest extends TestCase
         );
     }
 
+    /**
+     * @return array<string, array<string|bool>>
+     */
     public function provideGrantData(): array
     {
         return [
@@ -80,7 +84,7 @@ class IsGrantedTest extends TestCase
     }
 
     /** @dataProvider provideGrantData */
-    public function testIsGranted(string $role, string $resource, bool $isGranted)
+    public function testIsGranted(string $role, string $resource, bool $isGranted): void
     {
         $this->url->__invoke($resource, [], [])->willReturn('/' . $resource);
         $routeResult = $this->prophesize(RouteResult::class);

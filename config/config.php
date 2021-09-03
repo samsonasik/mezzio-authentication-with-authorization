@@ -1,6 +1,8 @@
 <?php
 
 declare(strict_types=1);
+use Mezzio\Flash\ConfigProvider;
+use Laminas\ZendFrameworkBridge\ConfigPostProcessor;
 
 use Laminas\ConfigAggregator\ArrayProvider;
 use Laminas\ConfigAggregator\ConfigAggregator;
@@ -13,7 +15,7 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
-    Mezzio\Flash\ConfigProvider::class,
+    ConfigProvider::class,
     Mezzio\Csrf\ConfigProvider::class,
     Laminas\I18n\ConfigProvider::class,
     Laminas\Form\ConfigProvider::class,
@@ -51,6 +53,6 @@ $aggregator = new ConfigAggregator([
 
     // Load development config if it exists
     new PhpFileProvider(realpath(__DIR__) . '/development.config.php'),
-], $cacheConfig['config_cache_path'], [Laminas\ZendFrameworkBridge\ConfigPostProcessor::class]);
+], $cacheConfig['config_cache_path'], [ConfigPostProcessor::class]);
 
 return $aggregator->getMergedConfig();

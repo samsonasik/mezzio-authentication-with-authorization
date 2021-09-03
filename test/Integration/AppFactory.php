@@ -11,13 +11,13 @@ final class AppFactory
 {
     public static function create(): Application
     {
-        $container = require 'config/container.php';
+        $container = require __DIR__ . '/config/container.php';
 
         $app     = $container->get(Application::class);
         $factory = $container->get(MiddlewareFactory::class);
 
-        (require 'config/pipeline.php')($app, $factory, $container);
-        (require 'config/routes.php')($app, $factory, $container);
+        (require __DIR__ . '/config/pipeline.php')($app, $factory, $container);
+        (require __DIR__ . '/config/routes.php')($app, $factory, $container);
 
         unset($_SESSION);
         return $app;

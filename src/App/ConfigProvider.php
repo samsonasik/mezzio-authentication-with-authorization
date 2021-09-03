@@ -4,6 +4,20 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Handler\AdminPageHandler;
+use App\Handler\AdminPageHandlerFactory;
+use App\Handler\HomePageHandler;
+use App\Handler\HomePageHandlerFactory;
+use App\Handler\LoginPageHandler;
+use App\Handler\LoginPageHandlerFactory;
+use App\Handler\LogoutHandler;
+use App\Handler\PingHandler;
+use App\Middleware\PrgMiddleware;
+use App\Middleware\UserMiddleware;
+use App\Middleware\UserMiddlewareFactory;
+use App\View\Helper\Flash;
+use App\View\Helper\GetRole;
+use App\View\Helper\IsGrantedFactory;
 use Laminas\ServiceManager\Factory\InvokableFactory;
 
 /**
@@ -26,11 +40,11 @@ class ConfigProvider
             'templates'    => $this->getTemplates(),
             'view_helpers' => [
                 'invokables' => [
-                    'flash'   => View\Helper\Flash::class,
-                    'getRole' => View\Helper\GetRole::class,
+                    'flash'   => Flash::class,
+                    'getRole' => GetRole::class,
                 ],
                 'factories'  => [
-                    'isGranted' => View\Helper\IsGrantedFactory::class,
+                    'isGranted' => IsGrantedFactory::class,
                 ],
             ],
         ];
@@ -38,26 +52,30 @@ class ConfigProvider
 
     /**
      * Returns the container dependencies
+     *
+     * @return mixed[]
      */
     public function getDependencies(): array
     {
         return [
             'invokables' => [
-                Handler\PingHandler::class   => Handler\PingHandler::class,
-                Handler\LogoutHandler::class => Handler\LogoutHandler::class,
+                PingHandler::class   => PingHandler::class,
+                LogoutHandler::class => LogoutHandler::class,
             ],
             'factories'  => [
-                Handler\AdminPageHandler::class  => Handler\AdminPageHandlerFactory::class,
-                Handler\LoginPageHandler::class  => Handler\LoginPageHandlerFactory::class,
-                Handler\HomePageHandler::class   => Handler\HomePageHandlerFactory::class,
-                Middleware\PrgMiddleware::class  => InvokableFactory::class,
-                Middleware\UserMiddleware::class => Middleware\UserMiddlewareFactory::class,
+                AdminPageHandler::class => AdminPageHandlerFactory::class,
+                LoginPageHandler::class => LoginPageHandlerFactory::class,
+                HomePageHandler::class  => HomePageHandlerFactory::class,
+                PrgMiddleware::class    => InvokableFactory::class,
+                UserMiddleware::class   => UserMiddlewareFactory::class,
             ],
         ];
     }
 
     /**
      * Returns the templates configuration
+     *
+     * @return array<string, array<string, array<string>>>
      */
     public function getTemplates(): array
     {
