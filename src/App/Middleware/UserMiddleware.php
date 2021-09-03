@@ -21,9 +21,6 @@ class UserMiddleware implements MiddlewareInterface
     /** @var string */
     private $redirect;
 
-    /**
-     * @param callable $user
-     */
     public function __construct(callable $user, string $redirect)
     {
         $this->user     = $user;
