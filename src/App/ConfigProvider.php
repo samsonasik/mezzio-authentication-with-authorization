@@ -19,6 +19,7 @@ use App\View\Helper\Flash;
 use App\View\Helper\GetRole;
 use App\View\Helper\IsGrantedFactory;
 use Laminas\ServiceManager\Factory\InvokableFactory;
+use App\Middleware\LegacyApplicationMiddleware;
 
 /**
  * The configuration provider for the App module
@@ -68,6 +69,7 @@ class ConfigProvider
                 HomePageHandler::class  => HomePageHandlerFactory::class,
                 PrgMiddleware::class    => InvokableFactory::class,
                 UserMiddleware::class   => UserMiddlewareFactory::class,
+                LegacyApplicationMiddleware::class => InvokableFactory::class
             ],
         ];
     }

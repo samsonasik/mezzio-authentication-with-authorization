@@ -17,6 +17,7 @@ use Mezzio\Router\Middleware\MethodNotAllowedMiddleware;
 use Mezzio\Router\Middleware\RouteMiddleware;
 use Mezzio\Session\SessionMiddleware;
 use Psr\Container\ContainerInterface;
+use App\Middleware\LegacyApplicationMiddleware;
 
 /**
  * Setup middleware pipeline:
@@ -74,6 +75,9 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     $app->pipe(UserMiddleware::class);
     // Register the dispatch middleware in the middleware pipeline
     $app->pipe(DispatchMiddleware::class);
+
+    // Middleware to load a legacy app with its own routing structure
+    $app->pipe(LegacyApplicationMiddleware::class);
 
     // At this point, if no Response is returned by any middleware, the
     // NotFoundHandler kicks in; alternately, you can provide other fallback
